@@ -38,7 +38,7 @@ print(result.json())
 | title                | `string`   客户名称  可选  默认随机生成            |
 | pasw               | `string`   客户登录密码  可选  默认为 123456              |
 | sublimit            | `int`   客户创建房间数量限制  可选  默认为 10000        |
-| view_auth_url      | `string`   用户自定义认证url  防盗链  进入房间之前验证  可选  默认为空   （[参见：房间认证接口规范](#auth_url_doc)）            |
+| view_auth_url      | `string`   用户自定义认证url  防盗链  进入房间之前验证  可选  默认为空   （[参见：房间认证接口规范](#房间认证接口规范)）            |
 
 > 返回结果如下:
 
@@ -169,7 +169,7 @@ print(result.json())
 | name              | `string`   客户后台登录名  可选  不设置表示保持不变   |
 | sublimit            | `int`    客户创建房间数量限制  可选  不设置表示保持不变     |
 | pasw               | `string`    客户登录密码  可选  不设置表示保持不变     |
-| view_auth_url       | `string`   用户自定义认证url  防盗链  进入房间之前验证  可选  不设置表示保持不变  （[参见：房间认证接口规范](#auth_url_doc)）       |
+| view_auth_url       | `string`   用户自定义认证url  防盗链  进入房间之前验证  可选  不设置表示保持不变  （[参见：房间认证接口规范](#房间认证接口规范)）       |
 
 > 返回结果如下:
 
