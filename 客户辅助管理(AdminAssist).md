@@ -535,7 +535,7 @@ print(result.json())
 }
 ```
 
-## 获取 LSS直播APP 域名白名单（getSubAdminDns）
+## 获取直播域名白名单（getSubAdminDns）
 
 请求方式 POST 需要认证
 
