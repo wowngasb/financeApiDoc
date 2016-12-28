@@ -68,17 +68,17 @@ print(result.json())
             "name": "默认播放器",
             "style": "1",
             "config": {
-                "watermarkPosition": "",
-                "watermarkPosition2": "",
+                "watermarkPosition": "",           //水印位置1
+                "watermarkPosition2": "",          //水印位置2
                 "watermark2": "",
                 "watermark": "",
                 "supernatantword": "",
                 "displayfrequen": "",
-                "scrollposition": "",
-                "logoPosition": "",
-                "adveReAddr": "",
-                "logoAddr": "",
-                "backgroundimage": ""
+                "scrollposition": "",           //调节声音按钮位置
+                "logoPosition": "",             //logo位置
+                "adveReAddr": "",               //播放器url跳转地址
+                "logoAddr": "",                 //播放器图标
+                "backgroundimage": ""           //播放器封面
             },
             "isDefault": "1",
             "addTime": "1469609578",
@@ -155,11 +155,11 @@ print(result.json())
                 "watermark": "",
                 "supernatantword": "",
                 "displayfrequen": "",
-                "scrollposition": "",
-                "logoPosition": "center",
-                "adveReAddr": "http://www.baidu.com",
-                "logoAddr": "http://pic.aodianyun.com/aodianyun/mps/logo/367a711d2b5fc83755a4bf76dd58a0db/0/0",
-                "backgroundimage": ""
+                "scrollposition": "",       //调节声音按钮位置
+                "logoPosition": "center",   //logo位置
+                "adveReAddr": "http://www.baidu.com",    //播放器url跳转地址
+                "logoAddr": "http://pic.aodianyun.com/aodianyun/mps/logo/367a711d2b5fc83755a4bf76dd58a0db/0/0",//播放器图标
+                "backgroundimage": ""   //播放器封面
             },
             "isDefault": "0",
             "addTime": "1482916581",
@@ -227,11 +227,11 @@ print(result.json())
                 "watermark": "",
                 "supernatantword": "",
                 "displayfrequen": "",
-                "scrollposition": "",
-                "logoPosition": "",
-                "adveReAddr": "",
-                "logoAddr": "",
-                "backgroundimage": ""
+                "scrollposition": "",     //调节声音按钮位置
+                "logoPosition": "",       //logo位置
+                "adveReAddr": "",         //播放器url跳转地址
+                "logoAddr": "",           //播放器图标
+                "backgroundimage": ""     //播放器封面
             },
             "isDefault": "0",
             "addTime": "1482916581",
@@ -299,14 +299,14 @@ print(result.json())
                 "watermark": "",
                 "supernatantword": "",
                 "displayfrequen": "",
-                "scrollposition": "",
-                "logoPosition": "",
-                "adveReAddr": "",
-                "logoAddr": "",
-                "backgroundimage": ""
+                "scrollposition": "",     //调节声音按钮位置
+                "logoPosition": "",       //logo位置
+                "adveReAddr": "",         //播放器url跳转地址
+                "logoAddr": "",           //播放器图标
+                "backgroundimage": ""     //播放器封面
             },
             "isDefault": "0",
-            "addTime": "1482916581",
+            "addTime": "1482916581",      
             "upTime": "1482919151"
         },
         "_uptime_": 1482919150
