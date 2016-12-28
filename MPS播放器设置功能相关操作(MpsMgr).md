@@ -63,22 +63,7 @@ print(result.json())
     "Flag": 100,
     "Info": [
         {
-            "id": "36",
-            "uin": "1436",
-            "name": "默认播放器",
-            "style": "1",
-            "config": {
-                "watermarkPosition": "",           //水印位置1
-                "watermarkPosition2": "",          //水印位置2
-                "watermark2": "",
-                "watermark": "",
-                "supernatantword": "",
-                "displayfrequen": "",
-                "scrollposition": "",           //调节声音按钮位置
-                "logoPosition": "",             //logo位置
-                "adveReAddr": "",               //播放器url跳转地址
-                "logoAddr": "",                 //播放器图标
-                "backgroundimage": ""           //播放器封面
+           //修改后的mps实例信息 参见接口getMpsItem
             },
             "isDefault": "1",
             "addTime": "1469609578",
@@ -144,22 +129,7 @@ print(result.json())
         "Flag": 100,
         "FlagString": "查询成功",
         "Info": {
-            "id": "1587",
-            "uin": "1436",
-            "name": "测试",
-            "style": "2",
-            "config": {
-                "watermarkPosition": "",
-                "watermarkPosition2": "",
-                "watermark2": "",
-                "watermark": "",
-                "supernatantword": "",
-                "displayfrequen": "",
-                "scrollposition": "",       //调节声音按钮位置
-                "logoPosition": "center",   //logo位置
-                "adveReAddr": "http://www.baidu.com",    //播放器url跳转地址
-                "logoAddr": "http://pic.aodianyun.com/aodianyun/mps/logo/367a711d2b5fc83755a4bf76dd58a0db/0/0",//播放器图标
-                "backgroundimage": ""   //播放器封面
+           //修改后的mps实例信息 参见接口getMpsItem
             },
             "isDefault": "0",
             "addTime": "1482916581",
@@ -216,26 +186,7 @@ print(result.json())
         "Flag": 100,
         "FlagString": "查询成功",
         "Info": {
-            "id": "1587",
-            "uin": "1436",
-            "name": "测试",
-            "style": "2",
-            "config": {
-                "watermarkPosition": "",
-                "watermarkPosition2": "",
-                "watermark2": "",
-                "watermark": "",
-                "supernatantword": "",
-                "displayfrequen": "",
-                "scrollposition": "",     //调节声音按钮位置
-                "logoPosition": "",       //logo位置
-                "adveReAddr": "",         //播放器url跳转地址
-                "logoAddr": "",           //播放器图标
-                "backgroundimage": ""     //播放器封面
-            },
-            "isDefault": "0",
-            "addTime": "1482916581",
-            "upTime": "1482918964"
+            //修改后的mps实例信息 参见接口getMpsItem
         },
         "_uptime_": 1482918963
     }
@@ -284,30 +235,7 @@ print(result.json())
     },
     "new_name": "测试",
     "last_name": "等噶欧云舞若",
-    "Info": {
-        "Flag": 100,
-        "FlagString": "查询成功",
-        "Info": {
-            "id": "1587",
-            "uin": "1436",
-            "name": "测试",
-            "style": "2",
-            "config": {
-                "watermarkPosition": "",
-                "watermarkPosition2": "",
-                "watermark2": "",
-                "watermark": "",
-                "supernatantword": "",
-                "displayfrequen": "",
-                "scrollposition": "",     //调节声音按钮位置
-                "logoPosition": "",       //logo位置
-                "adveReAddr": "",         //播放器url跳转地址
-                "logoAddr": "",           //播放器图标
-                "backgroundimage": ""     //播放器封面
-            },
-            "isDefault": "0",
-            "addTime": "1482916581",      
-            "upTime": "1482919151"
+    "Info": {  //修改后的mps实例信息 参见接口getMpsItem
         },
         "_uptime_": 1482919150
     }
