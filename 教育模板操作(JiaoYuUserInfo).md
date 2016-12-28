@@ -28,14 +28,14 @@ print(result.json())
 | uid                | `int`  发送者uid    |
 | msg_id                | `int`  消息唯一标识         |
 | msg_cmd               | `string`  消息命令类型        |
-| state            | `int`  发布，删除       |
-| create_time_s                | `datetime`  创建时间         |
-| create_time_e               | `datetime`  创建时间        |
-| update_s            | `datetime`  更新时间       |
-| update_e               | `datetime`  更新时间        |
-| start            | `int`  开始位置      |
+| state            | `int`  2 发布，9 删除       |
+| create_time_s                | `string`  获取某时间段内评论的开始时间点         |
+| create_time_e               | `string`   获取某时间段内评论的结束时间点        |
+| update_s            | `string`        记录更新开始时间 |
+| update_e               | `string`  记录更新结束时间        |
+| start            | `int`  查询开始位置      |
 | limit               | `string`  每页数据条数        |
-| sort_option            | `string`  排序字段       |
+| sort_option            | `array`  排序字段 ['field' => 'id', 'direction' => 'decs']       |
 ```
 {
     "Flag": 100,
@@ -48,7 +48,7 @@ print(result.json())
             "content": "地瓜干",   //发送内容
             "room_id": 73,         //房间id
             "time": 1480576896,    
-            "state": 1,           //状态
+            "state": 1,           //状态 0未定义 1存入 2已发布 8清空  9删除 
             "msg_id": 75,          //消息id
             "msg_from": null
         },
@@ -127,15 +127,15 @@ print(result.json())
     "Info": {
         "list": [
             {
-                "fileName": "qq.pptx",           //文件名
-                "url": "http://1436.long-vod.cdn.aodianyun.com/mfs/1436/wis/0x0/0ae67e448f46beba410bd478712782c9.pptx", //文档网址
+                "fileName": "qq.pptx",           //文档文件名
+                "url": "http://1436.long-vod.cdn.aodianyun.com/mfs/1436/wis/0x0/0ae67e448f46beba410bd478712782c9.pptx", //文档地址
                 "pdfUrl": "http://1436.long-vod.cdn.aodianyun.com/mfs/1436/wis/0x0/170fc0ca0d6645192f315ab2856c73f7.pdf",
                 //文档pdf地址
                 "page": 3,
-                "time": 1480576051,
-                "width": 720,
-                "height": 540,
-                "id": "65da1fde9a84617e2c33671d795347d0"
+                "time": 1480576051,          //文档创建时间
+                "width": 720,                //文档宽度
+                "height": 540,               //文档高度
+                "id": "65da1fde9a84617e2c33671d795347d0"   //文档id
             },
             ...
         ]
@@ -208,12 +208,12 @@ print(result.json())
     "Flag": 100,
     "FlagString": "success",
     "Info": {
-        "endTime": 1480576636112,                //结束时间
+        "endTime": 1480576636112,                //录制结束时间
         "id": "02041b3dc93ae654094d7817d737f06c",   //录制id
         "recUrl": "http://4640.long-vod.cdn.aodianyun.com/wis/1436/02041b3dc93ae654094d7817d737f06c/record.meta",   
-        "startTime": 1480576257062,  //开始时间
+        "startTime": 1480576257062,  //录制开始时间
         "title": "2016-12-01 03:10:57",
-        "videoUrl": "http://1436.live-vod.cdn.aodianyun.com/m3u8/0x0/dyy_280_902.ff04257eb2edfb28f52efeb738d6ca17.1480576257/dyy_280_902.ff04257eb2edfb28f52efeb738d6ca17.1480576257.m3u8",   //视频路径
+        "videoUrl": "http://1436.live-vod.cdn.aodianyun.com/m3u8/0x0/dyy_280_902.ff04257eb2edfb28f52efeb738d6ca17.1480576257/dyy_280_902.ff04257eb2edfb28f52efeb738d6ca17.1480576257.m3u8",   //录制视频地址
         "wisId": "lc_a9d7afff8f53ec7cc954c9f726d70195"
     }
 }
