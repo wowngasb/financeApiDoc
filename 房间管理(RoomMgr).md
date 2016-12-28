@@ -273,8 +273,47 @@ print(result.json())
             "password": "6666666666666",
             "create_time": "2016-12-23 15:17:02",
             "uptime": "2016-12-23 15:16:16"
-        }
+        },
+        ......
     }
+}
+```
+
+## 修改MCS密码（paswRoomMcs）
+
+请求方式 GET POST 不需要认证
+
+获取房间 流媒体 相关信息
+
+```shell
+curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/paswRoomMcs" \
+     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
+     -d "params"
+```
+
+```python
+import requests
+
+result = requests.post('http://finance.aodianyun.com/api/RoomMgr/paswRoomMcs',
+  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+  data=params)
+
+print(result.json())
+```
+
+| 字段                 | 描述                                          |
+| ---------------------- | ------------------------------------------------ |
+| room_id             | `int`  房间ID 指定的房间                        |
+| mcs_id             | `int`  直播间唯一标识                        |
+| password             | `string`  账号密码 数字，字母长度{6~18}                        |
+
+
+> 返回结果如下:
+
+```json
+{
+    "Flag": 100,
+    "FlagString": "删除成功"
 }
 ```
 
@@ -311,6 +350,8 @@ print(result.json())
 ```json
 {
     "Flag": 100,
-    "FlagString": "删除成功"
+    "FlagString": "修改成功"
 }
 ```
+
+
