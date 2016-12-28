@@ -183,3 +183,134 @@ print(result.json())
     }
 }
 ```
+
+## 为直播间新添直播MCS账号 需要管理room_id权限（addRoomMcs）
+
+请求方式 GET POST 不需要认证
+
+获取房间 流媒体 相关信息
+
+```shell
+curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/addRoomMcs" \
+     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
+     -d "params"
+```
+
+```python
+import requests
+
+result = requests.post('http://finance.aodianyun.com/api/RoomMgr/addRoomMcs',
+  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+  data=params)
+
+print(result.json())
+```
+
+| 字段                 | 描述                                          |
+| ---------------------- | ------------------------------------------------ |
+| room_id             | `int`  房间ID 指定的房间                        |
+| account             | `string`  直播账号 数字，字母长度(长度6~18)                        |
+| name             | `string`  账号用户名 主播名称(不超过10个字)                        |
+| password             | `string`  账号密码 数字，字母长度(长度6~18)                        |
+
+> 返回结果如下:
+
+```json
+{
+    "Flag": 100,
+    "FlagString": "添加MCS成功"
+}
+```
+
+## MCS直播间账号列表（listRoomMcs）
+
+请求方式 GET POST 不需要认证
+
+获取房间 流媒体 相关信息
+
+```shell
+curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/listRoomMcs" \
+     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
+     -d "params"
+```
+
+```python
+import requests
+
+result = requests.post('http://finance.aodianyun.com/api/RoomMgr/listRoomMcs',
+  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+  data=params)
+
+print(result.json())
+```
+
+| 字段                 | 描述                                          |
+| ---------------------- | ------------------------------------------------ |
+| room_id             | `int`  房间ID 指定的房间                        |
+
+> 返回结果如下:
+
+```json
+{
+    "Flag": 100,
+    "Info": {
+        "12": {
+            "id": 12,
+            "room_id": 74,
+            "mcs_id": 18317,
+            "name": "555555555",
+            "account": "6576666666",
+            "password": "ffffffffffffff",
+            "create_time": "2016-12-23 11:31:57",
+            "uptime": "2016-12-23 15:19:56"
+        },
+        "17": {
+            "id": 17,
+            "room_id": 74,
+            "mcs_id": 18327,
+            "name": "6666666666",
+            "account": "66666666666",
+            "password": "6666666666666",
+            "create_time": "2016-12-23 15:17:02",
+            "uptime": "2016-12-23 15:16:16"
+        }
+    }
+}
+```
+
+## 删除直播间账号（delRoomMcs）
+
+请求方式 GET POST 不需要认证
+
+获取房间 流媒体 相关信息
+
+```shell
+curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/delRoomMcs" \
+     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
+     -d "params"
+```
+
+```python
+import requests
+
+result = requests.post('http://finance.aodianyun.com/api/RoomMgr/delRoomMcs',
+  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+  data=params)
+
+print(result.json())
+```
+
+| 字段                 | 描述                                          |
+| ---------------------- | ------------------------------------------------ |
+| room_id             | `int`  房间ID 指定的房间                        |
+| mcs_id             | `int`  直播间唯一标识                        |
+
+
+> 返回结果如下:
+
+```json
+{
+    "Flag": 100,
+    "FlagString": "删除成功"
+}
+```
