@@ -184,11 +184,11 @@ print(result.json())
 }
 ```
 
-## 为直播间新添直播MCS账号 需要管理room_id权限（addRoomMcs）
+## 添加账号（addRoomMcs）
 
 请求方式 GET POST 不需要认证
 
-获取房间 流媒体 相关信息
+为直播间新添直播MCS账号 需要管理room_id权限
 
 ```shell
 curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/addRoomMcs" \
@@ -222,11 +222,11 @@ print(result.json())
 }
 ```
 
-## MCS直播间账号列表（listRoomMcs）
+## 直播间账号列表（listRoomMcs）
 
 请求方式 GET POST 不需要认证
 
-获取房间 流媒体 相关信息
+MCS直播间账号列表
 
 ```shell
 curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/listRoomMcs" \
@@ -279,11 +279,11 @@ print(result.json())
 }
 ```
 
-## 修改MCS密码（paswRoomMcs）
+## 修改密码（paswRoomMcs）
 
 请求方式 GET POST 不需要认证
 
-获取房间 流媒体 相关信息
+修改MCS密码
 
 ```shell
 curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/paswRoomMcs" \
@@ -321,7 +321,7 @@ print(result.json())
 
 请求方式 GET POST 不需要认证
 
-获取房间 流媒体 相关信息
+删除直播间账号
 
 ```shell
 curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/delRoomMcs" \
