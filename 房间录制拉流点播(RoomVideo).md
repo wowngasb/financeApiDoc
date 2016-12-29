@@ -45,7 +45,7 @@ print(result.json())
             "m3u8": "http://hz-vod.cdn.aodianyun.com/m3u8/0x0/dyy_280_902.992b822fa7276761418c1509e78e26a2.1482981338/dyy_280_902.992b822fa7276761418c1509e78e26a2.1482981338.m3u8",
             "duration": 219,
             "thumbnail": "http://cdn.dvr.aodianyun.com/pic/hz-vod/images/dyy_280_902.992b822fa7276761418c1509e78e26a2.1482981338/0/0",
-            "size": 22018424,                                 //视屏大小
+            "size": 22018424,                                 //视频大小
             "width": 540,                                     //宽度
             "height": 360,                                    //高度
             "begin": 0,                   
