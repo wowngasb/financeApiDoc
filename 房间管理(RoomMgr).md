@@ -184,11 +184,11 @@ print(result.json())
 }
 ```
 
-## 为直播间新添直播MCS账号 需要管理room_id权限（addRoomMcs）
+## 增加直播账号（addRoomMcs）
 
 请求方式 GET POST 不需要认证
 
-获取房间 流媒体 相关信息
+为制定房间 增加直播账号
 
 ```shell
 curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/addRoomMcs" \
@@ -222,11 +222,11 @@ print(result.json())
 }
 ```
 
-## MCS直播间账号列表（listRoomMcs）
+## 获取直播账号列表（listRoomMcs）
 
 请求方式 GET POST 不需要认证
 
-获取房间 流媒体 相关信息
+获取指定房间 直播账号列表
 
 ```shell
 curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/listRoomMcs" \
@@ -257,33 +257,23 @@ print(result.json())
         "12": {
             "id": 12,
             "room_id": 74,
-            "mcs_id": 18317,
-            "name": "555555555",
+            "mcs_id": 18317,  //直播账号id 用于删除修改密码等
+            "name": "555555555",  // 直播账号 登录名
             "account": "6576666666",
-            "password": "ffffffffffffff",
+            "password": "ffffffffffffff",  // 直播账号 登录密码
             "create_time": "2016-12-23 11:31:57",
             "uptime": "2016-12-23 15:19:56"
-        },
-        "17": {
-            "id": 17,
-            "room_id": 74,
-            "mcs_id": 18327,
-            "name": "6666666666",
-            "account": "66666666666",
-            "password": "6666666666666",
-            "create_time": "2016-12-23 15:17:02",
-            "uptime": "2016-12-23 15:16:16"
         },
         ......
     }
 }
 ```
 
-## 修改MCS密码（paswRoomMcs）
+## 修改直播账号密码（paswRoomMcs）
 
 请求方式 GET POST 不需要认证
 
-获取房间 流媒体 相关信息
+修改指定直播账号 登录密码
 
 ```shell
 curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/paswRoomMcs" \
@@ -304,8 +294,8 @@ print(result.json())
 | 字段                 | 描述                                          |
 | ---------------------- | ------------------------------------------------ |
 | room_id             | `int`  房间ID 指定的房间                        |
-| mcs_id             | `int`  直播间唯一标识                        |
-| password             | `string`  账号密码 数字，字母长度{6~18}                        |
+| mcs_id             | `int`  直播帐号唯一标识                        |
+| password           | `string`  新的密码 数字，字母长度{6~18}                        |
 
 
 > 返回结果如下:
@@ -313,15 +303,15 @@ print(result.json())
 ```json
 {
     "Flag": 100,
-    "FlagString": "删除成功"
+    "FlagString": "修改成功"
 }
 ```
 
-## 删除直播间账号（delRoomMcs）
+## 删除直播账号（delRoomMcs）
 
 请求方式 GET POST 不需要认证
 
-获取房间 流媒体 相关信息
+删除指定的 直播账号
 
 ```shell
 curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/delRoomMcs" \
@@ -342,7 +332,7 @@ print(result.json())
 | 字段                 | 描述                                          |
 | ---------------------- | ------------------------------------------------ |
 | room_id             | `int`  房间ID 指定的房间                        |
-| mcs_id             | `int`  直播间唯一标识                        |
+| mcs_id             | `int`  直播帐号唯一标识                        |
 
 
 > 返回结果如下:
@@ -350,7 +340,7 @@ print(result.json())
 ```json
 {
     "Flag": 100,
-    "FlagString": "修改成功"
+    "FlagString": "删除成功"
 }
 ```
 
