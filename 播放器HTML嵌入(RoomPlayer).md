@@ -56,6 +56,28 @@ var playerVar = new dyyPlayer({
 [在线文档](http://www.aodianyun.com/aodianyun_doc/254)
 
 
+## 学生白板嵌入
+
+学生端观看 只需获取到 房间id 即可观看
+
+[测试页面](http://finance.aodianyun.com/helper/roomwis.php?room_id=1478)
+
+```html
+<iframe id="wis-container" style="width: 800px;height: 600px;"></iframe>
+<script type="text/javascript" src="http://finance.aodianyun.com/helper/room_wis.js?r=1478&id=wis-container"></script>
+```
+
+## 教师白板嵌入
+
+教师端需调用API[接口](#生成房间token（getauthtoken）)获取到 认证token之后才可使用 
+
+[测试页面](http://finance.aodianyun.com/helper/roomwis.php?room_id=1478&token=a07dVZvHzZPe8GZEAePcC3loHl8Tn5cBXyPpy3qrcdyLqCFhBCbaBJXQdbox)
+
+```html
+<iframe id="wis-container" style="width: 800px;height: 600px;"></iframe>
+<script type="text/javascript" src="http://finance.aodianyun.com/helper/room_wis.js?r=1478&token=a07dVZvHzZPe8GZEAePcC3loHl8Tn5cBXyPpy3qrcdyLqCFhBCbaBJXQdbox&id=wis-container"></script>
+```
+
 ## 注意事项
 
 1.页面必须有完整的html、head、body标签，同一页面只可嵌入一个播放器
