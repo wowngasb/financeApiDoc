@@ -7,7 +7,7 @@
 请求方式 GET POST 需要认证
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomRecord/listMsgReview" \
+curl -X "POST" "http://finance.aodianyun.com/api/JiaoYuUserInfo/listMsgReview" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -15,7 +15,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomRecord/listMsgReview" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomRecord/listMsgReview',
+result = requests.post('http://finance.aodianyun.com/api/JiaoYuUserInfo/listMsgReview',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -36,6 +36,7 @@ print(result.json())
 | start            | `int`  查询开始位置      |
 | limit               | `string`  每页数据条数        |
 | sort_option            | `array`  排序字段 ['field' => 'id', 'direction' => 'decs']       |
+
 ```
 {
     "Flag": 100,
@@ -64,7 +65,7 @@ print(result.json())
 请求方式 GET POST 需要认证
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomRecord/dmsMsgReview" \
+curl -X "POST" "http://finance.aodianyun.com/api/JiaoYuUserInfo/dmsMsgReview" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -72,7 +73,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomRecord/dmsMsgReview" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomRecord/dmsMsgReview',
+result = requests.post('http://finance.aodianyun.com/api/JiaoYuUserInfo/dmsMsgReview',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -99,7 +100,7 @@ print(result.json())
 请求方式 GET POST 需要认证
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomRecord/listWisDoc" \
+curl -X "POST" "http://finance.aodianyun.com/api/JiaoYuUserInfo/listWisDoc" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -107,7 +108,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomRecord/listWisDoc" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomRecord/listWisDoc',
+result = requests.post('http://finance.aodianyun.com/api/JiaoYuUserInfo/listWisDoc',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -149,7 +150,7 @@ print(result.json())
 请求方式 GET POST 需要认证
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomRecord/delMsgReview" \
+curl -X "POST" "http://finance.aodianyun.com/api/JiaoYuUserInfo/delMsgReview" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -157,7 +158,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomRecord/delMsgReview" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomRecord/delMsgReview',
+result = requests.post('http://finance.aodianyun.com/api/JiaoYuUserInfo/delMsgReview',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -183,7 +184,7 @@ print(result.json())
 请求方式 GET POST 需要认证
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomRecord/getWisRecordInfo" \
+curl -X "POST" "http://finance.aodianyun.com/api/JiaoYuUserInfo/getWisRecordInfo" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -191,7 +192,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomRecord/getWisRecordInfo" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomRecord/getWisRecordInfo',
+result = requests.post('http://finance.aodianyun.com/api/JiaoYuUserInfo/getWisRecordInfo',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -225,7 +226,7 @@ print(result.json())
 请求方式 GET POST 需要认证
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomRecord/delWisDoc" \
+curl -X "POST" "http://finance.aodianyun.com/api/JiaoYuUserInfo/delWisDoc" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -233,7 +234,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomRecord/delWisDoc" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomRecord/delWisDoc',
+result = requests.post('http://finance.aodianyun.com/api/JiaoYuUserInfo/delWisDoc',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
