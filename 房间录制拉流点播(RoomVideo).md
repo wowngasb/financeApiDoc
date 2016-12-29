@@ -188,9 +188,9 @@ print(result.json())
 | 字段                 | 描述                                          |
 | ---------------------- | ------------------------------------------------ |
 | admin_id             | `int`  管理员id                     |
-| url               | `array`  视屏url地址        |
+| url               | `array`  视频url地址        |
 | page            | `int`  页数       |
-| type                | `string`  视屏类型   7DayDvrList 临时存储   DvrList永久存储   UploadVodList上传视频      |
+| type                | `string`  视频类型   7DayDvrList 临时存储   DvrList永久存储   UploadVodList上传视频      |
 
 ```
 {
