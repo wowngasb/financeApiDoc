@@ -6,6 +6,8 @@
 
 请求方式 GET POST 需要认证
 
+获取消息列表
+
 ```shell
 curl -X "POST" "http://finance.aodianyun.com/api/JiaoYuUserInfo/listMsgReview" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
@@ -60,9 +62,11 @@ print(result.json())
 
 ```
 
-## 后台审核 发布 dms 消息(dmsMsgReview)
+## 后台审核消息(dmsMsgReview)
 
 请求方式 GET POST 需要认证
+
+后台审核 发布 dms 消息
 
 ```shell
 curl -X "POST" "http://finance.aodianyun.com/api/JiaoYuUserInfo/dmsMsgReview" \
@@ -95,9 +99,11 @@ print(result.json())
 ```
 
 
-## 获取教育模版 文档列表(listWisDoc)
+## 获取文档列表(listWisDoc)
 
 请求方式 GET POST 需要认证
+
+获取教育模版 文档列表
 
 ```shell
 curl -X "POST" "http://finance.aodianyun.com/api/JiaoYuUserInfo/listWisDoc" \
@@ -145,9 +151,11 @@ print(result.json())
 
 ```
 
-## 后台审核 发布 dms 消息(delMsgReview)
+## 后台删除消息(delMsgReview)
 
 请求方式 GET POST 需要认证
+
+后台删除 dms 消息
 
 ```shell
 curl -X "POST" "http://finance.aodianyun.com/api/JiaoYuUserInfo/delMsgReview" \
@@ -179,10 +187,11 @@ print(result.json())
 ```
 
 
-## 获取单条白板录制信息(getWisRecordInfo)
+## 获取白板录制信息(getWisRecordInfo)
 
 请求方式 GET POST 需要认证
 
+获取单条白板录制信息
 ```shell
 curl -X "POST" "http://finance.aodianyun.com/api/JiaoYuUserInfo/getWisRecordInfo" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
@@ -224,6 +233,8 @@ print(result.json())
 ## 删除教育模版(delWisDoc)
 
 请求方式 GET POST 需要认证
+
+删除教育模版
 
 ```shell
 curl -X "POST" "http://finance.aodianyun.com/api/JiaoYuUserInfo/delWisDoc" \
