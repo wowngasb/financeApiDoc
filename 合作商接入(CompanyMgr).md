@@ -402,7 +402,7 @@ print(result.json())
     "Info": [
       {
           "id": "70fa43d93802056a34b45e30cb4bc3f3",  //录制id
-          "wisId": "lc_51b33821af8688197b328bc18ea0d6f4",  //录制id
+          "wisId": "lc_51b33821af8688197b328bc18ea0d6f4",  
           "title": "2016-11-11 04:51:41",  //录制文件标题
           "videoUrl": "http://13830.live-vod.cdn.aodianyun.com/m3u8/0x0/dyy_168_850.0d2b7152b0a2bf430a8c66fd6363070f.1478854302/dyy_168_850.0d2b7152b0a2bf430a8c66fd6363070f.1478854302.m3u8",  //录制生成视频文件 m3u8
           "recUrl": "http://4640.long-vod.cdn.aodianyun.com/wis/13830/70fa43d93802056a34b45e30cb4bc3f3/record.meta",  //录制生成白板数据文件
