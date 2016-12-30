@@ -523,7 +523,7 @@ print(result.json())
 
 请求方式 GET POST 不需要认证
 
-为制定房间 增加直播账号
+为制定房间 增加直播账号 需要管理room_id权限
 
 ```shell
 curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/addRoomMcs" \
@@ -562,6 +562,7 @@ print(result.json())
 请求方式 GET POST 不需要认证
 
 获取指定房间 直播账号列表
+
 
 ```shell
 curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/listRoomMcs" \
@@ -609,6 +610,7 @@ print(result.json())
 请求方式 GET POST 不需要认证
 
 修改指定直播账号 登录密码
+
 
 ```shell
 curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/paswRoomMcs" \

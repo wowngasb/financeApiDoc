@@ -2,10 +2,11 @@
 
 MPS播放器设置功能相关操作
 
-## 根据admin_id创建Mps播放器(newMpsItem)
+## 新建播放器(newMpsItem)
 
 请求方式 GET POST 需要认证
 
+根据admin_id创建Mps播放器
 ```shell
 curl -X "POST" "http://finance.aodianyun.com/api/MpsMgr/newMpsItem" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
@@ -35,9 +36,11 @@ print(result.json())
 }
 ```
 
-## 获取指定admin_id Mps播放器信息(listMpsItem)
+## 获取播放器信息(listMpsItem)
 
 请求方式 GET POST 需要认证
+
+获取指定admin_id Mps播放器信息
 
 ```shell
 curl -X "POST" "http://finance.aodianyun.com/api/MpsMgr/listMpsItem" \
@@ -82,9 +85,11 @@ print(result.json())
 }
 ```
 
-## 设置MPS的logo(editLogo)
+## 设置logo(editLogo)
 
 请求方式 GET POST 需要认证
+
+设置MPS的logo
 
 ```shell
 curl -X "POST" "http://finance.aodianyun.com/api/MpsMgr/editLogo" \
@@ -141,9 +146,11 @@ print(result.json())
 ```
 
 
-## 清楚MPS的logo(clearLogo)
+## 清除logo(clearLogo)
 
 请求方式 GET POST 需要认证
+
+清除MPS的logo
 
 ```shell
 curl -X "POST" "http://finance.aodianyun.com/api/MpsMgr/clearLogo" \
@@ -193,9 +200,11 @@ print(result.json())
 }
 ```
 
-## 设定播放器名称(editName)
+## 设定名称(editName)
 
 请求方式 GET POST 需要认证
+
+设定播放器名称
 
 ```shell
 curl -X "POST" "http://finance.aodianyun.com/api/MpsMgr/editName" \
