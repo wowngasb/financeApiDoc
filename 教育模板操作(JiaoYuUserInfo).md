@@ -1,6 +1,6 @@
 # 教育模板操作 JiaoYuUserInfo
 
-教育模板相关操作
+教育模板相关操作 相关操作需要使用 `RoomMgr`模块`getAuthToken`接口 获取token
 
 ## 待审核消息列表(listMsgReview)
 
@@ -227,6 +227,8 @@ print(result.json())
 
 上传文档  需要token认证
 
+目前支持文档格式 'pdf', 'ppt', 'pptx', 'doc', 'docx', 'xls', 'xlsx', 文档大小需要小于20M
+
 ```shell
 curl -X "POST" "http://finance.aodianyun.com/api/JiaoYuUserInfo/uploadWisDoc" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
@@ -348,6 +350,54 @@ print(result.json())
         "title": "2016-12-01 03:10:57",
         "videoUrl": "http://1436.live-vod.cdn.aodianyun.com/m3u8/0x0/dyy_280_902.ff04257eb2edfb28f52efeb738d6ca17.1480576257/dyy_280_902.ff04257eb2edfb28f52efeb738d6ca17.1480576257.m3u8",   //录制视频地址
         "wisId": "lc_a9d7afff8f53ec7cc954c9f726d70195"
+    }
+}
+```
+
+## 获取启动命令行(getWisPublishShell)
+
+请求方式 GET POST 需要认证
+
+获取网页启动发布工具命令行 需安装白板发布工具 跳过MCS帐号登陆
+
+```shell
+curl -X "POST" "http://finance.aodianyun.com/api/JiaoYuUserInfo/getWisPublishShell" \
+     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
+     -d "params"
+```
+
+```python
+import requests
+
+result = requests.post('http://finance.aodianyun.com/api/JiaoYuUserInfo/getWisPublishShell',
+  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+  data=params)
+
+print(result.json())
+
+```
+| 字段                 | 描述                                          |
+| --------------------- | ------------------------------------------------ |
+| token              | `string`  认证token                     |
+| ChatUrl              | `string`  软件内嵌网页地址 为空表示使用默认页面       |
+
+```
+{
+    "Flag": 100,
+    "Info": {
+        "room_id": 73,
+        "auth": {  // 用户相关信息
+            "room_id": 73,
+            "uid": "10156412",
+            "nick": "李老师",
+            "ava": "http://test25.aodianyun.com/dist/dyy/assets/img/male.png",
+            "ext": "",
+            "_cache_": 1483414931,
+            "_uptime_": 1483414939
+        },
+        "wis_shell": "wis://wis.aodianyun.com?params=eyJNYXhPdwMH0=",   //启动链接 放入网页a标签中 点击即可启动软件
+        "mcs_config": {  //MCS 视频发布相关参数  参见 getRoomMcsConfig 接口
+        }
     }
 }
 ```
