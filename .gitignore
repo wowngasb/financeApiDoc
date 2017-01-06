@@ -1,3 +1,5 @@
 *.md.html
 *.pyc
 /markdown
+*.class
+sdk/java/HttpApi.jar

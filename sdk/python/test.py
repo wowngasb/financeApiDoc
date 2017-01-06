@@ -15,7 +15,7 @@ def main():
     test_2 = HttpApi.post('JiaoYuUserInfo', 'listWisDoc', {
         'token': test_1['Info'],
         'page': 1,
-        'num': 20,
+        'num': 20
     })
     print 'test_2', test_2
 

@@ -19,12 +19,12 @@ public class HttpApi {
     private static String API_KEY = "3bddc47e7cc05e1d8f488f2562969a33";  // 修改为你的API key
 
     public static JSONObject post(String module, String api, JSONObject params){
-        String auth_str = "dyyadmin:" . HttpApi.API_KEY;
-        String query_url = HttpApi.api_host . "/api/{$module}/{$api}";
-        String method = 'POST';
-        String content = params.toString().getBytes("UTF-8");
-
+        String auth_str = "dyyadmin:" + HttpApi.API_KEY;
+        String query_url = HttpApi.api_host + "/api/" + module + "/" + api;
+        String method = "POST";
+        
         try{
+            byte[] content = params.toString().getBytes("UTF-8");
             URL url = new URL(query_url);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setDoOutput(true);
@@ -53,7 +53,8 @@ public class HttpApi {
             }
             reader.close();
             connection.disconnect();
-            return new JSONObject(response);
+            JSONObject ret = new JSONObject(new String(response));
+            return ret;
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (UnsupportedEncodingException e) {
@@ -61,26 +62,7 @@ public class HttpApi {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public static void main(String[] args) {
-        JSONObject test1_args = new JSONObject();
-        test1_args.put("room_id", 73);
-        test1_args.put("expire", 1000);
-        test1_args.put("uid", "234234");
-        test1_args.put("nick", "ttt");
-        test1_args.put("ava", "");
-        JSONObject test_1 = HttpApi.post("RoomMgr", "getAuthToken", test1_args);
-        System.out.println("test_1", test_1.toString());
-
-        JSONObject test2_args = new JSONObject();
-        test2_args.put("token", test_1.get("Info"));
-        test2_args.put("page", 1);
-        test2_args.put("num", 20);
-        
-        JSONObject test_2 = HttpApi::post("JiaoYuUserInfo", "listWisDoc", test2_args);
-echo 'test_2 ', json_encode($test_2);
-        System.out.println("test_2", test_2.toString());
+        return new JSONObject();
     }
 
 }

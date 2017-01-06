@@ -10,7 +10,7 @@ function HttpApiHelper() {
 
 
 HttpApiHelper.prototype.post = function (module, api, params, callback) {
-    var data = JSON.stringify(params);
+    var content = JSON.stringify(params);
     var options = {
         host: this.api_host.split('://')[1],
         path: '/api/' + module + '/' + api,
@@ -19,7 +19,7 @@ HttpApiHelper.prototype.post = function (module, api, params, callback) {
             'Accept': 'application/json',
             'Content-Type': 'application/json; charset=UTF-8',
             'Authorization': 'dyyadmin:' + this.API_KEY,
-            'Content-Length': Buffer.byteLength(data)
+            'Content-Length': Buffer.byteLength(content)
         }
     };
     var body = '';
@@ -32,7 +32,7 @@ HttpApiHelper.prototype.post = function (module, api, params, callback) {
             callback( JSON.parse(body) );
         })
     });
-    req.write(data);
+    req.write(content);
     req.end();
 }
 
