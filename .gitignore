@@ -4,3 +4,6 @@
 *.class
 sdk/java/HttpApi.jar
 *.exe
+/sdk/C#/bin
+/sdk/C#/obj
+/sdk/C#/.vs
