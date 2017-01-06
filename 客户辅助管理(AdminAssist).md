@@ -662,3 +662,133 @@ print(result.json())
     "FlagString": "操作成功"
 }
 ```
+
+
+## 房间直播状态（getRoomPublishInfo）
+
+请求方式 POST 需要认证
+
+获取 房间 发布流畅度相关信息  需要总公司权限 或者 所属子公司权限
+
+```shell
+curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/getRoomPublishInfo" \
+     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
+     -d "params"
+```
+
+```python
+import requests
+
+result = requests.post('http://finance.aodianyun.com/api/AdminAssist/getRoomPublishInfo',
+  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+  data=params)
+
+print(result.json())
+```
+
+| 字段                   | 描述                                          |
+| ------------------------- | ------------------------------------------------ |
+| room_id             | `int`  房间ID 指定的房间                           |
+| rangeMinute        | `int`   获取的时间范围 单位分钟 大于0小于等于60           |
+
+> 返回结果如下:
+
+```json
+{
+    "Flag": 100,
+    "Info": [
+        {
+            "room_id": 1042,
+            "admin_id": 1140,
+            "state": 1,
+            "viewer_count": 54,
+            "viewer_max": 1,
+            "room_title": "晚间直播",  //房间基本信息 参见getRoomInfo接口
+            ......
+            "bandwidth_info": {   //房间当前带宽信息
+                "bandwidth": 0,
+                "bandwidth_last": 0,
+                "time": 1483687106,
+                "uptime": 1483687106,
+                "bandwidth_str": "0",
+                "uptime_str": "2017-01-06 15:18:26"
+            },
+            "fluencyHistoryData": [  // 房间流畅度信息
+                {
+                    "name": "上行流畅度",
+                    "index": 0,
+                    "legendIndex": 0,
+                    "_colorIndex": 0,
+                    "_symbolIndex": 0,
+                    "data": []
+                },
+                {
+                    "name": "转发流畅度",
+                    "index": 1,
+                    "legendIndex": 1,
+                    "_colorIndex": 1,
+                    "_symbolIndex": 1,
+                    "data": []
+                },
+                {
+                    "name": "下行流畅度",
+                    "index": 2,
+                    "legendIndex": 2,
+                    "_colorIndex": 2,
+                    "_symbolIndex": 2,
+                    "data": []
+                }
+            ],
+            "fluencyHistoryData_uptime": null,
+            "PreviewImage": [],   //房间直播截图信息
+            "7DayDvr": []  //房间直播自动录制下来的 临时存储的视频信息
+        }
+    ]
+}
+```
+
+
+## 所有直播状态（getAdminPublishRoom）
+
+请求方式 POST 需要认证
+
+获取 Lss app 发布流畅度相关信息 只获取正在直播的房间  需要总公司权限 或者 所属子公司权限
+
+```shell
+curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/getAdminPublishRoom" \
+     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
+     -d "params"
+```
+
+```python
+import requests
+
+result = requests.post('http://finance.aodianyun.com/api/AdminAssist/getAdminPublishRoom',
+  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+  data=params)
+
+print(result.json())
+```
+
+| 字段                   | 描述                                          |
+| ------------------------- | ------------------------------------------------ |
+| admin_id             | `int`  子公司ID 指定的子公司    默认为0表示获取自身旗下房间       |
+| rangeMinute        | `int`   获取的时间范围 单位分钟 大于0小于等于60           |
+
+> 返回结果如下:
+
+```json
+{
+    "Flag": 100,
+    "Info": [  //旗下所有正在直播的房间 直播状态信息 参见 getRoomPublishInfo 接口
+        {
+            "room_id": 1042,
+            "admin_id": 1140,
+            "state": 1,
+            ......
+        }
+    ]
+}
+```
+
+

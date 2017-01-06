@@ -11,6 +11,9 @@
 
 [DEMO GitHub](https://github.com/aodianyunGroup/financeWebSDK)
 
+
+已集成常见后端开发语言SDK [SDK Github](https://github.com/aodianyunGroup/financeApiDoc/tree/master/sdk)
+
 ## 认证
 
 部分接口需认证授权，请联系工作人员获取 API_KEY
