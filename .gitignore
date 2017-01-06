@@ -3,3 +3,4 @@
 /markdown
 *.class
 sdk/java/HttpApi.jar
+*.exe
