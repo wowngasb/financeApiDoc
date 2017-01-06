@@ -9,7 +9,6 @@ import (
 )
 
 func main() {
-
 	test_1_args := gabs.New()
 	test_1_args.Set(73, "room_id")
 	test_1_args.Set(1000, "expire")
@@ -28,5 +27,4 @@ func main() {
 
 	test_2 := httpapi.Post("JiaoYuUserInfo", "listWisDoc", test_2_args)
 	fmt.Println("test_2", test_2.String())
-
 }
