@@ -13,12 +13,12 @@ namespace HttpApi
     class HttpApi
     {
         private static string api_host = "http://my.app";    // 修改为API域名  http://finance.aodianyun.com
-        private static string API_KEY = "3bddc47e7cc05e1d8f488f2562969a33";  // 修改为你的API key
+        private static string api_key = "3bddc47e7cc05e1d8f488f2562969a33";  // 修改为你的API key
 
         public static dynamic post(string module, string api, dynamic param)
         {
             var query_url = api_host + "/api/" + module + "/" + api;
-            var auth_str = "dyyadmin:" + API_KEY;
+            var auth_str = "dyyadmin:" + api_key;
             var content = JsonConvert.SerializeObject(param);
             byte[] byteArray = Encoding.UTF8.GetBytes(content);
 

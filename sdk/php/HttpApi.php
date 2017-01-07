@@ -7,10 +7,10 @@
 class HttpApi {
 
     private static $api_host = "http://my.app";    // 修改为API域名  http://finance.aodianyun.com
-    private static $API_KEY = "3bddc47e7cc05e1d8f488f2562969a33";  // 修改为你的API key
+    private static $api_key = "3bddc47e7cc05e1d8f488f2562969a33";  // 修改为你的API key
 
     public static function post($module, $api, $params){
-        $auth_str = "dyyadmin:" . self::$API_KEY;
+        $auth_str = "dyyadmin:" . self::$api_key;
         $timeout = 30;
         $query_url = self::$api_host . "/api/{$module}/{$api}";
         $method = 'POST';
