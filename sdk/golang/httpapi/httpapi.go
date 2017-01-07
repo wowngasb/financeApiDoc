@@ -8,11 +8,11 @@ import (
 	"github.com/jeffail/gabs"
 )
 
+const api_host = "http://my.app"                   // 修改为API域名  http://finance.aodianyun.com
+const api_key = "3bddc47e7cc05e1d8f488f2562969a33" // 修改为你的API key
+	
 func Post(module string, api string, params *gabs.Container) *gabs.Container {
-	api_host := "http://my.app"                   // 修改为API域名  http://finance.aodianyun.com
-	API_KEY := "3bddc47e7cc05e1d8f488f2562969a33" // 修改为你的API key
-
-	auth_str := "dyyadmin:" + API_KEY
+	auth_str := "dyyadmin:" + api_key
 	url := api_host + "/api/" + module + "/" + api
 	jsonStr := []byte(params.String())
 	req, err := http.NewRequest("POST", url, bytes.NewBuffer(jsonStr))

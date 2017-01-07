@@ -1,5 +1,4 @@
-var obj = require('./HttpApi.js');
-var HttpApi = obj.HttpApi;
+var HttpApi = require('./HttpApi.js');
 
 HttpApi.post('RoomMgr', 'getAuthToken', {
     'room_id': 73,
