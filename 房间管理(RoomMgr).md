@@ -432,6 +432,8 @@ print(result.json())
 
 获取房间列表  需要总公司权限 或者 所属子公司权限
 
+所有参数均为查询条件  可以不添加这个参数表示不使用这个查询
+
 ```shell
 curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/getAdminRoomList" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
@@ -453,12 +455,12 @@ print(result.json())
 | start               | `int`  起始位置 用于分页                            |
 | limit               | `int`  每页数量 用于分页                            |
 | sort_option        | `array`  排序依据 默认 ['field' => 'room_id', 'direction' => 'asc']    |
-| room_id           | `int`  房间room_id 为0时获取所有下属房间              |
+| room_id           | `int array`  房间room_id 为0时获取所有下属房间              |
 | room_title         | `string`  房间标题 支持模糊查询                       |
 | admin_id          | `int`  每管理员 admin_id 默认为0 表示查找自身下属房间    |
 | create_time_s      | `string`  创建时间范围 起始 为空表示不限制    |
 | create_time_e      | `string`  创建时间范围 结束 为空表示不限制    |
-| state               | `int`  状态  正常1，冻结2 关闭9 为0表示不限      |
+| state               | `int array`  状态  正常1，冻结2 关闭9 为0表示不限      |
 | live_state           | `int`  直播状态  直播1 未直播0 为-1表示不限      |
 | stream             | `string`  房间 stream 为空表示不限            |
 | vod_room_id       | `int`  录制来源房间 默认为0表示不限      |
@@ -471,46 +473,13 @@ print(result.json())
 ```json
 {
     "Flag": 100,
-    "rows": [
+    "rows": [  //房间详细信息 参见getRoomInfo 接口
         {
             "room_id": 74,  // 房间 id
             "admin_id": 281,  // 子公司 id
             "state": 1,  // 状态 正常1，冻结2 关闭9
             "viewer_count": 49,  // 累计观看人数
-            "viewer_max": 2,  // 最高同时在线人数
-            "room_title": "财经一号",  // 房间标题
-            "create_time": "2016-11-30 16:23:16",  // 
-            "live_state": 0,  // 直播状态  直播1 未直播0
-            "video_type": 1,  // 房间视频来源  1直播stream，2上传点播，3直播存储
-            "vod_url": null,  // 点播视频来源 url
-            "vod_file": null,  // 点播视频 视频连接
-            "vod_room_id": 0,  // 点播视频 房间录制来源
-            "chat_filter_keys": null,  // 聊天关键词过滤
-            "cover_pic": "",  // 视频封面图片
-            "background_pic": "",  // 直播间 背景图片
-            "ctrl_qas": 0,  // 问答控制，0未设置，1开启，7审核 9禁止所有人
-            "ctrl_sysmsg": 1,  // 是否显示 系统消息 0不显示  1显示 默认为 1
-            "ctrl_share": 0,  // 设置房间是否显示 分享按钮  0不显示   1显示
-            "ctrl_chat": 9,  // 聊天控制，0未设置，1开启，7审核 9禁止
-            "mcs_name": "dyy105174419",  // mcs 直播账号 登录名
-            "mcs_id": 3895,  // mcs app id 每个主播账号对应一个id
-            "mcs_pwd": "123456",  // mcs 直播账号 密码
-            "lss_player_maxbufferlength": 2,  // 最大视频缓冲时间，默认2秒 hls不支持
-            "lss_player_bufferlength": 1,  // 设置视频缓冲时间，默认1秒 hls不支持
-            "lss_player_stretching": 2,  // 设置全屏模式 1按比例撑满 2铺满全屏 3原始大小
-            "lss_player_type": "mps",  // 流媒体视频播放器类型 默认mps:mps播放器,aodianplayer:奥点播放器
-            "mps_id": 438,  // 所选 MPS 播放器 id
-            "mps_instance_id": "fN1Humm1116UPixX",  // 根据所选 MPS 播放器 id 流媒体app stream 生成的实例id
-            "uptime": "2016-12-26 14:41:19",  // 记录更新时间
-            "lss_app": "dyy_281_438",  // 房间流媒体 app
-            "stream": "dadad",  // 房间流媒体 stream
-            "admin_type": "caijing",  //模版类型  caijing财经  jiaoyu教育
-            "mps_list": [  //MPS 播放器相关
-                {
-                    "mps_id": "438",
-                    "name": "默认播放器"
-                }
-            ],
+            ......
         },
         ......
     ],
@@ -518,12 +487,87 @@ print(result.json())
 }
 ```
 
+## 获取房间信息（getRoomInfo）
+
+请求方式 GET POST 需要认证
+
+获取指定房间信息  需要总公司权限 或者 所属子公司权限
+
+```shell
+curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/getRoomInfo" \
+     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
+     -d "params"
+```
+
+```python
+import requests
+
+result = requests.post('http://finance.aodianyun.com/api/RoomMgr/getRoomInfo',
+  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+  data=params)
+
+print(result.json())
+```
+
+| 字段                 | 描述                                          |
+| ---------------------- | ------------------------------------------------ |
+| room_id             | `int`  房间ID 指定的房间                        |
+
+> 返回结果如下:
+
+```json
+{
+    "Flag": 100,
+    "Info": {  // 房间详细信息
+        "room_id": 74,  // 房间 id
+        "admin_id": 281,  // 子公司 id
+        "state": 1,  // 状态 正常1，冻结2 关闭9
+        "viewer_count": 49,  // 累计观看人数
+        "viewer_max": 2,  // 最高同时在线人数
+        "room_title": "财经一号",  // 房间标题
+        "create_time": "2016-11-30 16:23:16",  // 
+        "live_state": 0,  // 直播状态  直播1 未直播0
+        "video_type": 1,  // 房间视频来源  1直播stream，2上传点播，3直播存储
+        "vod_url": null,  // 点播视频来源 url
+        "vod_file": null,  // 点播视频 视频连接
+        "vod_room_id": 0,  // 点播视频 房间录制来源
+        "chat_filter_keys": null,  // 聊天关键词过滤
+        "cover_pic": "",  // 视频封面图片
+        "background_pic": "",  // 直播间 背景图片
+        "ctrl_qas": 0,  // 问答控制，0未设置，1开启，7审核 9禁止所有人
+        "ctrl_sysmsg": 1,  // 是否显示 系统消息 0不显示  1显示 默认为 1
+        "ctrl_share": 0,  // 设置房间是否显示 分享按钮  0不显示   1显示
+        "ctrl_chat": 9,  // 聊天控制，0未设置，1开启，7审核 9禁止
+        "mcs_name": "dyy105174419",  // mcs 直播账号 登录名
+        "mcs_id": 3895,  // mcs app id 每个主播账号对应一个id
+        "mcs_pwd": "123456",  // mcs 直播账号 密码
+        "lss_player_maxbufferlength": 2,  // 最大视频缓冲时间，默认2秒 hls不支持
+        "lss_player_bufferlength": 1,  // 设置视频缓冲时间，默认1秒 hls不支持
+        "lss_player_stretching": 2,  // 设置全屏模式 1按比例撑满 2铺满全屏 3原始大小
+        "lss_player_type": "mps",  // 流媒体视频播放器类型 默认mps:mps播放器,aodianplayer:奥点播放器
+        "mps_id": 438,  // 所选 MPS 播放器 id
+        "mps_instance_id": "fN1Humm1116UPixX",  // 根据所选 MPS 播放器 id 流媒体app stream 生成的实例id
+        "uptime": "2016-12-26 14:41:19",  // 记录更新时间
+        "lss_app": "dyy_281_438",  // 房间流媒体 app
+        "stream": "dadad",  // 房间流媒体 stream
+        "admin_type": "caijing",  //模版类型  caijing财经  jiaoyu教育
+        "mps_list": [  //MPS 播放器相关
+            {
+                "mps_id": "438",
+                "name": "默认播放器"
+            }
+        ],
+    },
+    "FlagString": "获取数据成功"
+}
+```
+
 
 ## 增加直播账号（addRoomMcs）
 
-请求方式 GET POST 不需要认证
+请求方式 GET POST 需要认证
 
-为制定房间 增加直播账号 需要管理room_id权限
+为制定房间 增加直播账号 需要总公司权限 或者 所属子公司权限
 
 ```shell
 curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/addRoomMcs" \
@@ -559,9 +603,9 @@ print(result.json())
 
 ## 获取直播账号列表（listRoomMcs）
 
-请求方式 GET POST 不需要认证
+请求方式 GET POST 需要认证
 
-获取指定房间 直播账号列表
+获取指定房间 直播账号列表  需要总公司权限 或者 所属子公司权限
 
 
 ```shell
@@ -607,9 +651,9 @@ print(result.json())
 
 ## 修改直播账号密码（paswRoomMcs）
 
-请求方式 GET POST 不需要认证
+请求方式 GET POST 需要认证
 
-修改指定直播账号 登录密码
+修改指定直播账号 登录密码  需要总公司权限 或者 所属子公司权限
 
 
 ```shell
@@ -646,9 +690,9 @@ print(result.json())
 
 ## 删除直播账号（delRoomMcs）
 
-请求方式 GET POST 不需要认证
+请求方式 GET POST 需要认证
 
-删除指定的 直播账号
+删除指定的 直播账号  需要总公司权限 或者 所属子公司权限
 
 ```shell
 curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/delRoomMcs" \

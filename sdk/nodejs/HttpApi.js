@@ -5,7 +5,7 @@ var querystring = require('querystring');
 
 function HttpApiHelper() {
     this.api_host = "http://my.app";    // 修改为API域名  http://finance.aodianyun.com
-    this.API_KEY = "3bddc47e7cc05e1d8f488f2562969a33";  // 修改为你的API key
+    this.api_key = "3bddc47e7cc05e1d8f488f2562969a33";  // 修改为你的API key
 }
 
 
@@ -18,7 +18,7 @@ HttpApiHelper.prototype.post = function (module, api, params, callback) {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json; charset=UTF-8',
-            'Authorization': 'dyyadmin:' + this.API_KEY,
+            'Authorization': 'dyyadmin:' + this.api_key,
             'Content-Length': Buffer.byteLength(content)
         }
     };
@@ -36,4 +36,5 @@ HttpApiHelper.prototype.post = function (module, api, params, callback) {
     req.end();
 }
 
-exports.HttpApi = new HttpApiHelper();
+var tmpObj = new HttpApiHelper();
+exports.post = tmpObj.post.bind(tmpObj);

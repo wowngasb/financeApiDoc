@@ -26,7 +26,7 @@ print(result.json())
 
 | 字段                 | 描述                                          |
 | --------------------- | ------------------------------------------------ |
-| admin_id          | `int`  管理员id                     |
+| admin_id          | `int`  子公司id                     |
 | room_id           | `int`  房间id    |
 | uptime            | `array`  获取时间   时间戳 格式为[开始时间，结束时间]      |
 | num              | `int`  每页列表数量        |
@@ -64,7 +64,7 @@ print(result.json())
             "create_date": "2016-12-29 11:22:07",
             "stream_url": "http://hz-vod.cdn.aodianyun.com/m3u8/0x0/dyy_280_902.992b822fa7276761418c1509e78e26a2.1482981338/dyy_280_902.992b822fa7276761418c1509e78e26a2.1482981338.m3u8",
             "is_living": 0,
-            "from_admin": []  // 来源 管理员
+            "from_admin": []  // 来源 子公司
         },
         ...
     ]
@@ -96,7 +96,7 @@ print(result.json())
 
 | 字段                 | 描述                                          |
 | ---------------------- | ------------------------------------------------ |
-| admin_id          | `int`  管理员id     为空表示使用当前admin_id         |
+| admin_id          | `int`  子公司id     为空表示使用当前admin_id         |
 | url               | `array`  视频url地址  可以同时删除多个      |
 | type             | `string`  视频类型   7DayDvrList 临时存储   DvrList永久存储   UploadVodList上传视频      |
 
@@ -131,7 +131,7 @@ print(result.json())
 
 | 字段                 | 描述                                          |
 | ---------------------- | ------------------------------------------------ |
-| admin_id           | `int`  管理员id                     |
+| admin_id           | `int`  子公司id                     |
 | url               | `array`  视频url地址        |
 
 ```
@@ -181,14 +181,14 @@ print(result.json())
 ```
 
 
-## 查询直播带宽使用(getAppBandWidthInfo)
+## 查询直播带宽(listAppBandWidthInfo)
 
 请求方式 GET POST 需要认证
 
-获取Lss 流媒体 app带宽历史信息 支持查询90天内的数据  需要子公司自身或所属总公司权限 
+获取Lss 流媒体 app带宽历史信息   支持查询90天内的数据  需要子公司自身或所属总公司权限 
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomVideo/getAppBandWidthInfo" \
+curl -X "POST" "http://finance.aodianyun.com/api/RoomVideo/listAppBandWidthInfo" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -196,7 +196,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomVideo/getAppBandWidthInfo" 
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomVideo/getAppBandWidthInfo',
+result = requests.post('http://finance.aodianyun.com/api/RoomVideo/listAppBandWidthInfo',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -205,8 +205,9 @@ print(result.json())
 
 | 字段                 | 描述                                          |
 | ---------------------- | ------------------------------------------------ |
-| admin_id             | `int`  管理员id                     |
-| days             | `int`  天数                     |
+| admin_id             | `int`  子公司id                     |
+| stime             | `int`  开始时间戳              |
+| etime             | `int`  结束时间戳                 |
 
 ```
 {
@@ -220,7 +221,7 @@ print(result.json())
             "mobile"
         ],
         "data": {
-            "4943056": {
+            "4943056": {   // 每个 key * step 为记录的时间戳  数据单位为 Mbps
                 "uptime": 1482916800,      //时间戳
                 "sum": 0.000537109375,     //总值
                 "play": 0.000263671875,    //pc端观看量
@@ -235,7 +236,69 @@ print(result.json())
             1482991546
         ]
     },
-    "TimeRange": [
+    "TimeRange": [   // 查询输入的时间戳范围
+        1482905146,
+        1482991546
+    ]
+}
+```
+
+## 查询直播流量(listAppFlowInfo)
+
+请求方式 GET POST 需要认证
+
+获取Lss 流媒体 app流量历史信息   支持查询90天内的数据  需要子公司自身或所属总公司权限 
+
+```shell
+curl -X "POST" "http://finance.aodianyun.com/api/RoomVideo/listAppFlowInfo" \
+     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
+     -d "params"
+```
+
+```python
+import requests
+
+result = requests.post('http://finance.aodianyun.com/api/RoomVideo/listAppFlowInfo',
+  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+  data=params)
+
+print(result.json())
+```
+
+| 字段                 | 描述                                          |
+| ---------------------- | ------------------------------------------------ |
+| admin_id             | `int`  子公司id                     |
+| stime             | `int`  开始时间戳              |
+| etime             | `int`  结束时间戳                 |
+
+```
+{
+    "Flag": 100,
+    "FlagString": "search success",
+    "List": {   
+        "type": [         //流量类型
+            "sum",            
+            "play",       
+            "publish",    
+            "mobile"
+        ],
+        "data": {
+            "4943056": {   // 每个 key * step 为记录的时间戳  数据单位为 MB
+                "uptime": 1482916800,      //时间戳
+                "sum": 93.75234,     //总值
+                "play": 87.5234,    //pc端观看量
+                "publish": 3.75234,   //发布占用量
+                "mobile": 3.4687    //手机端观看量
+            },
+            ...
+        },
+        "step": 300,  // 时间间隔
+        "time_period": [     //数据范围
+            1482916800,
+            1482991546
+        ]
+    },
+    "TimeRange": [   // 查询输入的时间戳范围
         1482905146,
         1482991546
     ]
@@ -267,7 +330,7 @@ print(result.json())
 
 | 字段                 | 描述                                          |
 | ---------------------- | ------------------------------------------------ |
-| admin_id             | `int`  管理员id                     |
+| admin_id             | `int`  子公司id                     |
 | page             | `int`  页数    默认为 1                 |
 | num             | `int`  每页数量      默认为 100              |
 
