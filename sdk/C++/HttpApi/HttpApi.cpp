@@ -1,4 +1,4 @@
-// HttpApi.cpp : ¶¨Òå¿ØÖÆÌ¨Ó¦ÓÃ³ÌĞòµÄÈë¿Úµã¡£
+// HttpApi.cpp : å®šä¹‰æ§åˆ¶å°åº”ç”¨ç¨‹åºçš„å…¥å£ç‚¹ã€‚
 //
 
 #include "stdafx.h"
@@ -15,7 +15,7 @@ using namespace web::http;
 using namespace web::http::client;
 using namespace concurrency;
 
-std::wstring s2ws(const std::string& s);
+wstring s2ws(const string& s);
 json::value HttpApiPost(wstring module, wstring api, json::value params);
 
 wstring s2ws(const string& s) {
@@ -34,8 +34,8 @@ wstring s2ws(const string& s) {
 
 json::value HttpApiPost(wstring module, wstring api, json::value params)
 {
-	const auto api_host = L"http://my.app";    // ĞŞ¸ÄÎªAPIÓòÃû  http ://finance.aodianyun.com
-	const auto api_key = L"3bddc47e7cc05e1d8f488f2562969a33";   //  ĞŞ¸ÄÎªÄãµÄAPI key
+	const auto api_host = L"http://my.app";    // ä¿®æ”¹ä¸ºAPIåŸŸå  http ://finance.aodianyun.com
+	const auto api_key = L"3bddc47e7cc05e1d8f488f2562969a33";   //  ä¿®æ”¹ä¸ºä½ çš„API key
 
 	wstring query_path = L"/api/";
 	query_path += module;
@@ -47,9 +47,18 @@ json::value HttpApiPost(wstring module, wstring api, json::value params)
 
 	auto content = params.serialize();
 
-	http_client client(api_host);
+	auto conf =  http_client_config();
+	http_client client(api_host, conf);
 	uri_builder builder(query_path);
 
+	auto auth_header =
+		[&auth_str](http_request request, std::shared_ptr<http_pipeline_stage> next_stage) -> pplx::task<http_response>
+	{
+		request.headers().add(L"Authorization", auth_str);
+		return next_stage->propagate(request);
+	};
+
+	client.add_handler(auth_header);
 	http_response response = client.request(methods::POST, builder.to_string(), content, L"application/application/json; charset=UTF-8").get();
 	auto response_code = response.status_code();
 	wstring response_error = L"";
@@ -73,7 +82,8 @@ json::value HttpApiPost(wstring module, wstring api, json::value params)
 
 	json::value error_value;
 	error_value[L"Flag"] = json::value::number(500);
-	error_value[L"FlagString"] = json::value::string(L"httpÇëÇóÊ§°Ü");
+	error_value[L"FlagString"] = json::value::string(L"httpè¯·æ±‚å¤±è´¥");
+	error_value[L"Info"] = json::value::value(error_info);
 	return error_value;
 }
 
@@ -91,9 +101,9 @@ int main()
 	wcout << L"test_1 " << test_1.serialize() << endl;
 
 	json::value test_2_args;
-	test_1_args[L"token"] = json::value::string(test_1.at(L"Info").as_string());
-	test_1_args[L"page"] = json::value::number(1);
-	test_1_args[L"num"] = json::value::number(20);
+	test_2_args[L"token"] = json::value::string(test_1.at(L"Info").as_string());
+	test_2_args[L"page"] = json::value::number(1);
+	test_2_args[L"num"] = json::value::number(20);
 
 	auto test_2 = HttpApiPost(L"JiaoYuUserInfo", L"listWisDoc", test_2_args);
 	wcout << L"test_2 " << test_2.serialize() << endl;
