@@ -59,7 +59,7 @@ json::value HttpApiPost(wstring module, wstring api, json::value params)
 	};
 
 	client.add_handler(auth_header);
-	http_response response = client.request(methods::POST, builder.to_string(), content, L"application/application/json; charset=UTF-8").get();
+	http_response response = client.request(methods::POST, builder.to_string(), content, L"application/application/json").get();
 	auto response_code = response.status_code();
 	wstring response_error = L"";
 	if (response_code == status_codes::OK)
