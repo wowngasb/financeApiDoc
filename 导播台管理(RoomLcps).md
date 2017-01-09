@@ -72,72 +72,6 @@ print(result.json())
 }
 ```
 
-## 设置演播厅(setLcpsMcsPwd)
-
-请求方式 GET POST 需要认证
-
-设置云导播台密码
-```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomLcps/setLcpsMcsPwd" \
-     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
-     -d "params"
-```
-
-```python
-import requests
-
-result = requests.post('http://finance.aodianyun.com/api/RoomLcps/setLcpsMcsPwd',
-  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
-  data=params)
-
-print(result.json())
-
-```
-| 字段                 | 描述                                          |
-| ---------------------- | ------------------------------------------------ |
-| token             | `string`                      |
-| mcs_pwd             | `int`  密码                   |
-
-```
-{
-    "Flag": 100,
-    "FlagString": "修改成功",
-}
-```
-
-## 设置导播台采集服务(setLcpsMcsConfig)
-
-请求方式 GET POST 需要认证
-
-设置导播台采集服务配置
-```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomLcps/setLcpsMcsConfig" \
-     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
-     -d "params"
-```
-
-```python
-import requests
-
-result = requests.post('http://finance.aodianyun.com/api/RoomLcps/setLcpsMcsConfig',
-  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
-  data=params)
-
-print(result.json())
-
-```
-| 字段                 | 描述                                          |
-| ---------------------- | ------------------------------------------------ |
-| token             | `string`                      |
-| config             | `array`  配置信息                   |
-
-```
-{
-    "Flag": 100,
-    "FlagString": "修改成功",
-}
-```
-
 ## 分配导播台(setLcpsOwner)
 
 请求方式 GET POST 需要认证
@@ -238,16 +172,16 @@ print(result.json())
         {
             "createTime": 1483694955,
             "destroyTime": 1483718400,
-            "instanceID": "",
+            "instanceID": "",     //导播台实例id
             "name": "ce",
             "progress": 100,
             "status": 1,
             "uptime": 1483694960,
-            "url": "http://fgs.13830.lcps.aodianyun.com:3000",
+            "url": "http://fgsXXXXX.13830.lcps.aodianyun.com:3000",
             "user": "13830",
             "ip": "120.55.182.230",
             "port": "3000",
-            "domain": "fgs",
+            "domain": "fgsXXXXX",
             "maxVideoSize": "720p",
             "isPreOpen": 1,
             "id": 12094,
@@ -258,13 +192,13 @@ print(result.json())
             "admin_id": 0,
             "room_id": 0,
             "mcs_list": {
-                //mcs列表
+                //mcs 直播账号列表
                 "通道0": {
                     "domain": "fgs",
                     "admin_id": 180,
                     "mcs_id": 18613,
-                    "mcs_name": "dyy7509124lcps0",
-                    "mcs_pwd": "123456",
+                    "mcs_name": "dyy7509124lcps0",   //直播账号登录名
+                    "mcs_pwd": "123456",  //直播账号登录密码
                     "mcs_title": "95_lcps_0",
                     "app_type": 2,
                     "app": "i-23l52mrgr-426",
