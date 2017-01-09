@@ -295,16 +295,7 @@ print(result.json())
 {
     "Flag": 100,
     "FlagString": "操作成功",
-    "new_config": {
-        "watermarkPosition": "1",  //水印位置
-        "watermarkPosition2": "2"   //水印位置
-    },
-    "last_config": [],
-    "new_name": "默认播放器",
-    "last_name": "默认播放器",
-    "Info": {
-       //播放器信息
-    }
+    "Info": { },  //修改后的mps实例信息 参见接口getMpsItem
 }
 ```
 
@@ -339,16 +330,7 @@ print(result.json())
 {
     "Flag": 100,
     "FlagString": "操作成功",
-    "new_config": {
-        "watermark2": "",   //水印一
-        "watermarkPosition2": ""   //水印二
-    },
-    "last_config": [],
-    "new_name": "默认播放器",
-    "last_name": "默认播放器",
-    "Info": {
-        //播放器信息
-    }
+    "Info": { },  //修改后的mps实例信息 参见接口getMpsItem
 }
 ```
 
@@ -383,16 +365,7 @@ print(result.json())
 {
     "Flag": 100,
     "FlagString": "操作成功",
-    "new_config": {
-        "watermark2": "",   //水印一
-        "watermarkPosition2": ""   //水印二
-    },
-    "last_config": [],
-    "new_name": "默认播放器",
-    "last_name": "默认播放器",
-    "Info": {
-        //播放器信息
-    }
+    "Info": { },  //修改后的mps实例信息 参见接口getMpsItem
 }
 ```
 
@@ -431,59 +404,6 @@ print(result.json())
 {
     "Flag": 100,
     "FlagString": "操作成功",
-    "new_config": {
-        "supernatantword": "测试",  
-        "displayfrequen": "1",   //显示频率
-        "scrollposition": "滚动"   //活动方式
-    },
-    "last_config": [],
-    "new_name": "默认播放器",
-    "last_name": "默认播放器",
-    "Info": {
-        //播放器信息
-    }
-}
-```
-
-
-## 设置名称(editName)
-
-请求方式 GET POST 需要认证
-
-设置播放器名称
-
-```shell
-curl -X "POST" "http://finance.aodianyun.com/api/MpsMgr/editName" \
-     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
-     -d "params"
-```
-
-```python
-import requests
-
-result = requests.post('http://finance.aodianyun.com/api/MpsMgr/editName',
-  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
-  data=params)
-
-print(result.json())
-
-```
-| 字段                 | 描述                                          |
-| ---------------------- | ------------------------------------------------ |
-| admin_id             | `int`  需要设置的子公司admin_id                     |
-| mps_id             | `int`  播放器唯一id                    |
-| name             | `string`  播放器名称                    |
-
-```
-{
-    "Flag": 100,
-    "FlagString": "操作成功",
-    "new_config": [],
-    "last_config": [],
-    "new_name": "测试",    //播放器名称
-    "last_name": "默认播放器",
-    "Info": {
-        //直播间信息
-    }
+    "Info": { },  //修改后的mps实例信息 参见接口getMpsItem
 }
 ```
