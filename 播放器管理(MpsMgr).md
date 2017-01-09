@@ -260,4 +260,150 @@ print(result.json())
 ```
 
 
+## 设置水印(editWatermark)
 
+请求方式 GET POST 需要认证
+
+设置MPS水印
+
+```shell
+curl -X "POST" "http://finance.aodianyun.com/api/MpsMgr/editWatermark" \
+     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
+     -d "params"
+```
+
+```python
+import requests
+
+result = requests.post('http://finance.aodianyun.com/api/MpsMgr/editWatermark',
+  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+  data=params)
+
+print(result.json())
+
+```
+| 字段                 | 描述                                          |
+| ---------------------- | ------------------------------------------------ |
+| admin_id             | `int`  需要设置的子公司admin_id                     |
+| mps_id             | `int`  播放器唯一id                    |
+| watermarkPosition             | `string`  水印位置一                   |
+| watermarkPosition2             | `string`  水印位置二                   |
+| watermark_bytes             | `string`  图片文件具体内容 使用base64编码                  |
+| watermark2_bytes             | `string`  图片文件具体内容 使用base64编码                  |
+
+```
+{
+    "Flag": 100,
+    "FlagString": "操作成功",
+    "Info": { },  //修改后的mps实例信息 参见接口getMpsItem
+}
+```
+
+## 清除水印一(clearWatermark)
+
+请求方式 GET POST 需要认证
+
+清除第一块水印
+
+```shell
+curl -X "POST" "http://finance.aodianyun.com/api/MpsMgr/clearWatermark" \
+     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
+     -d "params"
+```
+
+```python
+import requests
+
+result = requests.post('http://finance.aodianyun.com/api/MpsMgr/clearWatermark',
+  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+  data=params)
+
+print(result.json())
+
+```
+| 字段                 | 描述                                          |
+| ---------------------- | ------------------------------------------------ |
+| admin_id             | `int`  需要设置的子公司admin_id                     |
+| mps_id             | `int`  播放器唯一id                    |
+
+```
+{
+    "Flag": 100,
+    "FlagString": "操作成功",
+    "Info": { },  //修改后的mps实例信息 参见接口getMpsItem
+}
+```
+
+## 清除水印二(clearWatermark2)
+
+请求方式 GET POST 需要认证
+
+清除第一块水印
+
+```shell
+curl -X "POST" "http://finance.aodianyun.com/api/MpsMgr/clearWatermark2" \
+     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
+     -d "params"
+```
+
+```python
+import requests
+
+result = requests.post('http://finance.aodianyun.com/api/MpsMgr/clearWatermark2',
+  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+  data=params)
+
+print(result.json())
+
+```
+| 字段                 | 描述                                          |
+| ---------------------- | ------------------------------------------------ |
+| admin_id             | `int`  需要设置的子公司admin_id                     |
+| mps_id             | `int`  播放器唯一id                    |
+
+```
+{
+    "Flag": 100,
+    "FlagString": "操作成功",
+    "Info": { },  //修改后的mps实例信息 参见接口getMpsItem
+}
+```
+
+
+## 设置浮动信息(editSupernatant)
+
+请求方式 GET POST 需要认证
+
+设置浮动信息显示
+
+```shell
+curl -X "POST" "http://finance.aodianyun.com/api/MpsMgr/editSupernatant" \
+     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
+     -d "params"
+```
+
+```python
+import requests
+
+result = requests.post('http://finance.aodianyun.com/api/MpsMgr/editSupernatant',
+  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+  data=params)
+
+print(result.json())
+
+```
+| 字段                 | 描述                                          |
+| ---------------------- | ------------------------------------------------ |
+| admin_id             | `int`  需要设置的子公司admin_id                     |
+| mps_id             | `int`  播放器唯一id                    |
+| supernatantword             | `string`  文字信息                    |
+| displayfrequen             | `int`  显示频率                    |
+| scrollposition             | `string`  活动方式                    |
+
+```
+{
+    "Flag": 100,
+    "FlagString": "操作成功",
+    "Info": { },  //修改后的mps实例信息 参见接口getMpsItem
+}
+```
