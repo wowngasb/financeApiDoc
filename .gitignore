@@ -3,3 +3,7 @@
 *.class
 *.pyc
 sdk/java/HttpApi.jar
+
+sdk/golang
+sdk/C++
+sdk/C#
