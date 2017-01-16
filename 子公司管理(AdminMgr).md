@@ -231,7 +231,7 @@ print(result.json())
 }
 ```
 
-## 获取用户信息（getAdminInfo）
+## 子公司信息（getAdminInfo）
 
 请求方式 GET POST 需要认证
 
