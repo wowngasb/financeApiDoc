@@ -791,4 +791,77 @@ print(result.json())
 }
 ```
 
+## 获取管理员限制信息（getLimitInfo）
+
+请求方式 POST 需要认证
+
+获取 管理员限制相关信息 需要 自身 或所属 总公司权限
+
+```shell
+curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/getLimitInfo" \
+     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
+     -d "params"
+```
+
+```python
+import requests
+
+result = requests.post('http://finance.aodianyun.com/api/AdminAssist/getLimitInfo',
+  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+  data=params)
+
+print(result.json())
+```
+
+| 字段                   | 描述                                          |
+| ------------------------- | ------------------------------------------------ |
+| admin_id             | `int`  子公司ID 指定的子公司    默认为0表示获取自身旗下房间       |
+
+> 返回结果如下:
+
+```json
+{
+    "Flag": 100,
+    "FlagString": "获取成功",
+    "limit_msg": "流量限制：1TB, 已使用：5.57GB(未超出), 流量有效期：2016-08-28 到 2017-08-28 (12个月, 未过期)",
+    "Info": {
+        "bandwidth": {
+            //带宽信息
+            "bandwidth": 0,
+            "bandwidth_last": 0,
+            "time": 1484544948,
+            "uptime": 1484544948,
+            "limit_normal": 0,
+            "limit_special": 0,
+            "limit": 0
+        },
+        "onlinenumber": {
+            //在线并发数量
+            "onlinenumber": 0,
+            "time": 1484544947,
+            "uptime": 1484544948,
+            "limit_normal": 0,
+            "limit_special": 0,
+            "limit": 0
+        },
+        "yearflow": {
+            //年流量
+            "yearflow": 5700.11,
+            "time": 1484544948,
+            "start_time": "2016-08-28 00:00:00",
+            "month_count": 12,
+            "month_start": "201608",
+            "end_time": "2017-08-28 00:00:00",
+            "in_time_range": true,
+            "limit": 1048576
+        },
+        "_uptime_": "2017-01-16 13:35:48"
+    },
+    "view_state": true,
+    "admin_id": 281
+}
+```
+
+
+
 
