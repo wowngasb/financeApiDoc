@@ -793,7 +793,7 @@ print(result.json())
 
 ## 获取管理员限制信息（getLimitInfo）
 
-请求方式 POST 需要认证
+请求方式 GET POST 需要认证
 
 获取 管理员限制相关信息 需要 自身 或所属 总公司权限
 
