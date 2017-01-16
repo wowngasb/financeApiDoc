@@ -825,43 +825,40 @@ print(result.json())
     "FlagString": "获取成功",
     "limit_msg": "流量限制：1TB, 已使用：5.57GB(未超出), 流量有效期：2016-08-28 到 2017-08-28 (12个月, 未过期)",
     "Info": {
+        //根据设置的计费方式使用下面三种之一进行判断是否超出
         "bandwidth": {
             //带宽信息
-            "bandwidth": 0,
+            "bandwidth": 0,   //当前带宽
             "bandwidth_last": 0,
             "time": 1484544948,
-            "uptime": 1484544948,
-            "limit_normal": 0,
-            "limit_special": 0,
-            "limit": 0
+            "uptime": 1484544948,   //更新时间
+            "limit_normal": 0,      //平时带宽限制
+            "limit_special": 0,     //特殊时间段带宽限制
+            "limit": 0          //当前生效的限制 
         },
         "onlinenumber": {
             //在线并发数量
-            "onlinenumber": 0,
-            "time": 1484544947,
-            "uptime": 1484544948,
-            "limit_normal": 0,
-            "limit_special": 0,
-            "limit": 0
+            "onlinenumber": 0,      //在线用户数量
+            "time": 1484544947,    
+            "uptime": 1484544948,   //更新时间
+            "limit_normal": 0,       //平时并发限制  
+            "limit_special": 0,       //特殊时间段并发限制
+            "limit": 0               //当前生效的限制 
         },
         "yearflow": {
             //年流量
-            "yearflow": 5700.11,
+            "yearflow": 5700.11,     //累计使用流量    
             "time": 1484544948,
-            "start_time": "2016-08-28 00:00:00",
-            "month_count": 12,
+            "start_time": "2016-08-28 00:00:00",   //流量开始计费时间
+            "month_count": 12,         //流量有效期月数
             "month_start": "201608",
-            "end_time": "2017-08-28 00:00:00",
-            "in_time_range": true,
-            "limit": 1048576
+            "end_time": "2017-08-28 00:00:00",  //流量失效时间
+            "in_time_range": true,     //当前流量是否在有效期内
+            "limit": 1048576     //流量限制数
         },
         "_uptime_": "2017-01-16 13:35:48"
     },
-    "view_state": true,
-    "admin_id": 281
+    "view_state": true,    //当前是否可以观看
+    "admin_id": 281      //子公司id
 }
 ```
-
-
-
-
