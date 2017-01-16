@@ -186,3 +186,188 @@ print(result.json())
 }
 ```
 
+## 设置子公司密码（setAdminPwd）
+
+设置子公司密码  需要总公司权限
+
+```shell
+curl -X "POST" "http://finance.aodianyun.com/api/AdminMgr/setAdminPwd" \
+     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
+     -d "params"
+```
+
+```python
+import requests
+
+result = requests.post('http://finance.aodianyun.com/api/AdminMgr/setAdminPwd',
+  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+  data=params)
+
+print(result.json())
+```
+
+
+| 字段                 | 描述                                          |
+| --------------------- | ------------------------------------------------ 
+| admin_id          | `int`  需要设置的子公司admin_id      |
+| pasw      | `string`  登录密码    |
+     
+> 返回结果如下:
+
+```json
+{
+    "Flag": 100,
+    "rows": "修改密码成功"
+}
+```
+
+## 获取用户信息（getAdminInfo）
+
+获取指定admin_id 信息 需要自身或 所属总公司权限
+
+```shell
+curl -X "POST" "http://finance.aodianyun.com/api/AdminMgr/getAdminInfo" \
+     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
+     -d "params"
+```
+
+```python
+import requests
+
+result = requests.post('http://finance.aodianyun.com/api/AdminMgr/getAdminInfo',
+  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+  data=params)
+
+print(result.json())
+```
+
+
+| 字段                 | 描述                                          |
+| --------------------- | ------------------------------------------------ 
+| admin_id          | `int`  需要设置的子公司admin_id      |
+     
+> 返回结果如下:
+
+```json
+{
+    "Flag": 100,
+    "Info": {
+        "admin_id": 281,
+        "state": 1,          //管理员状态，1正常，2冻结，9删除
+        "name": "subAdmin",
+        "pasw_time": "2017-01-11 09:37:59",
+        "telephone": null,
+        "realname": null,
+        "title": "子公司一号",
+        ...
+    }
+}
+```
+
+
+## 设置流量查看权限（setAdminIsLssflowinfo）
+
+设置是否拥有流量查看权限
+
+```shell
+curl -X "POST" "http://finance.aodianyun.com/api/AdminMgr/setAdminIsLssflowinfo" \
+     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
+     -d "params"
+```
+
+```python
+import requests
+
+result = requests.post('http://finance.aodianyun.com/api/AdminMgr/setAdminIsLssflowinfo',
+  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+  data=params)
+
+print(result.json())
+```
+
+
+| 字段                 | 描述                                          |
+| --------------------- | ------------------------------------------------ 
+| admin_id          | `int`  需要设置的子公司admin_id      |
+| is_lssflowinfo    | `int`  1开启权限   0关闭权限             |
+     
+> 返回结果如下:
+
+```json
+{
+    "Flag": 100,
+    "FlagString": "修改流量查看权限成功"
+}
+```
+
+## 直播间修改权限（setAdminIsMcsConfig）
+
+修改用户对MCS直播间修改权限
+
+```shell
+curl -X "POST" "http://finance.aodianyun.com/api/AdminMgr/setAdminIsMcsConfig" \
+     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
+     -d "params"
+```
+
+```python
+import requests
+
+result = requests.post('http://finance.aodianyun.com/api/AdminMgr/setAdminIsMcsConfig',
+  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+  data=params)
+
+print(result.json())
+```
+
+
+| 字段                 | 描述                                          |
+| --------------------- | ------------------------------------------------ 
+| admin_id          | `int`  需要设置的子公司admin_id      |
+| is_mcsconfig    | `int`  1开启权限  0关闭权限              |
+     
+> 返回结果如下:
+
+```json
+{
+    "Flag": 100,
+    "FlagString": "修改MCS权限成功"
+}
+```
+
+## 修改点播功能（setAdminIsRoomvod）
+
+修改点播功能
+
+```shell
+curl -X "POST" "http://finance.aodianyun.com/api/AdminMgr/setAdminIsRoomvod" \
+     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
+     -d "params"
+```
+
+```python
+import requests
+
+result = requests.post('http://finance.aodianyun.com/api/AdminMgr/setAdminIsRoomvod',
+  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+  data=params)
+
+print(result.json())
+```
+
+
+| 字段                 | 描述                                          |
+| --------------------- | ------------------------------------------------ 
+| admin_id          | `int`  需要设置的子公司admin_id      |
+| is_roomvod    | `int`  1开启权限  0关闭权限              |
+     
+> 返回结果如下:
+
+```json
+{
+    "Flag": 100,
+    "FlagString": "修改点播功能成功"
+}
+
+```
+
