@@ -4,6 +4,8 @@
 
 ## 新建子公司（addCaijingSubAdmin）
 
+请求方式  POST 需要认证
+
 添加新的 子公司 需要总公司权限
 
 ```shell
@@ -54,6 +56,8 @@ print(result.json())
 
 ## 修改子公司（setCaijingSubAdmin）
 
+请求方式  POST 需要认证
+
 修改指定的 子公司 需要总公司权限
 
 
@@ -103,6 +107,8 @@ print(result.json())
 
 ## 冻结解冻子公司（stateSubAdmin）
 
+请求方式  POST 需要认证
+
 设置子公司状态 正常1，冻结2  需要总公司权限
 
 
@@ -138,6 +144,8 @@ print(result.json())
 
 
 ## 查找子公司（getSubAdminList）
+
+请求方式 GET POST 需要认证
 
 查找旗下的子公司 需要总公司权限
 
@@ -188,6 +196,8 @@ print(result.json())
 
 ## 设置子公司密码（setAdminPwd）
 
+请求方式 POST 需要认证
+
 设置子公司密码  需要总公司权限
 
 ```shell
@@ -222,6 +232,8 @@ print(result.json())
 ```
 
 ## 获取用户信息（getAdminInfo）
+
+请求方式 GET POST 需要认证
 
 获取指定admin_id 信息 需要自身或 所属总公司权限
 
@@ -265,9 +277,11 @@ print(result.json())
 ```
 
 
-## 设置流量查看权限（setAdminIsLssflowinfo）
+## 流量查看权限（setAdminIsLssflowinfo）
 
-设置是否拥有流量查看权限
+请求方式 POST 需要认证
+
+设置指定admin_id子公司 是否可以直播流量带宽信息  需要所属总公司权限
 
 ```shell
 curl -X "POST" "http://finance.aodianyun.com/api/AdminMgr/setAdminIsLssflowinfo" \
@@ -300,9 +314,12 @@ print(result.json())
 }
 ```
 
-## 直播间修改权限（setAdminIsMcsConfig）
+## 发布配置权限（setAdminIsMcsConfig）
 
-修改用户对MCS直播间修改权限
+请求方式 POST 需要认证
+
+设置指定admin_id子公司 是否可以修改直播间的发布配置  需要所属总公司权限
+
 
 ```shell
 curl -X "POST" "http://finance.aodianyun.com/api/AdminMgr/setAdminIsMcsConfig" \
@@ -335,9 +352,11 @@ print(result.json())
 }
 ```
 
-## 修改点播功能（setAdminIsRoomvod）
+## 点播功能权限（setAdminIsRoomvod）
 
-修改点播功能
+请求方式 POST 需要认证
+
+设置指定admin_id子公司 是否可以使用点播功能  需要所属总公司权限
 
 ```shell
 curl -X "POST" "http://finance.aodianyun.com/api/AdminMgr/setAdminIsRoomvod" \
