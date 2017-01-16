@@ -28,7 +28,7 @@ print(result.json())
 | --------------------- | ------------------------------------------------ |
 | title                | `string`     子公司标题         |
 | name              | `string`    登陆用户名         |
-| sublimit            | `int`    旗下子公司数量限制         |
+| sublimit            | `int`    旗下直播房间数量限制         |
 | is_lssflowinfo       | `int`    是否拥有查看流量权限  1是，0否         |
 | is_mcsconfig           | `int`    是否拥有修改发布配置权限  1是，0否         |
 | limit_onlinenumber     | `int`      子公司 在线并发限制  上级limit_type为2时有效   -1为无限制         |
@@ -39,8 +39,8 @@ print(result.json())
 | limit_weekdays_use_ex   | `string`   使用特殊限额 的 特殊星期几 使用_分隔         |
 | pasw                    | `string`    登录密码         |
 | expiration_date          | `string`   房间有效期 到达有效期后会被冻结         |
-| is_roomvod              | `int`   是否开启点播功能  1 开启 2 关闭         |
-| limit_onlinenumber_vod  | `int`   点播并发人数 限制         |
+| is_roomvod              | `int`   是否开启点播功能  1 开启 0 关闭         |
+| limit_onlinenumber_vod  | `int`   点播并发人数 限制  -1为无上限       |
      
 > 返回结果如下:
 
@@ -82,7 +82,7 @@ print(result.json())
 | admin_id                | `int`  需要设置的子公司admin_id      |
 | title                | `string`     子公司标题         |
 | name              | `string`    登陆用户名         |
-| sublimit            | `int`    旗下子公司数量限制         |
+| sublimit            | `int`    旗下直播房间数量限制         |
 | is_lssflowinfo       | `int`    是否拥有查看流量权限  1是，0否         |
 | is_mcsconfig           | `int`    是否拥有修改发布配置权限  1是，0否         |
 | limit_onlinenumber     | `int`      子公司 在线并发限制  上级limit_type为2时有效   -1为无限制         |
@@ -93,8 +93,8 @@ print(result.json())
 | limit_weekdays_use_ex   | `string`   使用特殊限额 的 特殊星期几 使用_分隔         |
 | pasw                    | `string`    登录密码         |
 | expiration_date          | `string`   房间有效期 到达有效期后会被冻结         |
-| is_roomvod              | `int`   是否开启点播功能  1 开启 2 关闭         |
-| limit_onlinenumber_vod  | `int`   点播并发人数 限制         |
+| is_roomvod              | `int`   是否开启点播功能  1 开启 0 关闭         |
+| limit_onlinenumber_vod  | `int`   点播并发人数 限制  -1为无上限       |
 
 > 返回结果如下:
 
