@@ -791,7 +791,7 @@ print(result.json())
 }
 ```
 
-## 获取管理员限制信息（getLimitInfo）
+## 子公司限额信息（getLimitInfo）
 
 请求方式 GET POST 需要认证
 
@@ -815,7 +815,7 @@ print(result.json())
 
 | 字段                   | 描述                                          |
 | ------------------------- | ------------------------------------------------ |
-| admin_id             | `int`  子公司ID 指定的子公司    默认为0表示获取自身旗下房间       |
+| admin_id             | `int`  子公司ID 指定的子公司        |
 
 > 返回结果如下:
 
@@ -858,7 +858,7 @@ print(result.json())
         },
         "_uptime_": "2017-01-16 13:35:48"
     },
-    "view_state": true,    //当前是否可以观看
+    "view_state": true,    //当前是否可以观看  限额超出后 此选项为false新加入的用户将无法观看
     "admin_id": 281      //子公司id
 }
 ```
