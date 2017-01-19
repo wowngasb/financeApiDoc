@@ -39,10 +39,61 @@ print(result.json())
 {
     "Flag": 100,
     "FlagString": "新建房间成功",
-    "Info": {
-        "room_id": 100236,  // 房间ID
+    "Info": {   //房间详细信息  参见  getRoomInfo 接口
+        "room_id": 74,  // 房间 id
+        "admin_id": 281,  // 子公司 id
+        "state": 1,  // 状态 正常1，冻结2 关闭9
+        "viewer_count": 49,  // 累计观看人数
         // 其他数据
     }
+}
+```
+
+## 修改房间（setCaijingRoom）
+
+设置房间 请求方式 POST 需要认证
+
+以下参数字段可以只使用部分 表示只修改部分设置  不需要修改的字段可以不设置或设置为null 表示保持原设置不变
+
+```shell
+curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/setCaijingRoom" \
+     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
+     -d "params"
+```
+
+```python
+import requests
+
+result = requests.post('http://finance.aodianyun.com/api/RoomMgr/setCaijingRoom',
+  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+  data=params)
+
+print(result.json())
+```
+
+| 字段                 | 描述                                          |
+| -------------------- | ------------------------------------------------ |
+| room_id             | `int`  房间ID 指定的房间                        |
+| state             | `int`  房间状态 1正常，2冻结 可选          |
+| room_title          | `string`  房间标题 可选               |
+| cover_pic           | `string`  视频封面图片 可选             |
+| notice             | `string`  预览界面 房间公告 可选             |
+| mcs_name          | `string`  直播工具mcs登录帐号  可选            |
+| mcs_pwd           | `string`  直播工具mcs登录密码  可选          |
+| background_pic   | `string`  预览界面 房间背景图片地址  可选          |
+| mps_id             |  `int`  MPS播放器样式id lss_player_type为mps时有效  可选     |
+| lss_player_stretching  |  `int`  视频全屏模式,1代表按比例撑满至全屏,2代表铺满全屏,3代表视频原始大小 默认为2 可选     |
+| chat_filter_keys       | `string` 聊天屏蔽关键词 使用 英文竖线 隔开  可选        |
+| lss_player_bufferlength  |  `int`   播放器缓冲区长度 默认为1 可选     |
+| lss_player_maxbufferlength  |  `int`  播放器最大缓冲时间 默认为2  可选     |
+
+
+> 返回结果如下:
+
+```json
+{
+    "Flag": 100,
+    "FlagString": "修改房间成功"
 }
 ```
 
@@ -80,6 +131,81 @@ print(result.json())
 {
     "Flag": 100,
     "FlagString": "设置MCS成功"
+}
+```
+
+## 修改MPS播放器（bindRoomWithMpsPlayer）
+
+请求方式 POST 需要认证
+
+为直播间设置MPS播放器  需要总公司权限 或者 所属子公司权限
+
+只有当房间播放器类型设置为 mps 才有效
+
+```shell
+curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/bindRoomWithMpsPlayer" \
+     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
+     -d "params"
+```
+
+```python
+import requests
+
+result = requests.post('http://finance.aodianyun.com/api/RoomMgr/bindRoomWithMpsPlayer',
+  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+  data=params)
+
+print(result.json())
+```
+
+| 字段                 | 描述                                          |
+| ---------------------- | ------------------------------------------------ |
+| room_id             | `int`  房间ID 指定的房间                        |
+| mps_id           | `int`  MPS播放器id 默认为0 表示使用默认的MPS播放器    |
+
+> 返回结果如下:
+
+```json
+{
+    "Flag": 100,
+    "FlagString": "修改播放器成功"
+}
+```
+
+## 修改播放器类型（setRoomLssPlayerType）
+
+请求方式 POST 需要认证
+
+修改直播间播放器类型  需要总公司权限 或者 所属子公司权限
+
+
+```shell
+curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/setRoomLssPlayerType" \
+     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
+     -d "params"
+```
+
+```python
+import requests
+
+result = requests.post('http://finance.aodianyun.com/api/RoomMgr/setRoomLssPlayerType',
+  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+  data=params)
+
+print(result.json())
+```
+
+| 字段                 | 描述                                          |
+| ---------------------- | ------------------------------------------------ |
+| room_id             | `int`  房间ID 指定的房间                        |
+| lss_player_type           | `string`  播放器类型  mps表示MPS播放器  aodianplayer表示基本播放器  |
+
+> 返回结果如下:
+
+```json
+{
+    "Flag": 100,
+    "FlagString": "设置播放器成功"
 }
 ```
 
@@ -122,7 +248,7 @@ print(result.json())
 
 ## 获取房间流媒体信息（getRoomLssInfo）
 
-请求方式 GET POST 不需要认证
+请求方式 GET POST 需要认证
 
 获取房间 流媒体 相关信息
 
@@ -186,9 +312,11 @@ print(result.json())
 
 ## 生成房间Token（getAuthToken）
 
-请求方式 GET POST 需要房间管理权限
+请求方式 GET POST  需要认证
 
-生成房间Token
+生成房间Token  需要房间管理权限
+
+Token 可用于聊天审核 教育模版操作文档、回答问题等操作
 
 ```shell
 curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/getAuthToken" \
@@ -567,7 +695,7 @@ print(result.json())
 
 请求方式 GET POST 需要认证
 
-为制定房间 增加直播账号 需要总公司权限 或者 所属子公司权限
+为指定房间 增加直播账号 需要总公司权限 或者 所属子公司权限
 
 ```shell
 curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/addRoomMcs" \
