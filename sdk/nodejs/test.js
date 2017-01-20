@@ -15,4 +15,4 @@ HttpApi.post('RoomMgr', 'getAuthToken', {
     }, function(test_2) {
         console.log('test_2', JSON.stringify(test_2));
     });
-})
+});

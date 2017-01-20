@@ -30,10 +30,13 @@ print(result.json())
 | name             | `string`  播放器名称                    |
 | style             | `int`  播放器样式 默认1                    |
 
+> 返回结果如下:
+
 ```
 {
     "Flag": 100,
     "FlagString": "创建成功",
+    "MpsId": 234234,  // 本次创建的播放器 mps_id
     "Info": [  // 创建成功之后  当前已存在的播放器列表
         {
             "mps_id": "36",
@@ -69,6 +72,8 @@ print(result.json())
 | 字段                 | 描述                                          |
 | ---------------------- | ------------------------------------------------ |
 | admin_id             | `int`  指定的子公司admin_id                     |
+
+> 返回结果如下:
 
 ```
 {
@@ -109,6 +114,8 @@ print(result.json())
 | 字段                 | 描述                                          |
 | ---------------------- | ------------------------------------------------ |
 | admin_id             | `int`  指定的子公司admin_id                     |
+
+> 返回结果如下:
 
 ```
 {
@@ -169,6 +176,8 @@ print(result.json())
 | adveReAddr       | `string`  点击跳转链接(完整链接地址)                   |
 | logoAddr_bytes   | `string`   图片文件具体内容 使用base64编码  |
 
+> 返回结果如下:
+
 ```
 {
     "Flag": 100,
@@ -208,6 +217,8 @@ print(result.json())
 | ---------------------- | ------------------------------------------------ |
 | admin_id             | `int`  需要设置的子公司admin_id                     |
 | mps_id             | `int`  播放器id                    |
+
+> 返回结果如下:
 
 ```
 {
@@ -250,6 +261,8 @@ print(result.json())
 | mps_id             | `int`  播放器id                    |
 | name             | `string`  播放器名称                   |
 
+> 返回结果如下:
+
 ```
 {
     "Flag": 100,
@@ -291,6 +304,8 @@ print(result.json())
 | watermark_bytes             | `string`  图片文件具体内容 使用base64编码                  |
 | watermark2_bytes             | `string`  图片文件具体内容 使用base64编码                  |
 
+> 返回结果如下:
+
 ```
 {
     "Flag": 100,
@@ -326,6 +341,8 @@ print(result.json())
 | admin_id             | `int`  需要设置的子公司admin_id                     |
 | mps_id             | `int`  播放器唯一id                    |
 
+> 返回结果如下:
+
 ```
 {
     "Flag": 100,
@@ -360,6 +377,8 @@ print(result.json())
 | ---------------------- | ------------------------------------------------ |
 | admin_id             | `int`  需要设置的子公司admin_id                     |
 | mps_id             | `int`  播放器唯一id                    |
+
+> 返回结果如下:
 
 ```
 {
@@ -399,6 +418,8 @@ print(result.json())
 | supernatantword             | `string`  文字信息                    |
 | displayfrequen             | `int`  显示频率                    |
 | scrollposition             | `string`  活动方式                    |
+
+> 返回结果如下:
 
 ```
 {

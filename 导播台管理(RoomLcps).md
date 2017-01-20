@@ -7,6 +7,7 @@
 请求方式 GET POST 需要认证
 
 销毁 VLSS 虚拟演播厅
+
 ```shell
 curl -X "POST" "http://finance.aodianyun.com/api/RoomLcps/removeVlssApp" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
@@ -23,10 +24,13 @@ result = requests.post('http://finance.aodianyun.com/api/RoomLcps/removeVlssApp'
 print(result.json())
 
 ```
+
 | 字段                 | 描述                                          |
 | ---------------------- | ------------------------------------------------ |
 | appId             | `string`  虚拟演播厅 VLSS app id                     |
 | instanceID             | `string`  导播台实例id                    |
+
+> 返回结果如下:
 
 ```
 {
@@ -41,6 +45,7 @@ print(result.json())
 请求方式 GET POST 需要认证
 
 修改 VLSS 虚拟演播厅
+
 ```shell
 curl -X "POST" "http://finance.aodianyun.com/api/RoomLcps/editVlssApp" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
@@ -57,6 +62,7 @@ result = requests.post('http://finance.aodianyun.com/api/RoomLcps/editVlssApp',
 print(result.json())
 
 ```
+
 | 字段                 | 描述                                          |
 | ---------------------- | ------------------------------------------------ |
 | appId             | `string`  虚拟演播厅 VLSS app id                     |
@@ -64,6 +70,8 @@ print(result.json())
 | name             | `string`  名称                    |
 | domain             | `string`  域名前缀                    |
 | destroyTime             | `string`  销毁时间                    |
+
+> 返回结果如下:
 
 ```
 {
@@ -77,6 +85,7 @@ print(result.json())
 请求方式 GET POST 需要认证
 
 把导播台分配给指定的子公司
+
 ```shell
 curl -X "POST" "http://finance.aodianyun.com/api/RoomLcps/setLcpsOwner" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
@@ -93,10 +102,13 @@ result = requests.post('http://finance.aodianyun.com/api/RoomLcps/setLcpsOwner',
 print(result.json())
 
 ```
+
 | 字段                 | 描述                                          |
 | ---------------------- | ------------------------------------------------ |
 | instanceID             | `string`    导播台实例 id                  |
 | admin_id             | `int`  指定的子公司id                   |
+
+> 返回结果如下:
 
 ```
 {
@@ -111,6 +123,7 @@ print(result.json())
 请求方式 GET POST 需要认证
 
 导播台输出配置
+
 ```shell
 curl -X "POST" "http://finance.aodianyun.com/api/RoomLcps/setLcpsOutPut" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
@@ -127,10 +140,13 @@ result = requests.post('http://finance.aodianyun.com/api/RoomLcps/setLcpsOutPut'
 print(result.json())
 
 ```
+
 | 字段                 | 描述                                          |
 | ---------------------- | ------------------------------------------------ |
 | url             | `string`                      |
 | room_id             | `int`  房间id                   |
+
+> 返回结果如下:
 
 ```
 {
@@ -145,6 +161,7 @@ print(result.json())
 请求方式 GET POST 需要认证
 
 获取 VLSS 列表 获取uin的 VLSS 列表 并根据admin_id 进行过滤
+
 ```shell
 curl -X "POST" "http://finance.aodianyun.com/api/RoomLcps/getVlssAppList" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
@@ -161,9 +178,12 @@ result = requests.post('http://finance.aodianyun.com/api/RoomLcps/getVlssAppList
 print(result.json())
 
 ```
+
 | 字段                 | 描述                                          |
 | ---------------------- | ------------------------------------------------ |
 | admin_id             | `int`  指定子公司id                   |
+
+> 返回结果如下:
 
 ```
 {

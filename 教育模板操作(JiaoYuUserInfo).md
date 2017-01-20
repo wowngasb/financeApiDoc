@@ -38,6 +38,7 @@ print(result.json())
 | start            | `int`  查询开始位置      |
 | limit               | `string`  每页数据条数        |
 | sort_option            | `array`  排序字段  默认 'field' => 'id', 'direction' => 'decs'       |
+> 返回结果如下:
 
 ```
 {
@@ -90,6 +91,8 @@ print(result.json())
 | msg_id               | `int`  消息唯一标识     |
 | state               | `int`  2 发布  9 删除    |
 
+> 返回结果如下:
+
 ```
 {
     "Flag": 100,
@@ -124,6 +127,7 @@ print(result.json())
 | ---------------------- | ------------------------------------------------ |
 | token             | `string`  认证token                     |
 
+> 返回结果如下:
 
 ```
 {
@@ -160,6 +164,8 @@ print(result.json())
 | token             | `string`  认证token                     |
 | page               | `int`  页数     |
 | num               | `int`  每页数量    |
+
+> 返回结果如下:
 
 ```
 {
@@ -211,6 +217,8 @@ print(result.json())
 | token             | `string`  认证token                     |
 | doc_id             | `int`  文档id                    |
 
+> 返回结果如下:
+
 ```
 {
     "Flag": 100,
@@ -251,6 +259,7 @@ print(result.json())
 | file_name         | `string`  文档文件名 支持格式 'pdf', 'ppt', 'pptx', 'doc', 'docx', 'xls', 'xlsx',    |
 | file_contents      | `string`  文档文件base64编码后的内容       |
 
+> 返回结果如下:
 
 ```
 {
@@ -338,6 +347,8 @@ print(result.json())
 | token             | `string`  认证token                     |
 | recordId             | `string`  录制id                     |
 
+> 返回结果如下:
+
 ```
 {
     "Flag": 100,
@@ -380,6 +391,8 @@ print(result.json())
 | --------------------- | ------------------------------------------------ |
 | token              | `string`  认证token                     |
 | ChatUrl              | `string`  软件内嵌网页地址 为空表示使用默认页面       |
+
+> 返回结果如下:
 
 ```
 {

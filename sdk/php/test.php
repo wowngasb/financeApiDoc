@@ -17,3 +17,16 @@ $test_2 = HttpApi::post('JiaoYuUserInfo', 'listWisDoc', array(
     'num' => 20
 ));
 echo 'test_2 ', json_encode($test_2), "\n";
+
+$mps = HttpApi::post('RoomVideo', 'newMpsPlayerByVod', array(
+    'vod_id' => "585900228894efebbb0008af", 
+    'vod_type' => 'upload', 
+    'vod_size' => 'm3u8_360', 
+    'config' => array(
+        'surfaceType' => 2,
+        'surfaceUrl' => 'http://www.google.cn/landing/cnexp/google-search.png',
+    ), 
+    'mps_id' => 1593,
+    'admin_id' => 280,
+));
+echo 'mps ', json_encode($mps), "\n";
