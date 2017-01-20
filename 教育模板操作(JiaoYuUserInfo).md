@@ -227,7 +227,7 @@ print(result.json())
 
 上传文档  需要token认证
 
-目前支持文档格式 'pdf', 'ppt', 'pptx', 'doc', 'docx', 'xls', 'xlsx', 文档大小需要小于20M
+目前支持文档格式 'png', 'jpg', 'pdf', 'ppt', 'pptx', 'doc', 'docx', 'xls', 'xlsx', 文档大小需要小于20M
 
 ```shell
 curl -X "POST" "http://finance.aodianyun.com/api/JiaoYuUserInfo/uploadWisDoc" \
