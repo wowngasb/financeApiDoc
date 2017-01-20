@@ -33,6 +33,8 @@ print(result.json())
 | page             | `int`  页数       |
 | type              | `string`  视频类型   7DayDvrList 临时存储   DvrList永久存储   UploadVodList上传视频      |
 
+> 返回结果如下:
+
 ```
 {
     "Flag": 100,
@@ -52,7 +54,7 @@ print(result.json())
             "height": 360,   //高度
             "begin": 0,
             "uptime": 1482981727,   //更新时间
-            "id": "58647ff18894efebbb756937",
+            "id": "58647ff18894efebbb756937",   //视频全局唯一id 
             "vod_file": "dyy_280_902.992b822fa7276761418c1509e78e26a2.1482981338.m3u8",
             "room_info": [],   // 点播房间相关信息  如未创建点播房间 不存在
             "room_id": 0,
@@ -100,6 +102,8 @@ print(result.json())
 | url               | `array`  视频url地址  可以同时删除多个      |
 | type             | `string`  视频类型   7DayDvrList 临时存储   DvrList永久存储   UploadVodList上传视频      |
 
+> 返回结果如下:
+
 ```
 {
     "Flag": 100,
@@ -133,6 +137,8 @@ print(result.json())
 | ---------------------- | ------------------------------------------------ |
 | admin_id           | `int`  子公司id                     |
 | url               | `array`  视频url地址        |
+
+> 返回结果如下:
 
 ```
 {
@@ -168,6 +174,8 @@ print(result.json())
 | 字段                 | 描述                                          |
 | ---------------------- | ------------------------------------------------ |
 | room_id             | `int`  房间id                     |
+
+> 返回结果如下:
 
 ```
 {
@@ -208,6 +216,8 @@ print(result.json())
 | admin_id             | `int`  子公司id                     |
 | stime             | `int`  开始时间戳              |
 | etime             | `int`  结束时间戳                 |
+
+> 返回结果如下:
 
 ```
 {
@@ -271,6 +281,8 @@ print(result.json())
 | stime             | `int`  开始时间戳              |
 | etime             | `int`  结束时间戳                 |
 
+> 返回结果如下:
+
 ```
 {
     "Flag": 100,
@@ -333,6 +345,8 @@ print(result.json())
 | admin_id             | `int`  子公司id                     |
 | page             | `int`  页数    默认为 1                 |
 | num             | `int`  每页数量      默认为 100              |
+
+> 返回结果如下:
 
 ```
 {
@@ -401,6 +415,7 @@ print(result.json())
 | runCount           | `int`  循环次数(范围1-100， 0无限循环)                     |
 | concat              | `int`  是否无缝播放(1是 0否)                     |
 
+> 返回结果如下:
 
 ```
 {
@@ -443,6 +458,8 @@ print(result.json())
 | ---------------------- | ------------------------------------------------ |
 | room_id             | `int`  房间id                     |
 
+> 返回结果如下:
+
 ```
 {
 	Flag: 100, 
@@ -477,6 +494,9 @@ print(result.json())
 | 字段                 | 描述                                          |
 | ---------------------- | ------------------------------------------------ |
 | room_id             | `int`  房间id                     |
+
+> 返回结果如下:
+
 ```
 {
 	Flag: 100, 
@@ -510,6 +530,9 @@ print(result.json())
 | 字段                 | 描述                                          |
 | ---------------------- | ------------------------------------------------ |
 | room_id             | `int`  房间id                     |
+
+> 返回结果如下:
+
 ```
 {
 	Flag: 100, 
@@ -544,9 +567,93 @@ print(result.json())
 | 字段                 | 描述                                          |
 | ---------------------- | ------------------------------------------------ |
 | room_id             | `int`  房间id                     |
+
+> 返回结果如下:
+
 ```
 {
     "Flag": 100,
     "FlagString": "操作成功"
 }
+```
+
+
+## 使用MPS播放VOD(newMpsPlayerByVod)
+
+请求方式 GET POST 需要认证
+
+使用MPS播放器播放点播视频  需要所属子公司权限
+
+```shell
+curl -X "POST" "http://finance.aodianyun.com/api/RoomVideo/cutReplayOpMic" \
+     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
+     -d "params"
+```
+
+```python
+import requests
+
+result = requests.post('http://finance.aodianyun.com/api/RoomVideo/cutReplayOpMic',
+  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+  data=params)
+
+print(result.json())
+```
+
+| 字段                 | 描述                                          |
+| ---------------------- | ------------------------------------------------------ |
+| vod_id             | `string`  视频id   参见 RoomVideo.getRoomDvrList 接口   |
+| vod_type           | `string`  视频类型  live 直播存储视频  upload上传视频  merge合并视频   |
+| vod_size           | `string`  分辨率选择  选项有：adaptive自适应，m3u8_1080  m3u8_720  m3u8_480  m3u8_320  m3u8_240   |
+| config             | `array`  封面图配置 {"surfaceType":"2","surfaceUrl":""}  设置 surfaceType=2  surfaceUrl图片链接   |
+| mps_id             | `int`  MPS播放器id  参见 MpsMgr.newMpsItem 接口   |
+| admin_id             | `int`  用户id    |
+
+> 返回结果如下:
+
+```
+{
+    "Flag": 100,
+    "FlagString": "操作成功",
+    "Id": "f6b1Hz113bbUWxyy",   //用于 网页 mpsPlayer 播放器 参数中的 appId
+    "uin": 1436  //用于 网页 mpsPlayer 播放器 参数中的 uin
+}
+```
+
+> 网页中使用如下播放代码:
+
+
+``` html
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+</head>
+<body>
+<div id="MPSplayer"></div>
+<script type="text/javascript" src="http://cdn.aodianyun.com/static/jquery/jquery-1.7.2.min.js"></script><!-- jquery地址也可使用您的地址 -->
+<script type="text/javascript" src="http://cdn.aodianyun.com/mps/v1/hlsplayer.js"></script>
+<script type="text/javascript">
+var objectPlayer=new mpsPlayer({
+    container:'MPSplayer',//播放器容器ID，必要参数
+    uin: '1436',//用户ID
+    appId: 'fm3Bzm3HbHbUWxyS',//播放实例ID
+    width: '1280',//播放器宽度，可用数字、百分比等
+    height: '720',//播放器高度，可用数字、百分比等
+    autostart: false,//是否自动播放，默认为false
+    controlbardisplay: 'enable',//是否显示控制栏，值为：disable、enable默认为disable。
+    isclickplay: true,//是否单击播放，默认为false
+    isfullscreen: true//是否双击全屏，默认为true
+});
+/* 以下为 objectPlayer 支持的事件 */
+/* objectPlayer.startPlay();//播放 */
+/* objectPlayer.pausePlay();//暂停 */
+/* objectPlayer.stopPlay();//停止 hls不支持*/
+/* objectPlayer.closeConnect();//断开连接 */
+/* objectPlayer.setMute(true);//静音或恢复音量，参数为true|false */
+/* objectPlayer.setVolume(volume);//设置音量，参数为0-100数字 */
+/* objectPlayer.setFullScreenMode(1);//设置全屏模式,1代表按比例撑满至全屏,2代表铺满全屏,3代表视频原始大小,默认值为1。手机不支持 */
+</script>
+</body>
+</html>
 ```
