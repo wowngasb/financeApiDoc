@@ -15,7 +15,7 @@
 计费方式设置为并发计费（bingfa）的客户，直播视频将使用预设码率并不允许修改，直播工具MCS发布配置也会被禁用
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/CompanyMgr/newSubCompany" \
+curl -X "POST" "http://58jinrongyun.com/api/CompanyMgr/newSubCompany" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -23,7 +23,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/CompanyMgr/newSubCompany" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/CompanyMgr/newSubCompany',
+result = requests.post('http://58jinrongyun.com/api/CompanyMgr/newSubCompany',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -63,7 +63,7 @@ print(result.json())
 获取客户信息
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/CompanyMgr/getSubInfo" \
+curl -X "POST" "http://58jinrongyun.com/api/CompanyMgr/getSubInfo" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -71,7 +71,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/CompanyMgr/getSubInfo" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/CompanyMgr/getSubInfo',
+result = requests.post('http://58jinrongyun.com/api/CompanyMgr/getSubInfo',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -111,7 +111,7 @@ print(result.json())
 设置客户状态    因为涉及冻结服务等操作 同一个帐号 每分钟只能操作一次
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/CompanyMgr/stateSubCompany" \
+curl -X "POST" "http://58jinrongyun.com/api/CompanyMgr/stateSubCompany" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -119,7 +119,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/CompanyMgr/stateSubCompany" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/CompanyMgr/stateSubCompany',
+result = requests.post('http://58jinrongyun.com/api/CompanyMgr/stateSubCompany',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -147,7 +147,7 @@ print(result.json())
 修改指定客户的基本信息 下列设置的字段为可选参数 不设置表示 保持原有不变
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/CompanyMgr/setSubCompany" \
+curl -X "POST" "http://58jinrongyun.com/api/CompanyMgr/setSubCompany" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -155,7 +155,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/CompanyMgr/setSubCompany" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/CompanyMgr/setSubCompany',
+result = requests.post('http://58jinrongyun.com/api/CompanyMgr/setSubCompany',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -187,7 +187,7 @@ print(result.json())
 为客户开通直播间
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/CompanyMgr/newRoomByAdminId" \
+curl -X "POST" "http://58jinrongyun.com/api/CompanyMgr/newRoomByAdminId" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -195,7 +195,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/CompanyMgr/newRoomByAdminId" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/CompanyMgr/newRoomByAdminId',
+result = requests.post('http://58jinrongyun.com/api/CompanyMgr/newRoomByAdminId',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -245,7 +245,7 @@ print(result.json())
 修改指定房间的主播帐号和密码 用于登录[MCS直播发布工具](http://www.aodianyun.com/aodianyun_doc/298)  帐号全局唯一
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/CompanyMgr/setRoomAccount" \
+curl -X "POST" "http://58jinrongyun.com/api/CompanyMgr/setRoomAccount" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -253,7 +253,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/CompanyMgr/setRoomAccount" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/CompanyMgr/setRoomAccount',
+result = requests.post('http://58jinrongyun.com/api/CompanyMgr/setRoomAccount',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -282,7 +282,7 @@ print(result.json())
 设置房间状态
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/CompanyMgr/setRoomState" \
+curl -X "POST" "http://58jinrongyun.com/api/CompanyMgr/setRoomState" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -290,7 +290,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/CompanyMgr/setRoomState" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/CompanyMgr/setRoomState',
+result = requests.post('http://58jinrongyun.com/api/CompanyMgr/setRoomState',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -318,7 +318,7 @@ print(result.json())
 获取房间基本信息
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/CompanyMgr/getRoomInfo" \
+curl -X "POST" "http://58jinrongyun.com/api/CompanyMgr/getRoomInfo" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -326,7 +326,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/CompanyMgr/getRoomInfo" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/CompanyMgr/getRoomInfo',
+result = requests.post('http://58jinrongyun.com/api/CompanyMgr/getRoomInfo',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -372,7 +372,7 @@ print(result.json())
 获取教育模版房间 录制节目列表
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/CompanyMgr/getRoomWisReplay" \
+curl -X "POST" "http://58jinrongyun.com/api/CompanyMgr/getRoomWisReplay" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -380,7 +380,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/CompanyMgr/getRoomWisReplay" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/CompanyMgr/getRoomWisReplay',
+result = requests.post('http://58jinrongyun.com/api/CompanyMgr/getRoomWisReplay',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -423,7 +423,7 @@ print(result.json())
 计费服务类别：直播流量(LSS)，消息服务(DMS)，点播流量(VOD)，媒体存储(MSS)，并发计费(PCU)。
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/CompanyMgr/getBillPrice" \
+curl -X "POST" "http://58jinrongyun.com/api/CompanyMgr/getBillPrice" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -431,7 +431,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/CompanyMgr/getBillPrice" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/CompanyMgr/getBillPrice',
+result = requests.post('http://58jinrongyun.com/api/CompanyMgr/getBillPrice',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -467,7 +467,7 @@ print(result.json())
 计费服务类别：直播流量(LSS)，消息服务(DMS)，点播流量(VOD)，媒体存储(MSS)。
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/CompanyMgr/getBillRunning" \
+curl -X "POST" "http://58jinrongyun.com/api/CompanyMgr/getBillRunning" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -475,7 +475,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/CompanyMgr/getBillRunning" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/CompanyMgr/getBillRunning',
+result = requests.post('http://58jinrongyun.com/api/CompanyMgr/getBillRunning',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -542,7 +542,7 @@ print(result.json())
 计费服务类别：直播流量(LSS)，消息服务(DMS)，点播流量(VOD)，媒体存储(MSS), 并发计费(PCU)。
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/CompanyMgr/getMonthBillRunning" \
+curl -X "POST" "http://58jinrongyun.com/api/CompanyMgr/getMonthBillRunning" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -550,7 +550,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/CompanyMgr/getMonthBillRunning"
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/CompanyMgr/getMonthBillRunning',
+result = requests.post('http://58jinrongyun.com/api/CompanyMgr/getMonthBillRunning',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -633,7 +633,7 @@ print(result.json())
 查询指定客户 实时直播并发人数
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/CompanyMgr/getSubLssNum" \
+curl -X "POST" "http://58jinrongyun.com/api/CompanyMgr/getSubLssNum" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -641,7 +641,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/CompanyMgr/getSubLssNum" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/CompanyMgr/getSubLssNum',
+result = requests.post('http://58jinrongyun.com/api/CompanyMgr/getSubLssNum',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -675,7 +675,7 @@ print(result.json())
 查询指定客户 实时点播并发人数
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/CompanyMgr/getSubVodNum" \
+curl -X "POST" "http://58jinrongyun.com/api/CompanyMgr/getSubVodNum" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -683,7 +683,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/CompanyMgr/getSubVodNum" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/CompanyMgr/getSubVodNum',
+result = requests.post('http://58jinrongyun.com/api/CompanyMgr/getSubVodNum',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -717,7 +717,7 @@ print(result.json())
 查询指定客户 直播流量 使用情况
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/CompanyMgr/getSubLssFlow" \
+curl -X "POST" "http://58jinrongyun.com/api/CompanyMgr/getSubLssFlow" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -725,7 +725,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/CompanyMgr/getSubLssFlow" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/CompanyMgr/getSubLssFlow',
+result = requests.post('http://58jinrongyun.com/api/CompanyMgr/getSubLssFlow',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -784,7 +784,7 @@ print(result.json())
 查询指定客户 直播带宽 使用情况
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/CompanyMgr/getSubLssBandWidth" \
+curl -X "POST" "http://58jinrongyun.com/api/CompanyMgr/getSubLssBandWidth" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -792,7 +792,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/CompanyMgr/getSubLssBandWidth" 
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/CompanyMgr/getSubLssBandWidth',
+result = requests.post('http://58jinrongyun.com/api/CompanyMgr/getSubLssBandWidth',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -851,7 +851,7 @@ print(result.json())
 查询指定客户 点播流量 使用情况
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/CompanyMgr/getSubVodFlow" \
+curl -X "POST" "http://58jinrongyun.com/api/CompanyMgr/getSubVodFlow" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -859,7 +859,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/CompanyMgr/getSubVodFlow" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/CompanyMgr/getSubVodFlow',
+result = requests.post('http://58jinrongyun.com/api/CompanyMgr/getSubVodFlow',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -907,7 +907,7 @@ print(result.json())
 查询指定客户 直播流量  每月使用情况
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/CompanyMgr/getSubLssMonthPeak" \
+curl -X "POST" "http://58jinrongyun.com/api/CompanyMgr/getSubLssMonthPeak" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -915,7 +915,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/CompanyMgr/getSubLssMonthPeak" 
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/CompanyMgr/getSubLssMonthPeak',
+result = requests.post('http://58jinrongyun.com/api/CompanyMgr/getSubLssMonthPeak',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -948,11 +948,11 @@ print(result.json())
 
 例如
 
-后台设置认证链接为：http://finance.aodianyun.com/cache/test_auth.php
+后台设置认证链接为：http://58jinrongyun.com/cache/test_auth.php
 
-用户打开观看连接：http://finance.aodianyun.com/glive/35?token=abc&nick=test&uid=10001
+用户打开观看连接：http://58jinrongyun.com/glive/35?token=abc&nick=test&uid=10001
 
-后台将会请求 http://finance.aodianyun.com/cache/test_auth.php?room_id=35&token=abc&nick=test&uid=10001 进行认证
+后台将会请求 http://58jinrongyun.com/cache/test_auth.php?room_id=35&token=abc&nick=test&uid=10001 进行认证
 
 
 > 认证接口需要返回json标识认证是否通过 格式如下：

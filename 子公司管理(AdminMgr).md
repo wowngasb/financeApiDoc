@@ -9,7 +9,7 @@
 添加新的 子公司 需要总公司权限
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/AdminMgr/addCaijingSubAdmin" \
+curl -X "POST" "http://58jinrongyun.com/api/AdminMgr/addCaijingSubAdmin" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -17,7 +17,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/AdminMgr/addCaijingSubAdmin" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/AdminMgr/addCaijingSubAdmin',
+result = requests.post('http://58jinrongyun.com/api/AdminMgr/addCaijingSubAdmin',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -62,7 +62,7 @@ print(result.json())
 
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/AdminMgr/setCaijingSubAdmin" \
+curl -X "POST" "http://58jinrongyun.com/api/AdminMgr/setCaijingSubAdmin" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -70,7 +70,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/AdminMgr/setCaijingSubAdmin" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/AdminMgr/setCaijingSubAdmin',
+result = requests.post('http://58jinrongyun.com/api/AdminMgr/setCaijingSubAdmin',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -113,7 +113,7 @@ print(result.json())
 
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/AdminMgr/stateSubAdmin" \
+curl -X "POST" "http://58jinrongyun.com/api/AdminMgr/stateSubAdmin" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -121,7 +121,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/AdminMgr/stateSubAdmin" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/AdminMgr/stateSubAdmin',
+result = requests.post('http://58jinrongyun.com/api/AdminMgr/stateSubAdmin',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -150,7 +150,7 @@ print(result.json())
 查找旗下的子公司 需要总公司权限
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/AdminMgr/getSubAdminList" \
+curl -X "POST" "http://58jinrongyun.com/api/AdminMgr/getSubAdminList" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -158,7 +158,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/AdminMgr/getSubAdminList" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/AdminMgr/getSubAdminList',
+result = requests.post('http://58jinrongyun.com/api/AdminMgr/getSubAdminList',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -201,7 +201,7 @@ print(result.json())
 设置子公司密码  需要总公司权限
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/AdminMgr/setAdminPwd" \
+curl -X "POST" "http://58jinrongyun.com/api/AdminMgr/setAdminPwd" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -209,7 +209,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/AdminMgr/setAdminPwd" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/AdminMgr/setAdminPwd',
+result = requests.post('http://58jinrongyun.com/api/AdminMgr/setAdminPwd',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -238,7 +238,7 @@ print(result.json())
 获取指定admin_id 信息 需要自身或 所属总公司权限
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/AdminMgr/getAdminInfo" \
+curl -X "POST" "http://58jinrongyun.com/api/AdminMgr/getAdminInfo" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -246,7 +246,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/AdminMgr/getAdminInfo" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/AdminMgr/getAdminInfo',
+result = requests.post('http://58jinrongyun.com/api/AdminMgr/getAdminInfo',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -284,7 +284,7 @@ print(result.json())
 设置指定admin_id子公司 是否可以直播流量带宽信息  需要所属总公司权限
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/AdminMgr/setAdminIsLssflowinfo" \
+curl -X "POST" "http://58jinrongyun.com/api/AdminMgr/setAdminIsLssflowinfo" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -292,7 +292,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/AdminMgr/setAdminIsLssflowinfo"
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/AdminMgr/setAdminIsLssflowinfo',
+result = requests.post('http://58jinrongyun.com/api/AdminMgr/setAdminIsLssflowinfo',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -322,7 +322,7 @@ print(result.json())
 
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/AdminMgr/setAdminIsMcsConfig" \
+curl -X "POST" "http://58jinrongyun.com/api/AdminMgr/setAdminIsMcsConfig" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -330,7 +330,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/AdminMgr/setAdminIsMcsConfig" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/AdminMgr/setAdminIsMcsConfig',
+result = requests.post('http://58jinrongyun.com/api/AdminMgr/setAdminIsMcsConfig',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -359,7 +359,7 @@ print(result.json())
 设置指定admin_id子公司 是否可以使用点播功能  需要所属总公司权限
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/AdminMgr/setAdminIsRoomvod" \
+curl -X "POST" "http://58jinrongyun.com/api/AdminMgr/setAdminIsRoomvod" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -367,7 +367,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/AdminMgr/setAdminIsRoomvod" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/AdminMgr/setAdminIsRoomvod',
+result = requests.post('http://58jinrongyun.com/api/AdminMgr/setAdminIsRoomvod',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
