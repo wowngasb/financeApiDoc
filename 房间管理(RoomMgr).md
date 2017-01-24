@@ -7,7 +7,7 @@
 新建房间 请求方式 POST 需要认证
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/newCaiJingRoom" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomMgr/newCaiJingRoom" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -15,7 +15,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/newCaiJingRoom" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomMgr/newCaiJingRoom',
+result = requests.post('http://58jinrongyun.com/api/RoomMgr/newCaiJingRoom',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -56,7 +56,7 @@ print(result.json())
 以下参数字段可以只使用部分 表示只修改部分设置  不需要修改的字段可以不设置或设置为null 表示保持原设置不变
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/setCaijingRoom" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomMgr/setCaijingRoom" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -64,7 +64,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/setCaijingRoom" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomMgr/setCaijingRoom',
+result = requests.post('http://58jinrongyun.com/api/RoomMgr/setCaijingRoom',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -104,7 +104,7 @@ print(result.json())
 修改指定房间[MCS直播发布工具](http://www.aodianyun.com/aodianyun_doc/298)的帐号密码，帐号是全局唯一的。
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/bindRoomWithMcsAccount" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomMgr/bindRoomWithMcsAccount" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -112,7 +112,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/bindRoomWithMcsAccount"
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomMgr/bindRoomWithMcsAccount',
+result = requests.post('http://58jinrongyun.com/api/RoomMgr/bindRoomWithMcsAccount',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -143,7 +143,7 @@ print(result.json())
 只有当房间播放器类型设置为 mps 才有效
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/bindRoomWithMpsPlayer" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomMgr/bindRoomWithMpsPlayer" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -151,7 +151,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/bindRoomWithMpsPlayer" 
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomMgr/bindRoomWithMpsPlayer',
+result = requests.post('http://58jinrongyun.com/api/RoomMgr/bindRoomWithMpsPlayer',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -180,7 +180,7 @@ print(result.json())
 
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/setRoomLssPlayerType" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomMgr/setRoomLssPlayerType" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -188,7 +188,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/setRoomLssPlayerType" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomMgr/setRoomLssPlayerType',
+result = requests.post('http://58jinrongyun.com/api/RoomMgr/setRoomLssPlayerType',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -216,7 +216,7 @@ print(result.json())
 获取房间 实时在线人数
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/getRoomDmsUserCount" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomMgr/getRoomDmsUserCount" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -224,7 +224,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/getRoomDmsUserCount" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomMgr/getRoomDmsUserCount',
+result = requests.post('http://58jinrongyun.com/api/RoomMgr/getRoomDmsUserCount',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -253,7 +253,7 @@ print(result.json())
 获取房间 流媒体 相关信息
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/getRoomLssInfo" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomMgr/getRoomLssInfo" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -261,7 +261,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/getRoomLssInfo" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomMgr/getRoomLssInfo',
+result = requests.post('http://58jinrongyun.com/api/RoomMgr/getRoomLssInfo',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -319,7 +319,7 @@ print(result.json())
 Token 可用于聊天审核 教育模版操作文档、回答问题等操作
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/getAuthToken" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomMgr/getAuthToken" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -327,7 +327,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/getAuthToken" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomMgr/getAuthToken',
+result = requests.post('http://58jinrongyun.com/api/RoomMgr/getAuthToken',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -361,7 +361,7 @@ print(result.json())
 设置房间状态  需要总公司权限 或者 所属子公司权限
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/stateSubRoom" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomMgr/stateSubRoom" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -369,7 +369,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/stateSubRoom" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomMgr/stateSubRoom',
+result = requests.post('http://58jinrongyun.com/api/RoomMgr/stateSubRoom',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -399,7 +399,7 @@ print(result.json())
 立即删除房间 不可找回  需要总公司权限 或者 所属子公司权限
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/removeSubRoom" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomMgr/removeSubRoom" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -407,7 +407,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/removeSubRoom" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomMgr/removeSubRoom',
+result = requests.post('http://58jinrongyun.com/api/RoomMgr/removeSubRoom',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -433,7 +433,7 @@ print(result.json())
 设置指定房间的MCS配置信息  需要总公司权限 或者 所属子公司权限
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/setRoomMcsConfig" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomMgr/setRoomMcsConfig" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -441,7 +441,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/setRoomMcsConfig" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomMgr/setRoomMcsConfig',
+result = requests.post('http://58jinrongyun.com/api/RoomMgr/setRoomMcsConfig',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -489,7 +489,7 @@ config 参数为
 获取指定房间的MCS配置信息  需要总公司权限 或者 所属子公司权限
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/getRoomMcsConfig" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomMgr/getRoomMcsConfig" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -497,7 +497,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/getRoomMcsConfig" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomMgr/getRoomMcsConfig',
+result = requests.post('http://58jinrongyun.com/api/RoomMgr/getRoomMcsConfig',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -546,7 +546,7 @@ print(result.json())
             "strUserID": "1478",
             "PubUrlPub": "13830.lsspublish",
             "PublishRoomInfo": "dyy_1736_133",
-            "ChatUrl": "http://finance.aodianyun.com/admin/mcsblock/wispublish?token=a07dVZvHzZPe8GZEAePcC3loHl8Tn5cBXyPpy3qrcdyLqCFhBCbaBJXQdbox",
+            "ChatUrl": "http://58jinrongyun.com/admin/mcsblock/wispublish?token=a07dVZvHzZPe8GZEAePcC3loHl8Tn5cBXyPpy3qrcdyLqCFhBCbaBJXQdbox",
             "stream": "a0c3d2dd3b4688f31da13991477980d9"
         },
         "addTime": "1478053169",
@@ -563,7 +563,7 @@ print(result.json())
 所有参数均为查询条件  可以不添加这个参数表示不使用这个查询
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/getAdminRoomList" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomMgr/getAdminRoomList" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -571,7 +571,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/getAdminRoomList" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomMgr/getAdminRoomList',
+result = requests.post('http://58jinrongyun.com/api/RoomMgr/getAdminRoomList',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -622,7 +622,7 @@ print(result.json())
 获取指定房间信息  需要总公司权限 或者 所属子公司权限
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/getRoomInfo" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomMgr/getRoomInfo" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -630,7 +630,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/getRoomInfo" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomMgr/getRoomInfo',
+result = requests.post('http://58jinrongyun.com/api/RoomMgr/getRoomInfo',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -698,7 +698,7 @@ print(result.json())
 为指定房间 增加直播账号 需要总公司权限 或者 所属子公司权限
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/addRoomMcs" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomMgr/addRoomMcs" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -706,7 +706,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/addRoomMcs" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomMgr/addRoomMcs',
+result = requests.post('http://58jinrongyun.com/api/RoomMgr/addRoomMcs',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -737,7 +737,7 @@ print(result.json())
 
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/listRoomMcs" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomMgr/listRoomMcs" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -745,7 +745,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/listRoomMcs" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomMgr/listRoomMcs',
+result = requests.post('http://58jinrongyun.com/api/RoomMgr/listRoomMcs',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -785,7 +785,7 @@ print(result.json())
 
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/paswRoomMcs" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomMgr/paswRoomMcs" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -793,7 +793,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/paswRoomMcs" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomMgr/paswRoomMcs',
+result = requests.post('http://58jinrongyun.com/api/RoomMgr/paswRoomMcs',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -823,7 +823,7 @@ print(result.json())
 删除指定的 直播账号  需要总公司权限 或者 所属子公司权限
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/delRoomMcs" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomMgr/delRoomMcs" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -831,7 +831,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomMgr/delRoomMcs" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomMgr/delRoomMcs',
+result = requests.post('http://58jinrongyun.com/api/RoomMgr/delRoomMcs',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 

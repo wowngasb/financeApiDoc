@@ -9,7 +9,7 @@
 获取房间 Dvr 视频列表
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomVideo/getRoomDvrList" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomVideo/getRoomDvrList" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -17,7 +17,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomVideo/getRoomDvrList" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomVideo/getRoomDvrList',
+result = requests.post('http://58jinrongyun.com/api/RoomVideo/getRoomDvrList',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -81,7 +81,7 @@ print(result.json())
 根据url删除视频
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomVideo/delRoomDvrByUrl" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomVideo/delRoomDvrByUrl" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -89,7 +89,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomVideo/delRoomDvrByUrl" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomVideo/delRoomDvrByUrl',
+result = requests.post('http://58jinrongyun.com/api/RoomVideo/delRoomDvrByUrl',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -118,7 +118,7 @@ print(result.json())
 同步7日临时存储视频到永久存储
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomVideo/sync7DayDvrListToStable" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomVideo/sync7DayDvrListToStable" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -126,7 +126,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomVideo/sync7DayDvrListToStab
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomVideo/sync7DayDvrListToStable',
+result = requests.post('http://58jinrongyun.com/api/RoomVideo/sync7DayDvrListToStable',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -156,7 +156,7 @@ print(result.json())
 针对正在直播的房间 结束当前录制文件  重新生成录制文件
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomVideo/replayRoomVodByRoomId" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomVideo/replayRoomVodByRoomId" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -164,7 +164,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomVideo/replayRoomVodByRoomId
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomVideo/replayRoomVodByRoomId',
+result = requests.post('http://58jinrongyun.com/api/RoomVideo/replayRoomVodByRoomId',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -196,7 +196,7 @@ print(result.json())
 获取Lss 流媒体 app带宽历史信息   支持查询90天内的数据  需要子公司自身或所属总公司权限 
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomVideo/listAppBandWidthInfo" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomVideo/listAppBandWidthInfo" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -204,7 +204,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomVideo/listAppBandWidthInfo"
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomVideo/listAppBandWidthInfo',
+result = requests.post('http://58jinrongyun.com/api/RoomVideo/listAppBandWidthInfo',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -260,7 +260,7 @@ print(result.json())
 获取Lss 流媒体 app流量历史信息   支持查询90天内的数据  需要子公司自身或所属总公司权限 
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomVideo/listAppFlowInfo" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomVideo/listAppFlowInfo" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -268,7 +268,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomVideo/listAppFlowInfo" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomVideo/listAppFlowInfo',
+result = requests.post('http://58jinrongyun.com/api/RoomVideo/listAppFlowInfo',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -325,7 +325,7 @@ print(result.json())
 获取拉流列表子公司拉流列表  对应流媒体app  需要子公司自身或所属总公司权限 
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomVideo/listSubAdminLssPullStream" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomVideo/listSubAdminLssPullStream" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -333,7 +333,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomVideo/listSubAdminLssPullSt
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomVideo/listSubAdminLssPullStream',
+result = requests.post('http://58jinrongyun.com/api/RoomVideo/listSubAdminLssPullStream',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -392,7 +392,7 @@ print(result.json())
 添加多个视频到指定房间的拉流列表 对应流媒体app  需要子公司自身或所属总公司权限 
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomVideo/addRoomPullStreamList" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomVideo/addRoomPullStreamList" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -400,7 +400,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomVideo/addRoomPullStreamList
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomVideo/addRoomPullStreamList',
+result = requests.post('http://58jinrongyun.com/api/RoomVideo/addRoomPullStreamList',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -439,7 +439,7 @@ print(result.json())
 删除指定房间的拉流列表 对应流媒体app  需要子公司自身或所属总公司权限 
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomVideo/delRoomPullStream" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomVideo/delRoomPullStream" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -447,7 +447,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomVideo/delRoomPullStream" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomVideo/delRoomPullStream',
+result = requests.post('http://58jinrongyun.com/api/RoomVideo/delRoomPullStream',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -476,7 +476,7 @@ print(result.json())
 暂停指定房间的拉流列表 需要子公司自身或所属总公司权限 
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomVideo/pauseRoomPullStream" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomVideo/pauseRoomPullStream" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -484,7 +484,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomVideo/pauseRoomPullStream" 
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomVideo/pauseRoomPullStream',
+result = requests.post('http://58jinrongyun.com/api/RoomVideo/pauseRoomPullStream',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -512,7 +512,7 @@ print(result.json())
 播放指定房间的拉流列表 需要子公司自身或所属总公司权限 
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomVideo/playRoomPullStream" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomVideo/playRoomPullStream" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -520,7 +520,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomVideo/playRoomPullStream" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomVideo/playRoomPullStream',
+result = requests.post('http://58jinrongyun.com/api/RoomVideo/playRoomPullStream',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -549,7 +549,7 @@ print(result.json())
 停止指定房间的视频发布 需要所属子公司权限
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomVideo/cutReplayOpMic" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomVideo/cutReplayOpMic" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -557,7 +557,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomVideo/cutReplayOpMic" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomVideo/cutReplayOpMic',
+result = requests.post('http://58jinrongyun.com/api/RoomVideo/cutReplayOpMic',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -585,7 +585,7 @@ print(result.json())
 使用MPS播放器播放点播视频  需要所属子公司权限
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomVideo/cutReplayOpMic" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomVideo/cutReplayOpMic" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -593,7 +593,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomVideo/cutReplayOpMic" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomVideo/cutReplayOpMic',
+result = requests.post('http://58jinrongyun.com/api/RoomVideo/cutReplayOpMic',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 

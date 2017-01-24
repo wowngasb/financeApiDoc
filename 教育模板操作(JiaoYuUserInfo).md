@@ -9,7 +9,7 @@
 待审核消息列表  需要token认证
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/JiaoYuUserInfo/listMsgReview" \
+curl -X "POST" "http://58jinrongyun.com/api/JiaoYuUserInfo/listMsgReview" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -17,7 +17,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/JiaoYuUserInfo/listMsgReview" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/JiaoYuUserInfo/listMsgReview',
+result = requests.post('http://58jinrongyun.com/api/JiaoYuUserInfo/listMsgReview',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -70,7 +70,7 @@ print(result.json())
 后台审核发布聊天消息  需要token认证
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/JiaoYuUserInfo/dmsMsgReview" \
+curl -X "POST" "http://58jinrongyun.com/api/JiaoYuUserInfo/dmsMsgReview" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -78,7 +78,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/JiaoYuUserInfo/dmsMsgReview" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/JiaoYuUserInfo/dmsMsgReview',
+result = requests.post('http://58jinrongyun.com/api/JiaoYuUserInfo/dmsMsgReview',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -108,7 +108,7 @@ print(result.json())
 清空待审核聊天消息  需要token认证
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/JiaoYuUserInfo/delMsgReview" \
+curl -X "POST" "http://58jinrongyun.com/api/JiaoYuUserInfo/delMsgReview" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -116,7 +116,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/JiaoYuUserInfo/delMsgReview" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/JiaoYuUserInfo/delMsgReview',
+result = requests.post('http://58jinrongyun.com/api/JiaoYuUserInfo/delMsgReview',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -144,7 +144,7 @@ print(result.json())
 获取教育模版 文档列表  需要token认证
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/JiaoYuUserInfo/listWisDoc" \
+curl -X "POST" "http://58jinrongyun.com/api/JiaoYuUserInfo/listWisDoc" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -152,7 +152,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/JiaoYuUserInfo/listWisDoc" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/JiaoYuUserInfo/listWisDoc',
+result = requests.post('http://58jinrongyun.com/api/JiaoYuUserInfo/listWisDoc',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -197,7 +197,7 @@ print(result.json())
 删除文档  需要token认证
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/JiaoYuUserInfo/delWisDoc" \
+curl -X "POST" "http://58jinrongyun.com/api/JiaoYuUserInfo/delWisDoc" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -205,7 +205,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/JiaoYuUserInfo/delWisDoc" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/JiaoYuUserInfo/delWisDoc',
+result = requests.post('http://58jinrongyun.com/api/JiaoYuUserInfo/delWisDoc',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -238,7 +238,7 @@ print(result.json())
 目前支持文档格式 'png', 'jpg', 'pdf', 'ppt', 'pptx', 'doc', 'docx', 'xls', 'xlsx', 文档大小需要小于20M
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/JiaoYuUserInfo/uploadWisDoc" \
+curl -X "POST" "http://58jinrongyun.com/api/JiaoYuUserInfo/uploadWisDoc" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -246,7 +246,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/JiaoYuUserInfo/uploadWisDoc" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/JiaoYuUserInfo/uploadWisDoc',
+result = requests.post('http://58jinrongyun.com/api/JiaoYuUserInfo/uploadWisDoc',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -277,7 +277,7 @@ print(result.json())
 获取教育房间 白板录制节目列表  需要token认证
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/JiaoYuUserInfo/listWisReplay" \
+curl -X "POST" "http://58jinrongyun.com/api/JiaoYuUserInfo/listWisReplay" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -285,7 +285,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/JiaoYuUserInfo/listWisReplay" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/JiaoYuUserInfo/listWisReplay',
+result = requests.post('http://58jinrongyun.com/api/JiaoYuUserInfo/listWisReplay',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -327,7 +327,7 @@ print(result.json())
 获取单条白板录制节目信息
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/JiaoYuUserInfo/getWisRecordInfo" \
+curl -X "POST" "http://58jinrongyun.com/api/JiaoYuUserInfo/getWisRecordInfo" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -335,7 +335,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/JiaoYuUserInfo/getWisRecordInfo
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/JiaoYuUserInfo/getWisRecordInfo',
+result = requests.post('http://58jinrongyun.com/api/JiaoYuUserInfo/getWisRecordInfo',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -372,7 +372,7 @@ print(result.json())
 获取网页启动发布工具命令行 需安装白板发布工具 跳过MCS帐号登陆
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/JiaoYuUserInfo/getWisPublishShell" \
+curl -X "POST" "http://58jinrongyun.com/api/JiaoYuUserInfo/getWisPublishShell" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -380,7 +380,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/JiaoYuUserInfo/getWisPublishShe
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/JiaoYuUserInfo/getWisPublishShell',
+result = requests.post('http://58jinrongyun.com/api/JiaoYuUserInfo/getWisPublishShell',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
