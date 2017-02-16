@@ -70,7 +70,7 @@ demo 使用 `plupload` 插件，也可以换成其他插件
 
 获取视频上传认证参数 需要总公司或子公司权限
 
-获取到的认证参数用于视频上传接口 [demo GitHub](https://github.com/aodianyunGroup/financeApiDoc/demo/upload)
+获取到的认证参数用于视频上传接口 [demo GitHub](https://github.com/aodianyunGroup/financeApiDoc/tree/master/demo/upload)
 
 视频上传完成之后需要调用 RoomVideo.addVodCaseTask 接口把视频分配给指定的子公司
 
