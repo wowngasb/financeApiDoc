@@ -1,0 +1,193 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no"> 
+<title>上传demo</title>
+<link href="./css/bootstrap.min.css?v=1.46" rel="stylesheet">
+<!--[if lt IE 9]>
+  <script src=".js/html5shiv.js"></script>
+  <script src=".js/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+    <div id="page-wrapper">
+        <div class="tab-content">
+            <p style="position: relative;"></p>
+            <div class="alert alert-info" role="alert">
+                <strong>注意：</strong><br>
+                <p>1.上传的视频文件单文件不能超过4G.</p>
+                <p>2.上传的视频格式必须是 *.avi *.f4v *.mpg *.mp4 *.flv *.wmv *.mov *.3gp *.rmvb *.mkv *.asf *.ts *.mts *.dat *.vob *.mp3
+                    *.wav *.m4v *.webm. </p>
+            </div>
+            <p style="position: relative;"></p>
+            <button type="button" class="btn btn-primary" id="selectFiles" style="position: relative; z-index: 1;">选择文件</button>
+            <button type="button" class="btn btn-success mgl10" onclick="beginUpload();">开始上传</button>
+            <div id="html5_1ak88d723g4q4td1l0r1kbh7n83_container" class="moxie-shim moxie-shim-html5"
+                 style="position: absolute; top: 0px; left: 0px; width: 82px; height: 34px; overflow: hidden; z-index: 0;">
+                <input id="html5_1ak88d723g4q4td1l0r1kbh7n83" type="file"
+                       style="font-size: 999px; opacity: 0; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"
+                       multiple="" accept="">
+            </div>
+        </p>
+        <p>上传文件大小：<span id="totalSize">0.00MB</span>&nbsp;&nbsp;&nbsp;&nbsp;上传进度：<span id="totalStatus">0.00%</span>&nbsp;&nbsp;&nbsp;&nbsp;上传速度：<span id="perSec">0.00Kb/s</span></p>
+        <!--table 表格 start-->
+        <div class="text-center">
+            <table class="table table-hover text-left" id="fileList">
+                <tbody>
+                <tr class="">
+                    <th width="40%">文件名</th>
+                    <th width="20%">大小</th>
+                    <th width="20%">进度</th>
+                    <th width="10%">状态</th>
+                    <th width="10%">操作</th>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--table 表格 end-->
+        <!-- /.container-fluid -->
+    </div>
+    <!-- /#page-wrapper -->
+
+    <!-- 错误提示 start -->
+    <div class="modal fade" id="showError" tabindex="-1" role="dialog" aria-labelledby="showErrorLabel"
+         style="display: none;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">×</span></button>
+                    <h4 class="modal-title" id="showErrorLabel">提示</h4>
+                </div>
+                <div class="modal-body" id="errorMsg">错误：无效的文件扩展名:plupload.full.min.js</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 错误提示 end -->
+
+    </div>
+
+</body>
+
+<script src="./js/jquery-1.11.1.min.js?v=1.46" type="text/javascript"></script>
+<script src="./js/bootstrap.min.js?v=1.46" type="text/javascript"></script>
+<script src="./plupload/plupload.full.min.js?v=1.46" type="text/javascript"></script>
+<script type="text/javascript">
+    var MULTIPART_PARAMS = {"access_id":"xxx","expires":1484106072,"signature":"xxx","signature_nonce":"335"};    //视频上传认证参数  通过 RoomVideo.getUploadAuthParams 接口获取
+
+    var uploaderObj = new plupload.Uploader({ //实例化一个plupload上传对象
+        browse_button: 'selectFiles',//触发文件选择对话框的按钮，为那个元素id
+        runtimes: 'html5,flash,silverlight,html4',
+        url: 'http://upload.dvr.aodianyun.com/v2/DVR.FormUpload',
+        chunk_size: '5000kb',   //分片大小  可以定义
+        max_retries: 3,   //分片上传  最大重试次数
+        filters: {
+            // Maximum file size
+            max_file_size: '4096mb',   //最大文件大小限制
+            // Select the duplicate files are not allowed
+            prevent_duplicates: true   //是否允许 多选文件
+        },
+        multipart_params: MULTIPART_PARAMS,   //上传认证参数
+        // Flash settings
+        flash_swf_url: './plupload/Moxie.swf',
+        // Silverlight settings
+        silverlight_xap_url: './plupload/Moxie.xap',
+        init: {
+            FileFiltered: function (uploader, file) {
+                var ext = ['.avi', '.f4v', '.mpg', '.mp4', '.flv', '.wmv', '.mov', '.3gp', '.rmvb', '.rm', '.mkv', '.asf', '.ts', '.mts', '.dat', '.vob', '.mp3', '.wav', '.m4v', '.webm'];
+                var type = file['name'].substr(file['name'].lastIndexOf('.')).toLowerCase();
+                if (ext.indexOf(type) == -1) {
+                    var errorMsg = "错误：无效的文件扩展名:" + file['name'];
+                    $('#errorMsg').html(errorMsg);
+                    $('#showError').modal('show');
+                    uploader.removeFile(file);
+                    return;
+                }
+                var html = '\
+            <tr id="file_' + file['id'] + '">\
+              <td>' + file['name'] + '</td>\
+              <td>' + (file['size'] / 1048576).toFixed(2) + ' MB</td>\
+              <td class="text-justify">\
+                <div class="progress" id="progress_' + file['id'] + '">\
+                  <div class="progress-bar" style="width:0%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" role="progressbar">0%</div>\
+                </div>\
+              </td>\
+              <td id="status_' + file['id'] + '">等待上传</td>\
+              <td><button type="button" class="btn btn-warning mgl10" onclick="removeFile(\'' + file['id'] + '\');">移除</button></td>\
+            </tr>\
+          ';
+                $('#fileList tbody').append(html);
+            },
+            UploadProgress: function (uploader, file) {
+                var progress = ((file['loaded'] / file['size']) * 100).toFixed(2);
+                var html = '<div class="progress-bar" style="width:' + progress + '%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="' + progress + '" role="progressbar">' + progress + '%</div>';
+                $('#progress_' + file['id']).html(html);
+                $('#status_' + file['id']).html('<span class="text-primary">上传中</span>');
+                changeTotal();
+            },
+            QueueChanged: function (uploader, file) {
+                changeTotal();
+            },
+            FileUploaded: function (uploader, file, responseObject) {
+                $('#status_' + file['id']).html('<span class="text-success">上传完成</span>');
+                var rst = $.parseJSON(responseObject.response);
+                if ( rst && rst.Flag == 100 && rst.location) {
+                    //视频上传完成  你可以调用异步接口 保存信息  
+                    //需要在此处调用 设置视频分类接口 把该视频分配给指定的子公司  参见 RoomVideo.addVodCaseTask  接口  
+                    //视频url：rst.locatio   视频文件名 file.name
+                    console.log("upload done", {res_url: rst.location, file_name: file.name});
+                }
+            },
+            ChunkUploaded: function (uploader, file, responseObject) {
+                if (responseObject.status != 200) {
+                    $('#file_' + file['id']).remove();
+                    uploader.removeFile(file);
+                    var errorMsg = "文件" + file['name'] + "在上传过程中遇到问题，请稍后重试";
+                    $('#errorMsg').html(errorMsg);
+                    $('#showError').modal('show');
+                    return;
+                }
+                var rst = $.parseJSON(responseObject.response);
+                if ( rst && rst.Flag != 100) {
+                    $('#file_' + file['id']).remove();
+                    uploader.removeFile(file);
+                    var errorMsg = "文件" + file['name'] + "上传失败，原因：" + rst.FlagString;
+                    $('#errorMsg').html(errorMsg);
+                    $('#showError').modal('show');
+                    return;
+                }
+            },
+            FilesRemoved: function (uploader, file) {
+                $('#file_' + file[0]['id']).remove();
+            }
+        }
+    });
+    uploaderObj.init(); //初始化
+
+    function beginUpload() {
+        uploaderObj.start();
+    }
+    function removeFile(id) {
+        uploaderObj.removeFile(id);
+    }
+    function changeTotal() {
+        var totalSize = (uploaderObj.total.size / 1048576).toFixed(2) + 'MB';
+        var totalStatus = ((uploaderObj.total.loaded / uploaderObj.total.size || 0) * 100).toFixed(2) + '%';
+        var perSec = (uploaderObj.total.bytesPerSec / 1024).toFixed(2) + 'Kb/s';
+        $('#totalSize').html(totalSize);
+        $('#totalStatus').html(totalStatus);
+        $('#perSec').html(perSec);
+    }
+
+</script>
+</html>

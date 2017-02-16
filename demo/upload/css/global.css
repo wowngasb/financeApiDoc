@@ -1,0 +1,187 @@
+html ,body{
+    height: 100%;
+    overflow-y: hidden;
+    font-family: '微软雅黑';
+}
+#wrapper{
+    height: 100%;
+    overflow-y: auto;
+}
+#wrapper-mobile{
+ left: 0px !important;
+}
+#page-wrapper{
+    position: absolute;
+    left: 158px;
+    right: 0;
+    top: 44px;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    overflow-y: auto;
+}
+@media(max-width: 800px){
+  .navbar-inverse{
+  	background-color: #2C3544 !important;
+  }
+}
+.u-text-orange{
+	color: #FD9753;
+}
+.u-text-gray{
+	color: #868686;
+}
+.u-text-black{
+	color: #000000;
+}
+.u-text-blue{
+	color: #0099CC;
+}
+.u-font-middle{
+	font-size: 20px;
+}
+.u-font-big{
+	font-size: 28px;
+}
+.u-input{
+	width: 200px;
+}
+.u-select a{
+	color: #ffffff;
+}
+/* 标题 title header start¨--*/
+.page-header span{
+	border-left: 2px solid #0099CC;
+	padding-left: 5px;
+}
+.page-head span{
+   padding-left: 5px;
+   font-size: 14px;
+   display: inline-block;
+}
+.g-header-position{
+	margin-top: 10px;
+}
+/* 标题 title header end--*/
+/*面板*/
+.g-panel-gray{
+	background-color: #F9F9F9;
+	border:2px solid #EEEEEE;
+}
+.g-panel-default{
+	background-color: #FFFFFF;
+	border:2px solid #EEEEEE;
+}
+.g-panel-inner-orange{
+	background-color: #FCF8E3;
+	border:1px solid #FBEED5;
+}
+
+/*tab*/
+.g-nav-tab > li > a {
+    padding: 10px 45px;
+}
+.nav-tabs > li > a {
+	background-color:#0275D8;
+	color: white;
+	margin-right: 15px;
+}
+.nav-tabs > li > a:hover{
+	background-color:#025AA5 ;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+	background-color:#449D44;
+	color: #ffffff;
+}
+/*导航*/
+.navbar-brand {
+    color: #fff;
+    font-size: 25px;
+}
+.navbar-name {
+    color: #fff;
+    font-size: 20px;
+}
+
+.g-side-bar .g-side-bar-title{
+      color: #fff;
+}
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover {
+    background-color:#3A6DA4;
+}
+.navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:hover {
+    background-color: #3A6DA4;
+    color: #fff;
+}
+/*table*/
+.g-table-panel .panel-body{
+  padding: 0;
+ } 
+ .g-table-panel .table{
+  margin-bottom: 0;  
+ }
+ .g-table-panel .table .g-td-style {
+  border-left: 1px solid #DDDDDD ;
+ }  
+
+.container-fluid thead{background-color: #F2F2F2}
+.container-fluid .table-div table, .container-fluid .table-div table th {text-align: center;}
+.container-fluid .table-div table .f-img1{width: 80px;height: 55px;}
+/*查询条件*/
+.feature .conditionSearch {
+	margin-top: 20px;
+}
+.conditionSearch {
+	margin-bottom: 20px;
+}
+.conditionSearch .f-div1{
+	margin-right: 10px;
+}
+.conditionSearch .f-img1{
+	width: 42px;
+	height: 33px;
+}
+/*翻页*/
+.page-div{text-align: center;}
+
+/*房间管理*/
+
+.g-room-manage .f-img1{
+	width: 120px;
+	height: 80px;
+	margin-right: 20px;
+}
+
+.g-room-manage .f-input1{
+	display: inline-block;
+	width: auto;
+}
+.g-room-manage .f-div1{
+	margin-top: 40px;
+}
+.g-room-manage .g-div1{
+	height: 120px;
+}
+.g-room-manage .g-div1 .f-div1{
+	text-align: center;
+	line-height: 120px;
+	display: none;
+}
+
+.g-room-manage .g-div1 .f-div2,.g-room-manage .g-div1 .f-div3{
+	text-align: center;
+	padding-top: 20px;
+	display: none;
+}
+
+.f-ml20{
+	margin-right: 20px;
+}
+
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a{
+	color: #23527c !important;
+}
+.webuploader-pick{
+  height: 24px !important;
+  line-height: 24px !important;
+}
