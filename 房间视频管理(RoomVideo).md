@@ -541,7 +541,6 @@ print(result.json())
 
 ```
 
-
 ## 停止房间视频发布(cutReplayOpMic)
 
 请求方式 GET POST 需要认证
@@ -574,6 +573,92 @@ print(result.json())
 {
     "Flag": 100,
     "FlagString": "操作成功"
+}
+```
+
+
+## 获取视频上传授权(getUploadAuthParams)
+
+请求方式 GET POST 需要认证
+
+获取视频上传认证参数 需要总公司或子公司权限
+
+获取到的认证参数用于视频上传接口 [demo GitHub](https://github.com/aodianyunGroup/financeApiDoc/demo/upload)
+
+视频上传完成之后需要调用 RoomVideo.addVodCaseTask 接口把视频分配给指定的子公司
+
+```shell
+curl -X "POST" "http://58jinrongyun.com/api/RoomVideo/cutReplayOpMic" \
+     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
+     -d "params"
+```
+
+```python
+import requests
+
+result = requests.post('http://58jinrongyun.com/api/RoomVideo/cutReplayOpMic',
+  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+  data=params)
+
+print(result.json())
+```
+
+| 字段                 | 描述                                          |
+| ---------------------- | ------------------------------------------------ |
+| admin_id             | `int`  客户id              |
+| expires             | `int`  授权信息有效期 单位为秒 上传期间需要一直有效 默认24小时   |
+
+
+> 返回结果如下:
+
+```
+{
+    "Flag": 100,
+    "FlagString": "获取成功",
+    "Info": {
+        "access_id": "xxxx",
+        "expires": xxxx,
+        "signature": "xxxx",
+        "signature_nonce": "706"
+    }
+}
+```
+
+## 分配上传视频(addVodCaseTask)
+
+请求方式 GET POST 需要认证
+
+分配上传完成的视频给指定的子公司 需要子公司或总公司权限
+
+```shell
+curl -X "POST" "http://58jinrongyun.com/api/RoomVideo/cutReplayOpMic" \
+     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
+     -d "params"
+```
+
+```python
+import requests
+
+result = requests.post('http://58jinrongyun.com/api/RoomVideo/cutReplayOpMic',
+  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+  data=params)
+
+print(result.json())
+```
+
+| 字段                 | 描述                                          |
+| ---------------------- | ------------------------------------------------ |
+| admin_id             | `int`  客户id              |
+| res_url             | `string`  视频url 上传完成之口可以获取到   |
+| file_name           | `string`  视频文件名  |
+
+
+> 返回结果如下:
+
+```
+{
+    "Flag": 100,
+    "FlagString": "设置成功"
 }
 ```
 
