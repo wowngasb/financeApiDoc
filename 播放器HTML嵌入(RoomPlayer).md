@@ -6,13 +6,13 @@
 
 引用 dyyplayer.js 然后在js代码中生成 播放器 需要必须参数 房间ID 和 播放器容器ID
 
-[测试页面](http://finance.aodianyun.com/helper/room1.php?room_id=1000)
+[测试页面](http://58jinrongyun.com/helper/room1.php?room_id=1000)
 
 > 嵌入页面代码：
 
 ```html
 <script type="text/javascript" src="http://cdn.aodianyun.com/static/jquery/jquery-1.7.2.min.js"></script><!-- jquery地址也可使用您的地址 -->
-<script type="text/javascript" src="http://finance.aodianyun.com/helper/dyyplayer.js?v=1.02"></script>
+<script type="text/javascript" src="http://58jinrongyun.com/helper/dyyplayer.js?v=1.02"></script>
 <div id="play-container" style="width: 800px;height: 600px;"></div>
 <script type="text/javascript">
 var playerVar = new dyyPlayer({
@@ -33,7 +33,7 @@ var playerVar = new dyyPlayer({
 
 在房间管理页面可获取视频播放器HTML嵌入代码
 
-[测试页面](http://finance.aodianyun.com/helper/room2.php?room_id=1000)
+[测试页面](http://58jinrongyun.com/helper/room2.php?room_id=1000)
 
 
 ### 步骤
@@ -49,7 +49,7 @@ var playerVar = new dyyPlayer({
 ```html
 <div id="play-container" style="width: 800px;height: 600px;"></div>
 <script type="text/javascript" src="http://cdn.aodianyun.com/static/jquery/jquery-1.7.2.min.js"></script><!-- jquery地址也可使用您的地址 -->
-<script type="text/javascript" src="http://finance.aodianyun.com/helper/room_player.js?r=1000&id=play-container"></script>
+<script type="text/javascript" src="http://58jinrongyun.com/helper/room_player.js?r=1000&id=play-container"></script>
 ```
 
 播放器嵌入后，页面可以使用全局变量 objectPlayer 对象控制播放器
@@ -60,22 +60,22 @@ var playerVar = new dyyPlayer({
 
 学生端观看 只需获取到 房间id 即可观看
 
-[测试页面](http://finance.aodianyun.com/helper/roomwis.php?room_id=1478)
+[测试页面](http://58jinrongyun.com/helper/roomwis.php?room_id=1478)
 
 ```html
 <iframe id="wis-container" style="width: 800px;height: 600px;"></iframe>
-<script type="text/javascript" src="http://finance.aodianyun.com/helper/room_wis.js?r=1478&id=wis-container"></script>
+<script type="text/javascript" src="http://58jinrongyun.com/helper/room_wis.js?r=1478&id=wis-container"></script>
 ```
 
 ## 教师白板嵌入
 
 教师端需调用API[接口](#生成房间token（getauthtoken）)获取到 认证token之后才可使用 
 
-[测试页面](http://finance.aodianyun.com/helper/roomwis.php?room_id=1478&token=a07dVZvHzZPe8GZEAePcC3loHl8Tn5cBXyPpy3qrcdyLqCFhBCbaBJXQdbox)
+[测试页面](http://58jinrongyun.com/helper/roomwis.php?room_id=1478&token=a07dVZvHzZPe8GZEAePcC3loHl8Tn5cBXyPpy3qrcdyLqCFhBCbaBJXQdbox)
 
 ```html
 <iframe id="wis-container" style="width: 800px;height: 600px;"></iframe>
-<script type="text/javascript" src="http://finance.aodianyun.com/helper/room_wis.js?r=1478&token=a07dVZvHzZPe8GZEAePcC3loHl8Tn5cBXyPpy3qrcdyLqCFhBCbaBJXQdbox&id=wis-container"></script>
+<script type="text/javascript" src="http://58jinrongyun.com/helper/room_wis.js?r=1478&token=a07dVZvHzZPe8GZEAePcC3loHl8Tn5cBXyPpy3qrcdyLqCFhBCbaBJXQdbox&id=wis-container"></script>
 ```
 
 ## 注意事项

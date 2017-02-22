@@ -9,7 +9,7 @@
 销毁 VLSS 虚拟演播厅
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomLcps/removeVlssApp" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomLcps/removeVlssApp" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -17,7 +17,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomLcps/removeVlssApp" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomLcps/removeVlssApp',
+result = requests.post('http://58jinrongyun.com/api/RoomLcps/removeVlssApp',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -47,7 +47,7 @@ print(result.json())
 修改 VLSS 虚拟演播厅
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomLcps/editVlssApp" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomLcps/editVlssApp" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -55,7 +55,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomLcps/editVlssApp" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomLcps/editVlssApp',
+result = requests.post('http://58jinrongyun.com/api/RoomLcps/editVlssApp',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -87,7 +87,7 @@ print(result.json())
 把导播台分配给指定的子公司
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomLcps/setLcpsOwner" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomLcps/setLcpsOwner" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -95,7 +95,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomLcps/setLcpsOwner" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomLcps/setLcpsOwner',
+result = requests.post('http://58jinrongyun.com/api/RoomLcps/setLcpsOwner',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -125,7 +125,7 @@ print(result.json())
 导播台输出配置
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomLcps/setLcpsOutPut" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomLcps/setLcpsOutPut" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -133,7 +133,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomLcps/setLcpsOutPut" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomLcps/setLcpsOutPut',
+result = requests.post('http://58jinrongyun.com/api/RoomLcps/setLcpsOutPut',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -163,7 +163,7 @@ print(result.json())
 获取 VLSS 列表 获取uin的 VLSS 列表 并根据admin_id 进行过滤
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomLcps/getVlssAppList" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomLcps/getVlssAppList" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -171,7 +171,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomLcps/getVlssAppList" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomLcps/getVlssAppList',
+result = requests.post('http://58jinrongyun.com/api/RoomLcps/getVlssAppList',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
