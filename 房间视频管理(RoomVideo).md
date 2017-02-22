@@ -585,12 +585,12 @@ print(result.json())
 
 获取视频上传认证参数 需要总公司或子公司权限
 
-获取到的认证参数用于视频上传接口 [demo GitHub](https://github.com/aodianyunGroup/financeApiDoc/demo/upload)
+获取到的认证参数用于视频上传接口 [demo GitHub](https://github.com/aodianyunGroup/financeApiDoc/tree/master/demo/upload)
 
 视频上传完成之后需要调用 RoomVideo.addVodCaseTask 接口把视频分配给指定的子公司
 
 ```shell
-curl -X "POST" "http://58jinrongyun.com/api/RoomVideo/cutReplayOpMic" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomVideo/getUploadAuthParams" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -598,7 +598,7 @@ curl -X "POST" "http://58jinrongyun.com/api/RoomVideo/cutReplayOpMic" \
 ```python
 import requests
 
-result = requests.post('http://58jinrongyun.com/api/RoomVideo/cutReplayOpMic',
+result = requests.post('http://58jinrongyun.com/api/RoomVideo/getUploadAuthParams',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -633,7 +633,7 @@ print(result.json())
 分配上传完成的视频给指定的子公司 需要子公司或总公司权限
 
 ```shell
-curl -X "POST" "http://58jinrongyun.com/api/RoomVideo/cutReplayOpMic" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomVideo/addVodCaseTask" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -641,7 +641,7 @@ curl -X "POST" "http://58jinrongyun.com/api/RoomVideo/cutReplayOpMic" \
 ```python
 import requests
 
-result = requests.post('http://58jinrongyun.com/api/RoomVideo/cutReplayOpMic',
+result = requests.post('http://58jinrongyun.com/api/RoomVideo/addVodCaseTask',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -672,7 +672,7 @@ print(result.json())
 使用MPS播放器播放点播视频  需要所属子公司权限
 
 ```shell
-curl -X "POST" "http://58jinrongyun.com/api/RoomVideo/cutReplayOpMic" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomVideo/newMpsPlayerByVod" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -680,7 +680,7 @@ curl -X "POST" "http://58jinrongyun.com/api/RoomVideo/cutReplayOpMic" \
 ```python
 import requests
 
-result = requests.post('http://58jinrongyun.com/api/RoomVideo/cutReplayOpMic',
+result = requests.post('http://58jinrongyun.com/api/RoomVideo/newMpsPlayerByVod',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
