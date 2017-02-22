@@ -737,12 +737,9 @@ print(result.json())
 
 ```
 {
-    "Flag": 100,
-    "rows": {
-        "Flag": 100,
-        "FlagString": "操作成功",
-        "List": []
-    }
+  "Flag": 100,
+  "FlagString": "操作成功",
+  "List": []
 }
 ```
 
