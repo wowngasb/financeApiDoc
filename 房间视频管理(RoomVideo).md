@@ -707,11 +707,11 @@ print(result.json())
 }
 ```
 
-## 取用户视频的码率(getUserDvrTranscoding)
+## 获取正在转码的视频列表(getUserDvrTranscoding)
 
 请求方式 GET POST 需要认证
 
-取用户视频的码率  需要所属子公司权限
+获取正在转码的视频列表  需要所属子公司权限
 
 ```shell
 curl -X "POST" "http://finance.aodianyun.com/api/RoomVideo/getUserDvrTranscoding" \
