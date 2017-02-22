@@ -32,6 +32,8 @@ print(result.json())
 | num              | `int`  每页列表数量        |
 | page             | `int`  页数       |
 | type              | `string`  视频类型   7DayDvrList 临时存储   DvrList永久存储   UploadVodList上传视频      |
+| url             | `string`  视频网址       |
+| title             | `string`  视频标题       |
 
 > 返回结果如下:
 
@@ -617,6 +619,83 @@ print(result.json())
     "FlagString": "操作成功",
     "Id": "f6b1Hz113bbUWxyy",   //用于 网页 mpsPlayer 播放器 参数中的 appId
     "uin": 1436  //用于 网页 mpsPlayer 播放器 参数中的 uin
+}
+```
+
+## 取用户视频的码率(getUserDvrTranscoding)
+
+请求方式 GET POST 需要认证
+
+取用户视频的码率  需要所属子公司权限
+
+```shell
+curl -X "POST" "http://finance.aodianyun.com/api/RoomVideo/getUserDvrTranscoding" \
+     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
+     -d "params"
+```
+
+```python
+import requests
+
+result = requests.post('http://finance.aodianyun.com/api/RoomVideo/getUserDvrTranscoding',
+  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+  data=params)
+
+print(result.json())
+```
+
+| 字段                 | 描述                                          |
+| ---------------------- | ------------------------------------------------------ |
+| admin_id             | `int`  用户id    |
+
+> 返回结果如下:
+
+```
+{
+    "Flag": 100,
+    "rows": {
+        "Flag": 100,
+        "FlagString": "操作成功",
+        "List": []
+    }
+}
+```
+
+## 视频转码(getDvrSubmitTranscoding)
+
+请求方式 GET POST 需要认证
+
+视频转码  需要所属子公司权限
+
+```shell
+curl -X "POST" "http://finance.aodianyun.com/api/RoomVideo/getDvrSubmitTranscoding" \
+     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
+     -d "params"
+```
+
+```python
+import requests
+
+result = requests.post('http://finance.aodianyun.com/api/RoomVideo/getDvrSubmitTranscoding',
+  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+  data=params)
+
+print(result.json())
+```
+
+| 字段                 | 描述                                          |
+| ---------------------- | ------------------------------------------------------ |
+| admin_id             | `int`  用户id    |
+| url             | `array`  视频url地址    |
+| videoRate             | `string` 视频分辨率   |
+| notify             | `string`  notify为 live 或者 upload，分别代表直播存储、上传存储     |
+| format             | `string`  固定mp4    |
+
+> 返回结果如下:
+
+```
+{
+  
 }
 ```
 
