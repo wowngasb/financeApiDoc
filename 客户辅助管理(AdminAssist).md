@@ -9,7 +9,7 @@
 获取 DVR 视频上传自动转码 配置  对应奥点（uin）
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/getUpDvrTransConfig" \
+curl -X "POST" "http://58jinrongyun.com/api/AdminAssist/getUpDvrTransConfig" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -17,7 +17,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/getUpDvrTransConfig
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/AdminAssist/getUpDvrTransConfig',
+result = requests.post('http://58jinrongyun.com/api/AdminAssist/getUpDvrTransConfig',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -55,7 +55,7 @@ print(result.json())
 设置 DVR 视频上传自动转码 配置  对应奥点（uin）
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/setUpDvrTransConfig" \
+curl -X "POST" "http://58jinrongyun.com/api/AdminAssist/setUpDvrTransConfig" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -63,7 +63,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/setUpDvrTransConfig
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/AdminAssist/setUpDvrTransConfig',
+result = requests.post('http://58jinrongyun.com/api/AdminAssist/setUpDvrTransConfig',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -93,7 +93,7 @@ print(result.json())
 获取 DVR 视频上传自动同步 配置  对应奥点（uin）
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/getVodUpVodConfig" \
+curl -X "POST" "http://58jinrongyun.com/api/AdminAssist/getVodUpVodConfig" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -101,7 +101,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/getVodUpVodConfig" 
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/AdminAssist/getVodUpVodConfig',
+result = requests.post('http://58jinrongyun.com/api/AdminAssist/getVodUpVodConfig',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -133,7 +133,7 @@ print(result.json())
 设置 DVR 视频上传自动同步 配置  对应奥点（uin）
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/setVodUpVodConfig" \
+curl -X "POST" "http://58jinrongyun.com/api/AdminAssist/setVodUpVodConfig" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -141,7 +141,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/setVodUpVodConfig" 
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/AdminAssist/setVodUpVodConfig',
+result = requests.post('http://58jinrongyun.com/api/AdminAssist/setVodUpVodConfig',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -174,7 +174,7 @@ print(result.json())
 获取 DVR 视频上传DRM加密 配置  对应奥点（uin）
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/getDvrDrmConfig" \
+curl -X "POST" "http://58jinrongyun.com/api/AdminAssist/getDvrDrmConfig" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -182,7 +182,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/getDvrDrmConfig" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/AdminAssist/getDvrDrmConfig',
+result = requests.post('http://58jinrongyun.com/api/AdminAssist/getDvrDrmConfig',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -222,7 +222,7 @@ print(result.json())
 设置 DVR 视频上传DRM加密 配置  对应奥点（uin）
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/setDvrDrmConfig" \
+curl -X "POST" "http://58jinrongyun.com/api/AdminAssist/setDvrDrmConfig" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -230,7 +230,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/setDvrDrmConfig" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/AdminAssist/setDvrDrmConfig',
+result = requests.post('http://58jinrongyun.com/api/AdminAssist/setDvrDrmConfig',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -258,7 +258,7 @@ print(result.json())
 获取 VOD点播域名配置 黑白名单 对应奥点（uin）
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/getVodDomainRef" \
+curl -X "POST" "http://58jinrongyun.com/api/AdminAssist/getVodDomainRef" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -266,7 +266,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/getVodDomainRef" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/AdminAssist/getVodDomainRef',
+result = requests.post('http://58jinrongyun.com/api/AdminAssist/getVodDomainRef',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -305,7 +305,7 @@ print(result.json())
 设置 VOD点播域名配置 黑白名单 对应奥点（uin）
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/setVodDomainRef" \
+curl -X "POST" "http://58jinrongyun.com/api/AdminAssist/setVodDomainRef" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -313,7 +313,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/setVodDomainRef" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/AdminAssist/setVodDomainRef',
+result = requests.post('http://58jinrongyun.com/api/AdminAssist/setVodDomainRef',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -346,7 +346,7 @@ print(result.json())
 获取 VOD点播域名列表 对应奥点（uin）
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/listVodDomainRef" \
+curl -X "POST" "http://58jinrongyun.com/api/AdminAssist/listVodDomainRef" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -354,7 +354,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/listVodDomainRef" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/AdminAssist/listVodDomainRef',
+result = requests.post('http://58jinrongyun.com/api/AdminAssist/listVodDomainRef',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -394,7 +394,7 @@ print(result.json())
 需要准备自己的域名 并CNAME 指向 直播存储 XXXX.live-vod.cdn.aodianyun.com  上传存储XXXX.long-vod.cdn.aodianyun.com 
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/addVodDomainRef" \
+curl -X "POST" "http://58jinrongyun.com/api/AdminAssist/addVodDomainRef" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -402,7 +402,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/addVodDomainRef" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/AdminAssist/addVodDomainRef',
+result = requests.post('http://58jinrongyun.com/api/AdminAssist/addVodDomainRef',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -431,7 +431,7 @@ print(result.json())
 检查并启用 VOD点播域名 对应奥点（uin）
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/checkVodDomainRef" \
+curl -X "POST" "http://58jinrongyun.com/api/AdminAssist/checkVodDomainRef" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -439,7 +439,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/checkVodDomainRef" 
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/AdminAssist/checkVodDomainRef',
+result = requests.post('http://58jinrongyun.com/api/AdminAssist/checkVodDomainRef',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -468,7 +468,7 @@ print(result.json())
 停用并移除 VOD点播域名 对应奥点（uin）
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/removeVodDomainRef" \
+curl -X "POST" "http://58jinrongyun.com/api/AdminAssist/removeVodDomainRef" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -476,7 +476,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/removeVodDomainRef"
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/AdminAssist/removeVodDomainRef',
+result = requests.post('http://58jinrongyun.com/api/AdminAssist/removeVodDomainRef',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -505,7 +505,7 @@ print(result.json())
 设置 LSS直播APP 域名白名单  最多5个 对应奥点（uin）
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/setSubAdminDns" \
+curl -X "POST" "http://58jinrongyun.com/api/AdminAssist/setSubAdminDns" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -513,7 +513,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/setSubAdminDns" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/AdminAssist/setSubAdminDns',
+result = requests.post('http://58jinrongyun.com/api/AdminAssist/setSubAdminDns',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -542,7 +542,7 @@ print(result.json())
 获取 LSS直播APP 域名白名单  最多5个 对应奥点（uin）
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/getSubAdminDns" \
+curl -X "POST" "http://58jinrongyun.com/api/AdminAssist/getSubAdminDns" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -550,7 +550,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/getSubAdminDns" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/AdminAssist/getSubAdminDns',
+result = requests.post('http://58jinrongyun.com/api/AdminAssist/getSubAdminDns',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -585,7 +585,7 @@ print(result.json())
 获取 webhook 异步通知 配置信息  对应总公司
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/getWebHookConfig" \
+curl -X "POST" "http://58jinrongyun.com/api/AdminAssist/getWebHookConfig" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -593,7 +593,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/getWebHookConfig" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/AdminAssist/getWebHookConfig',
+result = requests.post('http://58jinrongyun.com/api/AdminAssist/getWebHookConfig',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -610,7 +610,7 @@ print(result.json())
 {
     "Flag": 100,
     "Info": {
-        "url": "http://finance.aodianyun.com/cache/webhook.php",
+        "url": "http://58jinrongyun.com/cache/webhook.php",
         "content_type": "application/x-www-form-urlencoded",
         "secret": "adeawda",
         "event": {
@@ -631,7 +631,7 @@ print(result.json())
 设置 webhook 异步通知 配置信息  对应总公司
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/setWebHookConfig" \
+curl -X "POST" "http://58jinrongyun.com/api/AdminAssist/setWebHookConfig" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -639,7 +639,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/setWebHookConfig" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/AdminAssist/setWebHookConfig',
+result = requests.post('http://58jinrongyun.com/api/AdminAssist/setWebHookConfig',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -671,7 +671,7 @@ print(result.json())
 获取 房间 发布流畅度相关信息  需要总公司权限 或者 所属子公司权限
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/getRoomPublishInfo" \
+curl -X "POST" "http://58jinrongyun.com/api/AdminAssist/getRoomPublishInfo" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -679,7 +679,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/getRoomPublishInfo"
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/AdminAssist/getRoomPublishInfo',
+result = requests.post('http://58jinrongyun.com/api/AdminAssist/getRoomPublishInfo',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -755,7 +755,7 @@ print(result.json())
 获取 Lss app 发布流畅度相关信息 只获取正在直播的房间  需要总公司权限 或者 所属子公司权限
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/getAdminPublishRoom" \
+curl -X "POST" "http://58jinrongyun.com/api/AdminAssist/getAdminPublishRoom" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -763,7 +763,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/getAdminPublishRoom
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/AdminAssist/getAdminPublishRoom',
+result = requests.post('http://58jinrongyun.com/api/AdminAssist/getAdminPublishRoom',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -798,7 +798,7 @@ print(result.json())
 获取 管理员限制相关信息 需要 自身 或所属 总公司权限
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/getLimitInfo" \
+curl -X "POST" "http://58jinrongyun.com/api/AdminAssist/getLimitInfo" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -806,7 +806,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/AdminAssist/getLimitInfo" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/AdminAssist/getLimitInfo',
+result = requests.post('http://58jinrongyun.com/api/AdminAssist/getLimitInfo',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 

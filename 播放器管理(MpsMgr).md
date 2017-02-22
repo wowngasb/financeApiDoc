@@ -9,7 +9,7 @@ MPS播放器设置功能相关操作
 根据admin_id 创建Mps播放器
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/MpsMgr/newMpsItem" \
+curl -X "POST" "http://58jinrongyun.com/api/MpsMgr/newMpsItem" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -17,7 +17,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/MpsMgr/newMpsItem" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/MpsMgr/newMpsItem',
+result = requests.post('http://58jinrongyun.com/api/MpsMgr/newMpsItem',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -54,7 +54,7 @@ print(result.json())
 获取指定admin_id 已创建的播放器列表
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/MpsMgr/listMpsItem" \
+curl -X "POST" "http://58jinrongyun.com/api/MpsMgr/listMpsItem" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -62,7 +62,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/MpsMgr/listMpsItem" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/MpsMgr/listMpsItem',
+result = requests.post('http://58jinrongyun.com/api/MpsMgr/listMpsItem',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -96,7 +96,7 @@ print(result.json())
 获取指定mps_id的播放器的详细信息
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/MpsMgr/listMpsItem" \
+curl -X "POST" "http://58jinrongyun.com/api/MpsMgr/listMpsItem" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -104,7 +104,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/MpsMgr/listMpsItem" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/MpsMgr/listMpsItem',
+result = requests.post('http://58jinrongyun.com/api/MpsMgr/listMpsItem',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -153,7 +153,7 @@ print(result.json())
 设置MPS播放器的logo
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/MpsMgr/editLogo" \
+curl -X "POST" "http://58jinrongyun.com/api/MpsMgr/editLogo" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -161,7 +161,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/MpsMgr/editLogo" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/MpsMgr/editLogo',
+result = requests.post('http://58jinrongyun.com/api/MpsMgr/editLogo',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -198,7 +198,7 @@ print(result.json())
 清除MPS播放器的logo
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/MpsMgr/clearLogo" \
+curl -X "POST" "http://58jinrongyun.com/api/MpsMgr/clearLogo" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -206,7 +206,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/MpsMgr/clearLogo" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/MpsMgr/clearLogo',
+result = requests.post('http://58jinrongyun.com/api/MpsMgr/clearLogo',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -240,7 +240,7 @@ print(result.json())
 修改MPS播放器的名称
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/MpsMgr/editName" \
+curl -X "POST" "http://58jinrongyun.com/api/MpsMgr/editName" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -248,7 +248,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/MpsMgr/editName" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/MpsMgr/editName',
+result = requests.post('http://58jinrongyun.com/api/MpsMgr/editName',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -280,7 +280,7 @@ print(result.json())
 设置MPS水印
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/MpsMgr/editWatermark" \
+curl -X "POST" "http://58jinrongyun.com/api/MpsMgr/editWatermark" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -288,7 +288,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/MpsMgr/editWatermark" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/MpsMgr/editWatermark',
+result = requests.post('http://58jinrongyun.com/api/MpsMgr/editWatermark',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -321,7 +321,7 @@ print(result.json())
 清除第一块水印
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/MpsMgr/clearWatermark" \
+curl -X "POST" "http://58jinrongyun.com/api/MpsMgr/clearWatermark" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -329,7 +329,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/MpsMgr/clearWatermark" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/MpsMgr/clearWatermark',
+result = requests.post('http://58jinrongyun.com/api/MpsMgr/clearWatermark',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -358,7 +358,7 @@ print(result.json())
 清除第一块水印
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/MpsMgr/clearWatermark2" \
+curl -X "POST" "http://58jinrongyun.com/api/MpsMgr/clearWatermark2" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -366,7 +366,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/MpsMgr/clearWatermark2" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/MpsMgr/clearWatermark2',
+result = requests.post('http://58jinrongyun.com/api/MpsMgr/clearWatermark2',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -396,7 +396,7 @@ print(result.json())
 设置浮动信息显示
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/MpsMgr/editSupernatant" \
+curl -X "POST" "http://58jinrongyun.com/api/MpsMgr/editSupernatant" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -404,7 +404,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/MpsMgr/editSupernatant" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/MpsMgr/editSupernatant',
+result = requests.post('http://58jinrongyun.com/api/MpsMgr/editSupernatant',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 

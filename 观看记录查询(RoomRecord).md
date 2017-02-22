@@ -9,7 +9,7 @@
 获取房间在线人数记录
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomRecord/listRoomRecord" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomRecord/listRoomRecord" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -17,7 +17,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomRecord/listRoomRecord" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomRecord/listRoomRecord',
+result = requests.post('http://58jinrongyun.com/api/RoomRecord/listRoomRecord',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -71,7 +71,7 @@ print(result.json())
 获取子公司在线人数记录
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomRecord/listAppRecord" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomRecord/listAppRecord" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -79,7 +79,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomRecord/listAppRecord" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomRecord/listAppRecord',
+result = requests.post('http://58jinrongyun.com/api/RoomRecord/listAppRecord',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -133,7 +133,7 @@ print(result.json())
 获取房间IP访问记录
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomRecord/listRoomIpDistribution" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomRecord/listRoomIpDistribution" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -141,7 +141,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomRecord/listRoomIpDistributi
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomRecord/listRoomIpDistribution',
+result = requests.post('http://58jinrongyun.com/api/RoomRecord/listRoomIpDistribution',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -183,7 +183,7 @@ print(result.json())
 获取子公司IP访问记录
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomRecord/listAppIpDistribution" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomRecord/listAppIpDistribution" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -191,7 +191,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomRecord/listAppIpDistributio
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomRecord/listAppIpDistribution',
+result = requests.post('http://58jinrongyun.com/api/RoomRecord/listAppIpDistribution',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -233,7 +233,7 @@ print(result.json())
 获取房间观看记录
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomRecord/listRoomViewRecord" \
+curl -X "POST" "http://58jinrongyun.com/api/RoomRecord/listRoomViewRecord" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -241,7 +241,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/RoomRecord/listRoomViewRecord" 
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/RoomRecord/listRoomViewRecord',
+result = requests.post('http://58jinrongyun.com/api/RoomRecord/listRoomViewRecord',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
