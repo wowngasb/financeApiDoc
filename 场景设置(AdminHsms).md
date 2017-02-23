@@ -9,7 +9,7 @@
 创建场景组
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/AdminHsms/newHsmsGroup" \
+curl -X "POST" "http://58jinrongyun.com/api/AdminHsms/newHsmsGroup" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -17,7 +17,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/AdminHsms/newHsmsGroup" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/AdminHsms/newHsmsGroup',
+result = requests.post('http://58jinrongyun.com/api/AdminHsms/newHsmsGroup',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -51,7 +51,7 @@ print(result.json())
 修改场景组状态
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/AdminHsms/stateHsmsGroup" \
+curl -X "POST" "http://58jinrongyun.com/api/AdminHsms/stateHsmsGroup" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -59,7 +59,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/AdminHsms/stateHsmsGroup" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/AdminHsms/stateHsmsGroup',
+result = requests.post('http://58jinrongyun.com/api/AdminHsms/stateHsmsGroup',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -88,7 +88,7 @@ print(result.json())
 修改场景组状态
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/AdminHsms/updateHsmsGroup" \
+curl -X "POST" "http://58jinrongyun.com/api/AdminHsms/updateHsmsGroup" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -96,7 +96,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/AdminHsms/updateHsmsGroup" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/AdminHsms/updateHsmsGroup',
+result = requests.post('http://58jinrongyun.com/api/AdminHsms/updateHsmsGroup',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -127,7 +127,7 @@ print(result.json())
 获取场景列表
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/AdminHsms/listHsmsGroup" \
+curl -X "POST" "http://58jinrongyun.com/api/AdminHsms/listHsmsGroup" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -135,7 +135,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/AdminHsms/listHsmsGroup" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/AdminHsms/listHsmsGroup',
+result = requests.post('http://58jinrongyun.com/api/AdminHsms/listHsmsGroup',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -194,7 +194,7 @@ print(result.json())
 设置更新场景组配置
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/AdminHsms/updateHsmsGroupConfig" \
+curl -X "POST" "http://58jinrongyun.com/api/AdminHsms/updateHsmsGroupConfig" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -202,7 +202,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/AdminHsms/updateHsmsGroupConfig
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/AdminHsms/updateHsmsGroupConfig',
+result = requests.post('http://58jinrongyun.com/api/AdminHsms/updateHsmsGroupConfig',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -231,7 +231,7 @@ print(result.json())
 改变场景状态
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/AdminHsms/stateHsmsScene" \
+curl -X "POST" "http://58jinrongyun.com/api/AdminHsms/stateHsmsScene" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -239,7 +239,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/AdminHsms/stateHsmsScene" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/AdminHsms/stateHsmsScene',
+result = requests.post('http://58jinrongyun.com/api/AdminHsms/stateHsmsScene',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -268,7 +268,7 @@ print(result.json())
 设置更新场景配置
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/AdminHsms/updateHsmsSceneConfig" \
+curl -X "POST" "http://58jinrongyun.com/api/AdminHsms/updateHsmsSceneConfig" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -276,7 +276,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/AdminHsms/updateHsmsSceneConfig
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/AdminHsms/updateHsmsSceneConfig',
+result = requests.post('http://58jinrongyun.com/api/AdminHsms/updateHsmsSceneConfig',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -305,7 +305,7 @@ print(result.json())
 更新场景
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/AdminHsms/updateHsmsScene" \
+curl -X "POST" "http://58jinrongyun.com/api/AdminHsms/updateHsmsScene" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -313,7 +313,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/AdminHsms/updateHsmsScene" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/AdminHsms/updateHsmsScene',
+result = requests.post('http://58jinrongyun.com/api/AdminHsms/updateHsmsScene',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -344,7 +344,7 @@ print(result.json())
 新建场景
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/AdminHsms/newHsmsScene" \
+curl -X "POST" "http://58jinrongyun.com/api/AdminHsms/newHsmsScene" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -352,7 +352,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/AdminHsms/newHsmsScene" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/AdminHsms/newHsmsScene',
+result = requests.post('http://58jinrongyun.com/api/AdminHsms/newHsmsScene',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 
@@ -389,7 +389,7 @@ print(result.json())
 获取场景列表
 
 ```shell
-curl -X "POST" "http://finance.aodianyun.com/api/AdminHsms/listHsmsScene" \
+curl -X "POST" "http://58jinrongyun.com/api/AdminHsms/listHsmsScene" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
      -d "params"
 ```
@@ -397,7 +397,7 @@ curl -X "POST" "http://finance.aodianyun.com/api/AdminHsms/listHsmsScene" \
 ```python
 import requests
 
-result = requests.post('http://finance.aodianyun.com/api/AdminHsms/listHsmsScene',
+result = requests.post('http://58jinrongyun.com/api/AdminHsms/listHsmsScene',
   headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
   data=params)
 

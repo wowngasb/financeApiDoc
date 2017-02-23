@@ -11,7 +11,7 @@ local http=require("socket.http")
 local HttpApi = {}             -- Public namespace
 local __HttpApi = {}     -- Private namespace
 
-__HttpApi.api_host = "http://my.app"    -- 修改为API域名  http://finance.aodianyun.com
+__HttpApi.api_host = "http://my.app"    -- 修改为API域名  http://58jinrongyun.com
 __HttpApi.api_key = "3bddc47e7cc05e1d8f488f2562969a33"   -- 修改为你的API key
   
 function HttpApi.post(module, api, params)

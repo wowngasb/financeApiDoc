@@ -3,7 +3,7 @@ import requests
 import json
 
 class HttpApi(object):
-    __api_host = "http://my.app"    # 修改为API域名  http://finance.aodianyun.com
+    __api_host = "http://my.app"    # 修改为API域名  http://58jinrongyun.com
     __api_key = "3bddc47e7cc05e1d8f488f2562969a33"  # 修改为你的API key
 
     @classmethod

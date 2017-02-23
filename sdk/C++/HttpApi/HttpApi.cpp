@@ -34,7 +34,7 @@ wstring s2ws(const string& s) {
 
 json::value HttpApiPost(wstring module, wstring api, json::value params)
 {
-	const auto api_host = L"http://my.app";    // 修改为API域名  http ://finance.aodianyun.com
+	const auto api_host = L"http://my.app";    // 修改为API域名  http ://58jinrongyun.com
 	const auto api_key = L"3bddc47e7cc05e1d8f488f2562969a33";   //  修改为你的API key
 
 	wstring query_path = L"/api/";

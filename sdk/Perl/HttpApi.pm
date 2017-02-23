@@ -3,7 +3,7 @@ package HttpApi;
 use LWP::UserAgent;
 use JSON;
 
-my $api_host = "http://my.app";    # 修改为API域名  http://finance.aodianyun.com
+my $api_host = "http://my.app";    # 修改为API域名  http://58jinrongyun.com
 my $api_key = "3bddc47e7cc05e1d8f488f2562969a33";   # 修改为你的API key
 
 

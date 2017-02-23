@@ -6,7 +6,7 @@
 
 请求方式 POST 需要认证
 
-获取 DVR 视频上传自动转码 配置  对应奥点（uin）
+获取 DVR 视频上传自动转码 配置  对应（uin）
 
 ```shell
 curl -X "POST" "http://58jinrongyun.com/api/AdminAssist/getUpDvrTransConfig" \
@@ -52,7 +52,7 @@ print(result.json())
 
 请求方式 POST 需要认证
 
-设置 DVR 视频上传自动转码 配置  对应奥点（uin）
+设置 DVR 视频上传自动转码 配置  对应（uin）
 
 ```shell
 curl -X "POST" "http://58jinrongyun.com/api/AdminAssist/setUpDvrTransConfig" \
@@ -90,7 +90,7 @@ print(result.json())
 
 请求方式 POST 需要认证
 
-获取 DVR 视频上传自动同步 配置  对应奥点（uin）
+获取 DVR 视频上传自动同步 配置  对应（uin）
 
 ```shell
 curl -X "POST" "http://58jinrongyun.com/api/AdminAssist/getVodUpVodConfig" \
@@ -130,7 +130,7 @@ print(result.json())
 
 请求方式 POST 需要认证
 
-设置 DVR 视频上传自动同步 配置  对应奥点（uin）
+设置 DVR 视频上传自动同步 配置  对应（uin）
 
 ```shell
 curl -X "POST" "http://58jinrongyun.com/api/AdminAssist/setVodUpVodConfig" \
@@ -171,7 +171,7 @@ print(result.json())
 
 请求方式 POST 需要认证
 
-获取 DVR 视频上传DRM加密 配置  对应奥点（uin）
+获取 DVR 视频上传DRM加密 配置  对应（uin）
 
 ```shell
 curl -X "POST" "http://58jinrongyun.com/api/AdminAssist/getDvrDrmConfig" \
@@ -219,7 +219,7 @@ print(result.json())
 
 请求方式 POST 需要认证
 
-设置 DVR 视频上传DRM加密 配置  对应奥点（uin）
+设置 DVR 视频上传DRM加密 配置  对应（uin）
 
 ```shell
 curl -X "POST" "http://58jinrongyun.com/api/AdminAssist/setDvrDrmConfig" \
@@ -255,7 +255,7 @@ print(result.json())
 
 请求方式 POST 需要认证
 
-获取 VOD点播域名配置 黑白名单 对应奥点（uin）
+获取 VOD点播域名配置 黑白名单 对应（uin）
 
 ```shell
 curl -X "POST" "http://58jinrongyun.com/api/AdminAssist/getVodDomainRef" \
@@ -302,7 +302,7 @@ print(result.json())
 
 请求方式 POST 需要认证
 
-设置 VOD点播域名配置 黑白名单 对应奥点（uin）
+设置 VOD点播域名配置 黑白名单 对应（uin）
 
 ```shell
 curl -X "POST" "http://58jinrongyun.com/api/AdminAssist/setVodDomainRef" \
@@ -343,7 +343,7 @@ print(result.json())
 
 请求方式 POST 需要认证
 
-获取 VOD点播域名列表 对应奥点（uin）
+获取 VOD点播域名列表 对应（uin）
 
 ```shell
 curl -X "POST" "http://58jinrongyun.com/api/AdminAssist/listVodDomainRef" \
@@ -389,7 +389,7 @@ print(result.json())
 
 请求方式 POST 需要认证
 
-增加 VOD点播域名 对应奥点（uin）
+增加 VOD点播域名 对应（uin）
 
 需要准备自己的域名 并CNAME 指向 直播存储 XXXX.live-vod.cdn.aodianyun.com  上传存储XXXX.long-vod.cdn.aodianyun.com 
 
@@ -428,7 +428,7 @@ print(result.json())
 
 请求方式 POST 需要认证
 
-检查并启用 VOD点播域名 对应奥点（uin）
+检查并启用 VOD点播域名 对应（uin）
 
 ```shell
 curl -X "POST" "http://58jinrongyun.com/api/AdminAssist/checkVodDomainRef" \
@@ -465,7 +465,7 @@ print(result.json())
 
 请求方式 POST 需要认证
 
-停用并移除 VOD点播域名 对应奥点（uin）
+停用并移除 VOD点播域名 对应（uin）
 
 ```shell
 curl -X "POST" "http://58jinrongyun.com/api/AdminAssist/removeVodDomainRef" \
@@ -498,11 +498,68 @@ print(result.json())
 }
 ```
 
+## 查询点播流量（VodGetAmount）
+
+请求方式 POST 需要认证
+
+根据CDN域名查询点播流量   对应（uin）
+
+```shell
+curl -X "POST" "http://58jinrongyun.com/api/AdminAssist/VodGetAmount" \
+     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
+     -d "params"
+```
+
+```python
+import requests
+
+result = requests.post('http://58jinrongyun.com/api/AdminAssist/VodGetAmount',
+  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+  data=params)
+
+print(result.json())
+```
+
+| 字段                 | 描述                                          |
+| ------------------ | ------------------------------------------------ |
+| admin_id           | `int`  客户ID 指定的客户                        |
+| stime                | `int`  始时间戳 单位为秒             |
+| etime                | `int`  结束时间戳 单位为秒            |
+| domain             | `string`  CDN 域名     |
+     
+> 返回结果如下:
+
+```json
+{
+    "Flag": 100,
+    "FlagString": "search success",
+    "List": {
+        "type": [  // 数据分类 tag  根据域名的分类  这两个字段只会出现一个
+            "direct",
+            "upload"
+        ],
+        "data": {
+            "1477648800": {
+                "uptime": 1477648800,  //更新时间
+                "direct": 22548,         //直播生成的视频 点播流量   
+                "upload": 2254848     //上传的视频 点播流量
+            },
+            ......
+        },
+        "step": 3600,   //时间 步长
+        "time_period": [ 
+            1477206000,   //开始时间
+            1477650339   //结束时间
+        ]
+    }
+}
+```
+
 ## 设置直播域名白名单（setSubAdminDns）
 
 请求方式 POST 需要认证
 
-设置 LSS直播APP 域名白名单  最多5个 对应奥点（uin）
+设置 LSS直播APP 域名白名单  最多5个 对应（uin）
 
 ```shell
 curl -X "POST" "http://58jinrongyun.com/api/AdminAssist/setSubAdminDns" \
@@ -539,7 +596,7 @@ print(result.json())
 
 请求方式 POST 需要认证
 
-获取 LSS直播APP 域名白名单  最多5个 对应奥点（uin）
+获取 LSS直播APP 域名白名单  最多5个 对应（uin）
 
 ```shell
 curl -X "POST" "http://58jinrongyun.com/api/AdminAssist/getSubAdminDns" \
