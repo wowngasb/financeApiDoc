@@ -6,7 +6,7 @@
 
 请求方式 GET POST 需要认证
 
-获取房间 Dvr 视频列表
+获取点播视频列表  
 
 ```shell
 curl -X "POST" "http://58jinrongyun.com/api/RoomVideo/getRoomDvrList" \
@@ -26,14 +26,14 @@ print(result.json())
 
 | 字段                 | 描述                                          |
 | --------------------- | ------------------------------------------------ |
-| admin_id          | `int`  子公司id                     |
-| room_id           | `int`  房间id    |
+| admin_id          | `int`  用户id  可以检索子公司或总公司的id  设置为总公司的id时表示获取所有视频      |
+| room_id           | `int`  房间id  查询直播视频时使用 表示为指定直播间产生的直播视频  默认为 0   |
 | uptime            | `array`  获取时间   时间戳 格式为[开始时间，结束时间]      |
-| num              | `int`  每页列表数量        |
-| page             | `int`  页数       |
-| type              | `string`  视频类型   7DayDvrList 临时存储   DvrList永久存储   UploadVodList上传视频      |
-| url             | `string`  视频网址       |
-| title             | `string`  视频标题       |
+| num              | `int`  每页数量  默认为 8 最大100  |
+| page             | `int`  页数  默认为 1     |
+| type              | `string`  视频类型  7DayDvrList 临时存储   DvrList永久存储   UploadVodList上传视频  默认为 7DayDvrList    |
+| url             | `string`  视频URL 可选检索参数  默认为空    |
+| title             | `string`  视频标题 可选检索参数  用于查找上传视频  默认为空    |
 
 > 返回结果如下:
 
@@ -707,82 +707,6 @@ print(result.json())
 }
 ```
 
-## 取用户视频的码率(getUserDvrTranscoding)
-
-请求方式 GET POST 需要认证
-
-取用户视频的码率  需要所属子公司权限
-
-```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomVideo/getUserDvrTranscoding" \
-     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
-     -d "params"
-```
-
-```python
-import requests
-
-result = requests.post('http://finance.aodianyun.com/api/RoomVideo/getUserDvrTranscoding',
-  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
-  data=params)
-
-print(result.json())
-```
-
-| 字段                 | 描述                                          |
-| ---------------------- | ------------------------------------------------------ |
-| admin_id             | `int`  用户id    |
-
-> 返回结果如下:
-
-```
-{
-    "Flag": 100,
-    "rows": {
-        "Flag": 100,
-        "FlagString": "操作成功",
-        "List": []
-    }
-}
-```
-
-## 视频转码(getDvrSubmitTranscoding)
-
-请求方式 GET POST 需要认证
-
-视频转码  需要所属子公司权限
-
-```shell
-curl -X "POST" "http://finance.aodianyun.com/api/RoomVideo/getDvrSubmitTranscoding" \
-     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
-     -d "params"
-```
-
-```python
-import requests
-
-result = requests.post('http://finance.aodianyun.com/api/RoomVideo/getDvrSubmitTranscoding',
-  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
-  data=params)
-
-print(result.json())
-```
-
-| 字段                 | 描述                                          |
-| ---------------------- | ------------------------------------------------------ |
-| admin_id             | `int`  用户id    |
-| url             | `array`  视频url地址    |
-| videoRate             | `string` 视频分辨率   |
-| notify             | `string`  notify为 live 或者 upload，分别代表直播存储、上传存储     |
-| format             | `string`  固定mp4    |
-
-> 返回结果如下:
-
-```
-{
-  
-}
-```
 
 > 网页中使用如下播放代码:
 
@@ -821,3 +745,142 @@ var objectPlayer=new mpsPlayer({
 </body>
 </html>
 ```
+
+## 获取转码列表(listDvrTranscoding)
+
+请求方式 GET POST 需要认证
+
+获取正在转码的视频列表  需要所属子公司权限
+
+```shell
+curl -X "POST" "http://58jinrongyun.com/api/RoomVideo/listDvrTranscoding" \
+     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
+     -d "params"
+```
+
+```python
+import requests
+
+result = requests.post('http://58jinrongyun.com/api/RoomVideo/listDvrTranscoding',
+  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+  data=params)
+
+print(result.json())
+```
+
+| 字段                 | 描述                                          |
+| ---------------------- | ------------------------------------------------------ |
+| admin_id             | `int`  用户id    |
+
+> 返回结果如下:
+
+```
+{
+    "Flag": 100,
+    "FlagString": "操作成功",
+    "List": [
+        {
+            "type": "video",
+            "infile": "http://long-vod.oss-cn-hangzhou-internal.aliyuncs.com/u/13830/mp4/0x0/c7d1e5116cbc3f5186816655899774cc.mp4",   //输入文件
+            "outfile": {
+                "object": "u/13830/mp4/854x480/c7d1e5116cbc3f5186816655899774cc.mp4"  //输出文件
+            },
+            "options": {   //转码配置
+                "height": 480,
+                "format": "mp4",
+                "vcodec": "h264",
+                "acodec": "aac",
+                "ac": 2,
+                "folder": "/data/video/8e66ff684dcfa45acc369c3cf883bdeb",
+                "bitrate": 800
+            },
+            "percent": 1.59,   //处理进度
+            "time": 1487761822,   //开始时间
+            "uptime": 1487761826,  //更新时间
+            "QID": "8e66ff684dcfa45acc369c3cf883bdeb"    //队列id
+        },  //其他任务
+    ]
+}
+```
+
+## 提交视频转码(submitTranscoding)
+
+请求方式 GET POST 需要认证
+
+提交视频转码  需要所属子公司权限
+
+视频转码任务会进入队列  可由RoomVideo.listDvrTranscoding接口查询  转码完成后可以收到webhook回调
+
+```shell
+curl -X "POST" "http://58jinrongyun.com/api/RoomVideo/submitTranscoding" \
+     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
+     -d "params"
+```
+
+```python
+import requests
+
+result = requests.post('http://58jinrongyun.com/api/RoomVideo/submitTranscoding',
+  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+  data=params)
+
+print(result.json())
+```
+
+| 字段                 | 描述                                          |
+| ---------------------- | ------------------------------------------------------ |
+| admin_id          | `int`  用户id    |
+| url                | `string`  视频url地址    |
+| videoRate         | `string` 码率  1920x1080  1280x720  854x480  640x360  426x240   |
+| notify             | `string`  转码目标为mp4时需要设置 live 直播存储 ，upload上传存储  转为m3u8时不用设置  默认为空     |
+| format            | `string`  目标视频格式  m3u8 或者 mp4  默认为 m3u8   |
+
+> 返回结果如下:
+
+```
+{
+    "Flag": 100,
+    "FlagString": "提交转码队列成功",
+    "QID": "c76cb4e84c87306cafdac20365eb3237"   //队列id
+}
+```
+
+
+## 修改上传视频信息(setUploadVodByAdminId)
+
+请求方式 GET POST 需要认证
+
+修改上传视频分配及标题  需要所属子公司权限
+
+```shell
+curl -X "POST" "http://58jinrongyun.com/api/RoomVideo/setUploadVodByAdminId" \
+     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
+     -d "params"
+```
+
+```python
+import requests
+
+result = requests.post('http://58jinrongyun.com/api/RoomVideo/setUploadVodByAdminId',
+  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+  data=params)
+
+print(result.json())
+```
+
+| 字段                 | 描述                                          |
+| ---------------------- | ------------------------------------------------------ |
+| url                | `string`  视频url地址    |
+| admin_id          | `int`  用户id  该视频将会分配给指定客户   |
+| title            | `string`  视频标题   |
+
+> 返回结果如下:
+
+```
+{
+    "Flag": 100,
+    "FlagString": "修改成功",
+}
+```
+
+

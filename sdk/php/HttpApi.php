@@ -6,7 +6,7 @@
  */
 class HttpApi {
 
-    private static $api_host = "http://my.app";    // 修改为API域名  http://finance.aodianyun.com
+    private static $api_host = "http://my.app";    // 修改为API域名  http://58jinrongyun.com
     private static $api_key = "3bddc47e7cc05e1d8f488f2562969a33";  // 修改为你的API key
 
     public static function post($module, $api, $params){
@@ -30,7 +30,7 @@ class HttpApi {
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $content);
         curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-            'Accept: application/json', 
+            'Accept: application/json',
             'Content-Type: application/application/json; charset=UTF-8',
             "Authorization: {$auth_str}"
         ));

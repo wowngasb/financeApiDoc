@@ -672,7 +672,7 @@ print(result.json())
         "lss_player_maxbufferlength": 2,  // 最大视频缓冲时间，默认2秒 hls不支持
         "lss_player_bufferlength": 1,  // 设置视频缓冲时间，默认1秒 hls不支持
         "lss_player_stretching": 2,  // 设置全屏模式 1按比例撑满 2铺满全屏 3原始大小
-        "lss_player_type": "mps",  // 流媒体视频播放器类型 默认mps:mps播放器,aodianplayer:奥点播放器
+        "lss_player_type": "mps",  // 流媒体视频播放器类型 默认mps:mps播放器,aodianplayer:默认播放器
         "mps_id": 438,  // 所选 MPS 播放器 id
         "mps_instance_id": "fN1Humm1116UPixX",  // 根据所选 MPS 播放器 id 流媒体app stream 生成的实例id
         "uptime": "2016-12-26 14:41:19",  // 记录更新时间

@@ -15,7 +15,7 @@ import net.sf.json.JSONObject;
 
 public class HttpApi {
 
-    private static String api_host = "http://my.app";    // 修改为API域名  http://finance.aodianyun.com
+    private static String api_host = "http://my.app";    // 修改为API域名  http://58jinrongyun.com
     private static String api_key = "3bddc47e7cc05e1d8f488f2562969a33";  // 修改为你的API key
 
     public static JSONObject post(String module, String api, JSONObject params){
