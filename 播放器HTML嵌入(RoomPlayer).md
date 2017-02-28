@@ -80,9 +80,9 @@ var playerVar = new dyyPlayer({
 
 ## 点播视频播放
 
-网页播放m3u8视频
+网页播放m3u8视频 你可以选择使用奥点播放器或其他播放器(ckplayer等)
 
-[测试页面](http://58jinrongyun.com/helper/demo_m3u8.html)
+奥点播放器 [测试页面](http://58jinrongyun.com/helper/demo_m3u8.html)
 
 ```html
 <div id="play" style="width:400px; height:300px;"></div>
