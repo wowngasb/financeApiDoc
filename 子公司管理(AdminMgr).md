@@ -390,3 +390,74 @@ print(result.json())
 
 ```
 
+## 设置房间观看认证接口（setAdminViewAuthUrl）
+
+请求方式 POST 需要认证
+
+设置子公司房间观看认证接口  该子公司下属房间用户进入时会调用此认证接口  需要所属总公司权限
+
+进入房间会把url所带的参数原样转发到认证链接接口，请求方式为GET  具体参见 `房间认证接口规范`
+
+```shell
+curl -X "POST" "http://58jinrongyun.com/api/AdminMgr/setAdminViewAuthUrl" \
+     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
+     -d "params"
+```
+
+```python
+import requests
+
+result = requests.post('http://58jinrongyun.com/api/AdminMgr/setAdminViewAuthUrl',
+  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+  data=params)
+
+print(result.json())
+```
+
+| 字段                 | 描述                                          |
+| --------------------- | ------------------------------------------------ 
+| admin_id          | `int`  需要设置的子公司admin_id      |
+| view_auth_url    | `string`  认证http接口 需要可访问              |
+     
+> 返回结果如下:
+
+```json
+{
+    "Flag": 100,
+    "FlagString": "设置房间观看认证接口"
+}
+
+```
+
+
+## 房间认证接口规范
+
+如果客户设置了 认证链接 则每当用户进入房间都会进行认证
+
+后台把进入房间所带的参数原样转发到认证链接接口，请求方式为GET 
+
+例如
+
+后台设置认证链接为：http://58jinrongyun.com/cache/test_auth.php
+
+用户打开观看连接：http://58jinrongyun.com/glive/35?token=abc&nick=test&uid=10001
+
+后台将会请求 http://58jinrongyun.com/cache/test_auth.php?room_id=35&token=abc&nick=test&uid=10001 进行认证
+
+
+> 认证接口需要返回json标识认证是否通过 格式如下：
+
+```json
+//认证成功
+{
+  "errno": 0,
+  "message": "success"
+}
+
+//认证失败
+{
+  "errno": 403,  //你可以换成你的错误码 非0表示错误  0标识成功
+  "message": "auth failed",  //你可以换成你的错误信息
+  "redirect": "http://baidu.com/404.html"  //你可以换成你的错误页面
+}
+```
