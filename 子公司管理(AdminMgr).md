@@ -31,12 +31,12 @@ print(result.json())
 | sublimit            | `int`    旗下直播房间数量限制         |
 | is_lssflowinfo       | `int`    是否拥有查看流量权限  1是，0否         |
 | is_mcsconfig           | `int`    是否拥有修改发布配置权限  1是，0否         |
-| limit_onlinenumber     | `int`      子公司 在线并发限制  上级limit_type为2时有效   -1为无限制         |
-| limit_bandwidth        | `int`     子公司 带宽限制  上级limit_type为1时有效  -1为无限制         |
-| limit_yearflow          | `int`     子公司 年流量限制  上级limit_type为3时有效   -1为无限制         |
-| limit_bandwidth_ex     | `int`   子公司 带宽限制 特殊限额         |
-| limit_onlinenumber_ex  | `int`   子公司 在线并发限制 特殊限额         |
-| limit_weekdays_use_ex   | `string`   使用特殊限额 的 特殊星期几 使用_分隔         |
+| limit_onlinenumber     | `int`      子公司 在线并发限制  上级limit_type为2时有效   必须大于等于0         |
+| limit_bandwidth        | `int`     子公司 带宽限制  上级limit_type为1时有效  必须大于等于0        |
+| limit_yearflow          | `int`     子公司 年流量限制  上级limit_type为3时有效   必须大于等于0         |
+| limit_bandwidth_ex     | `int`   子公司 带宽限制 特殊限额  默认为0      |
+| limit_onlinenumber_ex  | `int`   子公司 在线并发限制 特殊限额 默认为0    |
+| limit_weekdays_use_ex   | `string`   使用特殊限额 的 特殊星期几 使用_分隔   默认为空  |
 | pasw                    | `string`    登录密码         |
 | expiration_date          | `string`   房间有效期 到达有效期后会被冻结         |
 | is_roomvod              | `int`   是否开启点播功能  1 开启 0 关闭         |
