@@ -256,7 +256,7 @@ print(result.json())
 | 字段                 | 描述                                          |
 | ---------------------- | ------------------------------------------------ |
 | token             | `string`  认证token                     |
-| file_name         | `string`  文档文件名 支持格式 'pdf', 'ppt', 'pptx', 'doc', 'docx', 'xls', 'xlsx',    |
+| file_name         | `string`  文档文件名 支持格式 'png', 'jpg', 'pdf', 'ppt', 'pptx', 'doc', 'docx', 'xls', 'xlsx',   |
 | file_contents      | `string`  文档文件base64编码后的内容       |
 
 > 返回结果如下:
@@ -410,6 +410,60 @@ print(result.json())
         },
         "wis_shell": "wis://wis.aodianyun.com?params=eyJNYXhPdwMH0=",   //启动链接 放入网页a标签中 点击即可启动软件
         "mcs_config": {  //MCS 视频发布相关参数  参见 getRoomMcsConfig 接口
+        }
+    }
+}
+```
+
+
+## 互动软件启动(getWisShellEx)
+
+请求方式 GET POST 需要认证
+
+获取白板互动软件程序启动命令 需安装白板互动软件  支持老师学生视频互动
+
+```shell
+curl -X "POST" "http://58jinrongyun.com/api/JiaoYuUserInfo/getWisShellEx" \
+     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
+     -d "params"
+```
+
+```python
+import requests
+
+result = requests.post('http://58jinrongyun.com/api/JiaoYuUserInfo/getWisShellEx',
+  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+  data=params)
+
+print(result.json())
+
+```
+| 字段                 | 描述                                          |
+| --------------------- | ------------------------------------------------ |
+| token              | `string`  认证token                     |
+| role              | `string`  字符串 表示用户角色   目前支持  student   teacher         |
+| ChatUrl              | `string`  软件内嵌网页地址 为空表示使用默认页面       |
+
+> 返回结果如下:
+
+```
+{
+    "Flag": 100,
+    "Info": {
+        "room_id": 73,
+        "auth": {   //token 对应的用户具体信息
+            "room_id": 73,
+            "uid": "4918",
+            "nick": "游客",
+            "ava": "http://my.app/dist/dyy/assets/img/male.png",
+            "ext": "",
+            "_uptime_": 1490773964
+        },
+        "wis_shell": "wis2://wis.aodianyun.com?params=eyJyb2xlI",   //启动软件的url 可直接放入html a 标签中
+        "mcs_config": {   //软件的具体配置信息
+            "role": "teacher",
+            "nick": "游客"
+            /*  ...  */
         }
     }
 }
