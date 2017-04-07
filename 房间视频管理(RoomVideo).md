@@ -80,7 +80,7 @@ print(result.json())
 
 请求方式 GET POST 需要认证
 
-根据url删除视频
+根据url删除视频  可以通过`videoRate`和`format`参数删除指定分辨率、指定格式的视频，不设置则删除原始视频（删除之后对应的所有转码视频也会被删除）
 
 ```shell
 curl -X "POST" "http://58jinrongyun.com/api/RoomVideo/delRoomDvrByUrl" \
@@ -103,6 +103,8 @@ print(result.json())
 | admin_id          | `int`  子公司id     为空表示使用当前admin_id         |
 | url               | `array`  视频url地址  可以同时删除多个      |
 | type             | `string`  视频类型   7DayDvrList 临时存储   DvrList永久存储   UploadVodList上传视频      |
+| videoRate       | `string`  视频码率   240 360 480 720 1080  默认为空 表示删除原视频    |
+| format       | `string`  文件格式  mp4 或者 m3u8  默认为空 表示删除原视频    |
 
 > 返回结果如下:
 
