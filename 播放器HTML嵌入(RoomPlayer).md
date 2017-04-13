@@ -16,7 +16,7 @@
 <div id="play-container" style="width: 800px;height: 600px;"></div>
 <script type="text/javascript">
 var playerVar = new dyyPlayer({
-    room_id: 100067, //对应房间ID，必要参数
+    room_id: 1478, //对应房间ID，必要参数
     container: 'play-container', //播放器容器ID，必要参数
     width: '100%', //播放器宽度，可用数字、百分比等
     height: '100%', //播放器高度，可用数字、百分比等
@@ -28,6 +28,79 @@ var playerVar = new dyyPlayer({
 播放器嵌入后，可以使用变量 playerVar.player 对象控制播放器
 [在线文档](http://www.aodianyun.com/aodianyun_doc/254)
 
+手机端使用MPS播放器使用非全屏播放功能时，因为播放器高度是根据视频高度动态变化的，所以需要增加 playCallback pauseCallback 回调调整页面布局，示例代码如下
+
+
+``` html
+<div id="play-container" ></div>
+<script type="text/javascript">
+var playerVar = new dyyPlayer({
+    room_id: 1478 //对应房间ID，必要参数
+    container: 'play-container', //播放器容器ID，必要参数
+    width: '100%',//视频宽度，可用数字、百分比等
+    height: '100%',//视频高度，可用数字、百分比等
+    autostart: true,//是否自动播放，默认为false
+    controlbardisplay: 'enable',//是否显示控制栏，值为：disable、enable默认为disable。
+    isclickplay: false,//是否单击播放，默认为false
+    isfullscreen: true,//是否双击全屏，默认为true
+    playCallback: function(){
+        setTimeout(
+            function(){
+                //可以在这里调整高度
+                console.log && console.log("playCallback size:", $('#play-container').width(), $('#play-container').height());
+            }
+            ,1000);
+    },
+    pauseCallback: function(){
+        setTimeout(
+            function(){
+                //可以在这里调整高度
+                console.log && console.log("pauseCallback size:", $('#play-container').width(), $('#play-container').height());
+            }
+            ,1000);
+    },
+    onload: function(){
+        //可以在这里增加 播放器事件的 回调函数  不同浏览器支持的事件不同
+        console.log && console.log("PlayerReady size:", $('#play-container').width(), $('#play-container').height());
+        if(!this.addPlayerCallback){
+            return;
+        }
+        this.addPlayerCallback('start', function(){  // lssplayer 支持 hlsplayer 支持
+            console.log && console.log("PlayerCallback start");
+        });
+        this.addPlayerCallback('full', function(){  // lssplayer 支持 hlsplayer 支持
+            console.log && console.log("PlayerCallback full");
+        });
+        this.addPlayerCallback('empty', function(){  // lssplayer 支持 hlsplayer 支持
+            console.log && console.log("PlayerCallback empty");
+        });
+        this.addPlayerCallback('pause', function(){  // lssplayer 支持 hlsplayer 支持
+            console.log && console.log("PlayerCallback pause");
+        });
+        this.addPlayerCallback('resume', function(){  // lssplayer 支持 hlsplayer 支持
+            console.log && console.log("PlayerCallback resume");
+        });
+        this.addPlayerCallback('stop', function(){  // lssplayer 支持 hlsplayer 支持
+            console.log && console.log("PlayerCallback stop");
+        });
+
+        this.addPlayerCallback('ready', function(){   //  hlsplayer 支持
+            console.log && console.log("PlayerCallback ready");
+        });
+        this.addPlayerCallback('slider.start', function(){  //hlsplayer 支持
+            console.log && console.log("PlayerCallback slider.start");
+        });
+        this.addPlayerCallback('slider.end', function(){   //hlsplayer 支持
+            console.log && console.log("PlayerCallback slider.end");
+        });
+        this.addPlayerCallback('play.stop', function(){   //hlsplayer 支持
+            console.log && console.log("PlayerCallback play.stop");
+        });
+        //html5player  只支持  play.stop
+    }
+});
+</script>
+```
 
 ## 引用js文件方式
 
