@@ -28,14 +28,20 @@ var playerVar = new dyyPlayer({
 播放器嵌入后，可以使用变量 playerVar.player 对象控制播放器
 [在线文档](http://www.aodianyun.com/aodianyun_doc/254)
 
-手机端使用MPS播放器使用非全屏播放功能时，因为播放器高度是根据视频高度动态变化的，所以需要增加 playCallback pauseCallback 回调调整页面布局，示例代码如下
+## 手机布局调整
+
+手机端使用MPS播放器使用非全屏播放功能时，因为播放器高度是根据视频高度动态变化的，所以需要增加 playCallback pauseCallback 回调调整页面布局
+
+> 示例代码如下
 
 
 ``` html
+<script type="text/javascript" src="http://cdn.aodianyun.com/static/jquery/jquery-1.7.2.min.js"></script><!-- jquery地址也可使用您的地址 -->
+<script type="text/javascript" src="http://58jinrongyun.com/helper/dyyplayer.js?v=1.02"></script>
 <div id="play-container" ></div>
 <script type="text/javascript">
 var playerVar = new dyyPlayer({
-    room_id: 1478 //对应房间ID，必要参数
+    room_id: 1478, //对应房间ID，必要参数
     container: 'play-container', //播放器容器ID，必要参数
     width: '100%',//视频宽度，可用数字、百分比等
     height: '100%',//视频高度，可用数字、百分比等
