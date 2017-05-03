@@ -54,6 +54,9 @@ var playerVar = new dyyPlayer({
             function(){
                 //可以在这里调整高度
                 console.log && console.log("playCallback size:", $('#play-container').width(), $('#play-container').height());
+                $('#play-container').css({
+                    height: $('#videoBox').height()
+                });
             }
             ,1000);
     },
@@ -62,12 +65,18 @@ var playerVar = new dyyPlayer({
             function(){
                 //可以在这里调整高度
                 console.log && console.log("pauseCallback size:", $('#play-container').width(), $('#play-container').height());
+                $('#play-container').css({
+                    height: $('#videoBox').height()
+                });
             }
             ,1000);
     },
     onload: function(){
         //可以在这里增加 播放器事件的 回调函数  不同浏览器支持的事件不同
         console.log && console.log("PlayerReady size:", $('#play-container').width(), $('#play-container').height());
+        $('#play-container').css({
+            height: $('#videoBox').height()
+        });
         if(!this.addPlayerCallback){
             return;
         }
