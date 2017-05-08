@@ -390,6 +390,7 @@ print(result.json())
 | room_id            | `int`  房间ID 指定的房间                        |
 | config               | `array`  直播配置信息数组          |
 | mcs_id              | `int`  mcs实例id 默认为0 表示使用原id         |
+| chat_url             | `string`  MCS 内嵌网页 设置为 null 表示使用默认连接   |
 
 config 参数为 
 
