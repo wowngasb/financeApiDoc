@@ -600,10 +600,10 @@ print(result.json())
         "chat_filter_keys": null,  // 聊天关键词过滤
         "cover_pic": "",  // 视频封面图片
         "background_pic": "",  // 直播间 背景图片
-        "ctrl_qas": 0,  // 问答控制，0未设置，1开启，7审核 9禁止所有人
+        "ctrl_qas": 0,  // 问答控制，0开启，7审核 9禁止所有人
         "ctrl_sysmsg": 1,  // 是否显示 系统消息 0不显示  1显示 默认为 1
         "ctrl_share": 0,  // 设置房间是否显示 分享按钮  0不显示   1显示
-        "ctrl_chat": 9,  // 聊天控制，0未设置，1开启，7审核 9禁止
+        "ctrl_chat": 9,  // 聊天控制，0开启，7审核 9禁止
         "mcs_name": "dyy105174419",  // mcs 直播账号 登录名
         "mcs_id": 3895,  // mcs app id 每个主播账号对应一个id
         "mcs_pwd": "123456",  // mcs 直播账号 密码
