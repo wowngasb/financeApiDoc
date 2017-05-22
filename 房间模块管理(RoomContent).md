@@ -4,7 +4,7 @@
 
 ## 获取模块列表(getRoomContentList)
 
-请求方式 GET POST 需要认证
+请求方式 GET POST  不需要认证
 
 获取模块列表
 
@@ -108,7 +108,7 @@ print(result.json())
 
 请求方式 GET POST 需要认证
 
-新增房间区块内容
+新增房间区块内容    需要子公司自身或所属总公司权限 
 
 ```shell
 curl -X "POST" "http://58jinrongyun.com/api/RoomContent/newRoomContent" \
@@ -164,7 +164,7 @@ print(result.json())
 
 请求方式 GET POST 需要认证
 
-修改区块信息
+修改区块信息  需要子公司自身或所属总公司权限 
 
 ```shell
 curl -X "POST" "http://58jinrongyun.com/api/RoomContent/setRoomContent" \
@@ -214,11 +214,11 @@ print(result.json())
 ```
 
 
-## 查询直播带宽(stateRoomContent)
+## 修改区块状态(stateRoomContent)
 
 请求方式 GET POST 需要认证
 
-获取Lss 流媒体 app带宽历史信息   支持查询90天内的数据  需要子公司自身或所属总公司权限 
+修改区块状态  需要子公司自身或所属总公司权限 
 
 ```shell
 curl -X "POST" "http://58jinrongyun.com/api/RoomContent/stateRoomContent" \
