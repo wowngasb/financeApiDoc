@@ -792,3 +792,69 @@ print(result.json())
 
 ```
 
+## 历时消息查询（listRoomHistoryMsg）
+
+请求方式 GET POST 需要认证
+
+历时消息查询  需要总公司权限 或者 所属子公司权限
+
+```shell
+curl -X "POST" "http://58jinrongyun.com/api/RoomMgr/listRoomHistoryMsg" \
+     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
+     -d "params"
+```
+
+```python
+import requests
+
+result = requests.post('http://58jinrongyun.com/api/RoomMgr/listRoomHistoryMsg',
+  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+  data=params)
+
+print(result.json())
+```
+
+room_id 为必选字段，其他为检索参数  可以不设置 表示不使用这个条件
+
+| 字段                 | 描述                                          |
+| ---------------------- | ------------------------------------------------ |
+| start               | `int`  起始位置 用于分页  默认为 0                       |
+| limit               | `int`  每页数量 用于分页  默认为 20     最大100           |
+| sort_option        | `array`  排序依据 默认 ['field' => 'create_time', 'direction' => 'decs']    |
+| room_id             | `int`  房间ID 指定的房间                        |
+| uid             | `string`  用户标识  默认为空                 |
+| msg_id             | `int`  消息id 可以指定查询某一条消息  默认0                 |
+| msg_cmd             | `string or array`  消息类型  chat 聊天  question 提问  answer 回答    默认为空        |
+| state             | `int or array`  消息状态  1 待审核  2 审核发布  3 未开启审核直接发布  7 已回答  8 批量清除  9 手动删除  默认为空     |
+| create_time_s             | `string`  消息创建时间 起始   格式 2017-01-01 12:00:00   默认为空      |
+| create_time_e             | `string`  消息创建时间 结束   格式 2017-01-01 12:00:00   默认为空      |
+| uptime_s             | `string`  消息更新时间 起始   格式 2017-01-01 12:00:00     默认为空    |
+| uptime_e             | `string`  消息更新时间 结束   格式 2017-01-01 12:00:00   默认为空      |
+
+     
+
+> 返回结果如下:
+
+```json
+{
+    "Flag": 100,
+    "rows": [
+        {
+            "uid": "9035",   // 发送者 用户标识
+            "nick": "ihpyH",  // 发送者 昵称
+            "ava": "https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png",  // 发送者 头像
+            "ext": "student",  // 发送者 角色
+            "content": "法规法规",   //发送内容
+            "time": 1491461108,  //发送时间
+            "cmd": "chat",  // 消息类型  chat 聊天  question 提问  answer 回答
+            "state": 1,  // 消息状态  1 待审核  2 审核发布  3 未开启审核直接发布  7 已回答  8 批量清除  9 手动删除
+            "msg_id": 590,  // 消息唯一id
+            "msg_from": null   // cmd 为 answer 的回答消息有此字段 对应问题的 msg_id
+        },
+        // ......
+    ],
+    "results": 35  //符合条件的消息总数
+}
+```
+
+
