@@ -276,6 +276,9 @@ print(result.json())
 
 获取教育房间 白板录制节目列表  需要token认证
 
+获取白板录制列表之后  可以这样创建 [录制回放页面](#录制回放页面)
+
+
 ```shell
 curl -X "POST" "http://58jinrongyun.com/api/JiaoYuUserInfo/listWisReplay" \
      -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
@@ -294,9 +297,10 @@ print(result.json())
 
 | 字段                  | 描述                                          |
 | ---------------------- | ------------------------------------------------ |
-| token             | `string`  认证token                     |
-| page               | `int`    页数                      |
-| num                | `int`    每页数量                   |
+| room_id            | `int`    房间ID 指定的房间            |
+| page               | `int`    页数    默认为 1                  |
+| num                | `int`    每页数量    默认为 20               |
+| expire              | `int`   嵌入链接 有效期 单位秒  默认 86400 24小时       |
 
 > 返回结果如下:
 
@@ -311,6 +315,7 @@ print(result.json())
           "title": "2016-11-11 04:51:41",  //录制文件标题
           "videoUrl": "http://13830.live-vod.cdn.aodianyun.com/m3u8/0x0/dyy_168_850.0d2b7152b0a2bf430a8c66fd6363070f.1478854302/dyy_168_850.0d2b7152b0a2bf430a8c66fd6363070f.1478854302.m3u8",  //录制生成视频文件 m3u8
           "recUrl": "http://4640.long-vod.cdn.aodianyun.com/wis/13830/70fa43d93802056a34b45e30cb4bc3f3/record.meta",  //录制生成白板数据文件
+          "wis_live_url": "http://web.wis.aodianyun.com/replay.php?wisId=lc_a9d7afff8f53ec7cc954c9f726d70195&expire=1582015223&rand=&dmn=&power=1&sign=3ts6UIwlcqH2yAegJ%2BI6fusFt%2BY%3D&style=010&pad=0&space=0&recordId=ecda1086a8a94fd2f3b6c1f8a0787f3a"
           "startTime": 1478854301820,  //录制开始时间 单位毫秒
           "endTime": 1478854513075  //录制结束时间 单位毫秒
       },

@@ -151,7 +151,7 @@ var playerVar = new dyyPlayer({
 
 ## 教师白板嵌入
 
-教师端需调用API[接口](#生成房间token（getauthtoken）)获取到 认证token之后才可使用 
+教师端需调用API[接口](#getauthtoken)获取到 认证token之后才可使用 
 
 [测试页面](http://58jinrongyun.com/helper/roomwis.php?room_id=1478&token=a07dVZvHzZPe8GZEAePcC3loHl8Tn5cBXyPpy3qrcdyLqCFhBCbaBJXQdbox)
 
@@ -159,6 +159,54 @@ var playerVar = new dyyPlayer({
 <iframe id="wis-container" style="width: 800px;height: 600px;"></iframe>
 <script type="text/javascript" src="http://58jinrongyun.com/helper/room_wis.js?r=1478&token=a07dVZvHzZPe8GZEAePcC3loHl8Tn5cBXyPpy3qrcdyLqCFhBCbaBJXQdbox&id=wis-container"></script>
 ```
+
+## 录制回放页面
+
+通过 [白板录制列表](#listWisReplay) 接口获取的录制列表 可以使用此方式嵌入页面
+
+[测试页面](http://58jinrongyun.com/helper/wisreplaydemo.html)
+
+
+页面 html
+```html
+<script src="http://cdn.aodianyun.com/static/jquery/jquery-1.7.2.min.js"></script>
+<script src="http://cdn.aodianyun.com/wis/exchange.js"></script>
+<script src="http://cdn.aodianyun.com/lss/aodianplay/player.js"></script>
+<div id="player-container" style="width: 400px;height: 300px;"></div>
+<iframe id="wis-container" style="width: 800px;height: 600px;"></iframe>
+```
+
+页面 javascript
+```
+var wis_live_url = "http://web.wis.aodianyun.com/replay.php?wisId=lc_5dad72f817f31a2b80feb5511ec13216&expire=1496480152&rand=&dmn=&power=1&sign=6tT6bNIz%2Fj1CIbDnGpVjD9mAoQc%3D&style=010&pad=0&space=0&recordId=031ba7033454db1444e6a96fd8f39c3d";
+$(function(){
+    $("#wis-container").load(function () {
+        WISExchange.Init({
+            iframe: "wis-container",
+            onSuccess: function (info) {
+                console.log("onSuccess", info);
+            },
+            onDocLoad: function (info) {
+                console.log("onDocLoad", info);
+            },
+            onPageChange: function (info) {
+                console.log("onPageChange", info);
+            },
+            onFailure: function (info) {
+                console.log("onFailure", info.error);
+            }
+        });
+        WISExchange.InitPlayer({
+            mode: "replay", //replay为录播播放器，live为直播播放器
+            container: "player-container",
+            width: $("#player-container").width(),
+            height: $("#player-container").height()
+        });
+    });
+    $("wis-container").attr("src", wis_live_url);
+});
+```
+
 
 ## 点播视频播放
 
