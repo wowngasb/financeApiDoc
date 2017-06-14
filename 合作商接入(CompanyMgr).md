@@ -365,6 +365,70 @@ print(result.json())
 }
 ```
 
+## 获取房间流媒体信息（getRoomLssInfo）
+
+请求方式 GET POST 需要认证
+
+获取房间 流媒体 相关信息
+
+```shell
+curl -X "POST" "http://58jinrongyun.com/api/CompanyMgr/getRoomLssInfo" \
+     -H "Authorization: dyyadmin:{{API_KEY}} \n Content-type: application/x-www-form-urlencoded; charset=UTF-8" \
+     -d "params"
+```
+
+```python
+import requests
+
+result = requests.post('http://58jinrongyun.com/api/CompanyMgr/getRoomLssInfo',
+  headers={"Authorization": "dyyadmin:{{API_KEY}}", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+  data=params)
+
+print(result.json())
+```
+
+| 字段                 | 描述                                          |
+| ---------------------- | ------------------------------------------------ |
+| room_id             | `int`  房间ID 指定的房间                        |
+
+> 返回结果如下:
+
+```json
+{
+    "Flag": 100,
+    "FlagString": "获取数据成功",
+    "Info": {
+        "admin_id": 7,
+        "aodian_id": 13830,  //奥点uin
+        "cover_pic": "http://static.douyalive.com/images/my_147141392965877.png",  //播放器封面图片
+        "dms_app": "dyy_7_221",
+        "dms_pub_key": "pub_df6f4a4ef6fcb81edfe45cae48aa577f",
+        "dms_sub_key": "sub_43718b49407c2c49385fb224862f91ae",
+        "dms_total": 0,
+        "hls_url": "http://13830.hlsplay.aodianyun.com/dyy_7_221/aajie.m3u8",   // HLS 播放 视频地址
+        "live_state": 0,
+        "lssPublishAddr": "rtmp://13830.lsspublish.aodianyun.com/dyy_7_221/aajie",   // RTMP 发布 视频地址
+        "lss_app": "dyy_7_221",   // 视频 流媒体  app
+        "lss_player_stretching": 2,
+        "lss_player_type": "mps",
+        "mcs_id": 518,
+        "mps_id": 438,
+        "mps_instance_id": "f1BHzbBBH16UWXiS",
+        "room_id": 1000,
+        "rtmp_url": "rtmp://13830.lssplay.aodianyun.com/dyy_7_221/aajie",  // RTMP 播放 视频地址
+        "state": 9,
+        "stream": "aajie",   // 视频 流媒体  stream
+        "topic": "chat_1000",
+        "video_type": 1,
+        "vod_case": "",
+        "vod_file": "",
+        "vod_room_id": 0,
+        "vod_url": "",
+        "wis_id": ""
+    }
+}
+```
+
 ## 教育房间录制列表（getRoomWisReplay）
 
 请求方式 GET POST 需要认证

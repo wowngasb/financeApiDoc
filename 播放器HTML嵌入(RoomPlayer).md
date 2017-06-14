@@ -2,7 +2,7 @@
 
 在管理后台新建房间后，可用过以下两种方式在HTML网页中嵌入播放器
 
-## js代码方式
+## js代码方式（jscode）
 
 引用 dyyplayer.js 然后在js代码中生成 播放器 需要必须参数 房间ID 和 播放器容器ID
 
@@ -28,7 +28,7 @@ var playerVar = new dyyPlayer({
 播放器嵌入后，可以使用变量 playerVar.player 对象控制播放器
 [在线文档](http://www.aodianyun.com/aodianyun_doc/254)
 
-## 手机布局调整
+## 手机布局调整（mobile-mps）
 
 手机端使用MPS播放器使用非全屏播放功能时，因为播放器高度是根据视频高度动态变化的，所以需要增加 playCallback pauseCallback 回调调整页面布局
 
@@ -111,7 +111,7 @@ var playerVar = new dyyPlayer({
 </script>
 ```
 
-## 引用js文件方式
+## 引用js文件方式（jsfile）
 
 在房间管理页面可获取视频播放器HTML嵌入代码
 
@@ -138,7 +138,7 @@ var playerVar = new dyyPlayer({
 [在线文档](http://www.aodianyun.com/aodianyun_doc/254)
 
 
-## 学生白板嵌入
+## 学生白板嵌入（wis）
 
 学生端观看 只需获取到 房间id 即可观看
 
@@ -149,7 +149,7 @@ var playerVar = new dyyPlayer({
 <script type="text/javascript" src="http://58jinrongyun.com/helper/room_wis.js?r=1478&id=wis-container"></script>
 ```
 
-## 教师白板嵌入
+## 教师白板嵌入（twis）
 
 教师端需调用API[接口](#getauthtoken)获取到 认证token之后才可使用 
 
@@ -160,7 +160,7 @@ var playerVar = new dyyPlayer({
 <script type="text/javascript" src="http://58jinrongyun.com/helper/room_wis.js?r=1478&token=a07dVZvHzZPe8GZEAePcC3loHl8Tn5cBXyPpy3qrcdyLqCFhBCbaBJXQdbox&id=wis-container"></script>
 ```
 
-## 录制回放页面
+## 录制回放页面（wisreplay）
 
 通过 [白板录制列表](#listWisReplay) 接口获取的录制列表 可以使用此方式嵌入页面
 
@@ -208,7 +208,7 @@ $(function(){
 ```
 
 
-## 点播视频播放
+## 点播视频播放（vodreplay）
 
 网页播放m3u8视频 你可以选择使用奥点播放器或其他播放器(ckplayer等)
 
