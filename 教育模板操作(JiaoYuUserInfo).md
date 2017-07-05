@@ -425,6 +425,12 @@ print(result.json())
 
 请求方式 GET POST 需要认证
 
+需要先使用用户信息生成token，参见 [生成房间Token](#getAuthToken) 接口
+
+观看页面地址为  http://58jinrongyun.com/preview/education/page?token=你的token
+
+管理页面地址为  http://58jinrongyun.com/preview/education/publish?token=你的token
+
 获取白板互动软件程序启动命令 需安装白板互动软件  支持老师学生视频互动
 
 ```shell

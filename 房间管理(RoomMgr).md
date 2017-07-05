@@ -277,7 +277,7 @@ print(result.json())
 | uid                 | `string` 用户唯一标识 用于标识token使用者  可为空      |
 | nick                | `string`  用户昵称 用于标识token使用者  可为空     |
 | ava                 | `string`  用户头像  用于标识token使用者  可为空      |
-| ext                 | `string`  用户扩展信息  可为空      |
+| ext                 | `string`  用户扩展信息  可为空  教育互动版请设置 教师 teacher  学生 student    |
 
 > 返回结果如下:
 

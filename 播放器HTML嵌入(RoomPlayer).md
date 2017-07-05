@@ -21,7 +21,7 @@ var playerVar = new dyyPlayer({
     width: '100%', //播放器宽度，可用数字、百分比等
     height: '100%', //播放器高度，可用数字、百分比等
     autostart: true, //是否自动播放，默认为false
-    controlbardisplay: 'enable', //是否显示控制栏，值为：disable、enable默认为disable
+    controlbardisplay: 'enable' //是否显示控制栏，值为：disable、enable默认为disable
 });
 </script>
 ```
