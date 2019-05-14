@@ -16,3 +16,4 @@ sdk/java/HttpApi.jar
 /sdk/C++/cpprestsdk-2.9.0/.vs
 *.db
 *.opendb
+*.pdb
